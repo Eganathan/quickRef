@@ -1,6 +1,6 @@
 baseURL = "https://qref.eknath.dev"
 languageCode = "en-us"
-title = "QuickRef - Developer Reference"
+title = "QuickRef - Personal Developer Reference"
 theme = "quickref"
 
 [params]
@@ -14,7 +14,7 @@ theme = "quickref"
     weight = 1
   [[menu.main]]
     name = "GitHub"
-    url = "https://github.com/yourusername/quickref"
+    url = "https://github.com/eganathan/quickref"
     weight = 2
 
 [markup]
