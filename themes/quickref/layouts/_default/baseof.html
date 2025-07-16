@@ -19,12 +19,15 @@
     {{ end }}
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="{{ .Site.BaseURL }}">
                 <i class="fas fa-code"></i> {{ .Site.Title }}
             </a>
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <button class="theme-toggle me-3" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
                 {{ range .Site.Menus.main }}
                 <a class="nav-link" href="{{ .URL }}" {{ if .Name | eq "GitHub" }}target="_blank"{{ end }}>
                     {{ if .Name | eq "Home" }}<i class="fas fa-home"></i>{{ end }}

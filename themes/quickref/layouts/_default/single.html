@@ -1,15 +1,9 @@
 {{ define "main" }}
-<div class="container my-4">
-    <div class="row">
-        <div class="col-12">
-            <a href="{{ .Site.BaseURL }}" class="back-link">
-                <i class="fas fa-arrow-left"></i> Back to QuickRef
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="container">
+<div class="ref-page">
+    <a href="{{ .Site.BaseURL }}" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to QuickRef
+    </a>
+    
     <div class="ref-header">
         <h1 class="ref-title">{{ .Title }}</h1>
         <p class="ref-description">{{ .Description | default .Summary }}</p>

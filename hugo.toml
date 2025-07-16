@@ -23,7 +23,7 @@ theme = "quickref"
       unsafe = true
   [markup.highlight]
     style = "github-dark"
-    lineNos = true
+    lineNos = false
     tabWidth = 2
 
 [taxonomies]

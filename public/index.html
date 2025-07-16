@@ -18,12 +18,15 @@
     
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="http://localhost:1313/">
                 <i class="fas fa-code"></i> QuickRef - Developer Reference
             </a>
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <button class="theme-toggle me-3" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
                 
                 <a class="nav-link" href="/" >
                     <i class="fas fa-home"></i>
@@ -43,14 +46,14 @@
 
     <main>
         
-<div class="hero-section bg-primary text-white text-center py-5">
+<div class="header-section">
     <div class="container">
-        <h1 class="display-4 fw-bold mb-3">QuickRef - Developer Reference</h1>
-        <p class="lead mb-4">Share quick reference and cheat sheets for developers</p>
-        <div class="search-container mx-auto" style="max-width: 500px;">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-lg" placeholder="Search for cheatsheet..." id="searchInput">
-                <button class="btn btn-outline-light" type="button" id="searchBtn">
+        <div class="header-content">
+            <h1 class="header-title">QuickRef - Developer Reference</h1>
+            <p class="header-subtitle">Share quick reference and cheat sheets for developers</p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for cheatsheet..." id="searchInput">
+                <button class="search-btn" id="searchBtn">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
@@ -58,71 +61,79 @@
     </div>
 </div>
 
-<div class="container my-5">
-    <div id="categories-container">
+<div class="main-content">
+    <div class="category-grid" id="categories-container">
         
         
         
-        <div class="category-section mb-5">
-            <h2 class="category-title">
-                <i class="fas fa-folder"></i> Programming
-            </h2>
-            <p class="text-muted mb-4">Programming reference sheets</p>
-            <div class="row">
+        <div class="category-section">
+            <div class="category-header">
+                <i class="fas fa-folder category-icon"></i>
+                <h2 class="category-title">Programming</h2>
+                <span class="category-count">1</span>
+            </div>
+            <div class="cards-grid">
                 
-                <div class="col-md-6 col-lg-4 mb-3">
-                    <a href="/programming/bash/" class="quickref-card">
-                        <h5>Bash</h5>
-                        <p><h2 id="overview">Overview</h2>
-<p>Bash (Bourne Again SHell) is a Unix shell and command language. It&rsquo;s the default …</p></p>
-                        <div class="quickref-tags">
-                            
-                            <span class="quickref-tag">programming</span>
-                            
-                            <span class="quickref-tag">shell</span>
-                            
-                            <span class="quickref-tag">scripting</span>
-                            
-                            <span class="quickref-tag">linux</span>
-                            
-                            <span class="quickref-tag">unix</span>
-                            
-                        </div>
-                    </a>
-                </div>
+                <a href="/programming/bash/" class="quickref-card">
+                    <div class="quickref-card-title">
+                        <i class="fas fa-file-code quickref-card-icon"></i>
+                        Bash
+                    </div>
+                    <div class="quickref-card-description">
+                        <h2 id="overview">Overview</h2>
+<p>Bash (Bourne Again SHell) is a Unix shell and command language. It&rsquo;s the default shell on most Linux …</p>
+                    </div>
+                    <div class="quickref-tags">
+                        
+                        <span class="quickref-tag">programming</span>
+                        
+                        <span class="quickref-tag">shell</span>
+                        
+                        <span class="quickref-tag">scripting</span>
+                        
+                        <span class="quickref-tag">linux</span>
+                        
+                        <span class="quickref-tag">unix</span>
+                        
+                    </div>
+                </a>
                 
             </div>
         </div>
         
         
         
-        <div class="category-section mb-5">
-            <h2 class="category-title">
-                <i class="fas fa-folder"></i> Tools
-            </h2>
-            <p class="text-muted mb-4">Tools reference sheets</p>
-            <div class="row">
+        <div class="category-section">
+            <div class="category-header">
+                <i class="fas fa-folder category-icon"></i>
+                <h2 class="category-title">Tools</h2>
+                <span class="category-count">1</span>
+            </div>
+            <div class="cards-grid">
                 
-                <div class="col-md-6 col-lg-4 mb-3">
-                    <a href="/tools/grep/" class="quickref-card">
-                        <h5>Grep</h5>
-                        <p><h2 id="overview">Overview</h2>
-<p>Grep is a command-line utility for searching plain-text data sets for lines that match a …</p></p>
-                        <div class="quickref-tags">
-                            
-                            <span class="quickref-tag">tools</span>
-                            
-                            <span class="quickref-tag">linux</span>
-                            
-                            <span class="quickref-tag">cli</span>
-                            
-                            <span class="quickref-tag">text</span>
-                            
-                            <span class="quickref-tag">search</span>
-                            
-                        </div>
-                    </a>
-                </div>
+                <a href="/tools/grep/" class="quickref-card">
+                    <div class="quickref-card-title">
+                        <i class="fas fa-file-code quickref-card-icon"></i>
+                        Grep
+                    </div>
+                    <div class="quickref-card-description">
+                        <h2 id="overview">Overview</h2>
+<p>Grep is a command-line utility for searching plain-text data sets for lines that match a regular expression. …</p>
+                    </div>
+                    <div class="quickref-tags">
+                        
+                        <span class="quickref-tag">tools</span>
+                        
+                        <span class="quickref-tag">linux</span>
+                        
+                        <span class="quickref-tag">cli</span>
+                        
+                        <span class="quickref-tag">text</span>
+                        
+                        <span class="quickref-tag">search</span>
+                        
+                    </div>
+                </a>
                 
             </div>
         </div>

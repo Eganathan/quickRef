@@ -1,8 +1,33 @@
 // QuickRef Hugo Theme JavaScript
 document.addEventListener('DOMContentLoaded', function() {
+    initTheme();
     setupSearch();
     setupSmoothScrolling();
+    setupCopyButtons();
+    setupAdaptiveGrid();
 });
+
+// Theme Management
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+}
+
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    
+    const themeIcon = document.getElementById('theme-icon');
+    if (themeIcon) {
+        themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+}
 
 // Search functionality
 function setupSearch() {
@@ -33,6 +58,7 @@ function handleSearch() {
             const cards = category.querySelectorAll('.quickref-card');
             cards.forEach(card => card.style.display = 'block');
         });
+        hideNoResults();
         return;
     }
     
@@ -43,8 +69,8 @@ function handleSearch() {
         let categoryHasResults = false;
         
         cards.forEach(card => {
-            const title = card.querySelector('h5').textContent.toLowerCase();
-            const description = card.querySelector('p').textContent.toLowerCase();
+            const title = card.querySelector('.quickref-card-title').textContent.toLowerCase();
+            const description = card.querySelector('.quickref-card-description').textContent.toLowerCase();
             const tags = Array.from(card.querySelectorAll('.quickref-tag')).map(tag => tag.textContent.toLowerCase());
             
             const matches = title.includes(searchTerm) || 
@@ -69,6 +95,9 @@ function handleSearch() {
     } else {
         hideNoResults();
     }
+    
+    // Update grid layout based on visible content
+    updateGridOnSearch();
 }
 
 function showNoResults(searchTerm) {
@@ -140,15 +169,73 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Add copy buttons to code blocks
-document.addEventListener('DOMContentLoaded', function() {
+// Setup copy buttons for code blocks
+function setupCopyButtons() {
     const codeBlocks = document.querySelectorAll('pre code');
     codeBlocks.forEach(block => {
         const pre = block.parentElement;
         const button = document.createElement('button');
         button.textContent = 'Copy';
-        button.className = 'copy-code-btn btn btn-sm btn-outline-secondary position-absolute top-0 end-0 m-2';
+        button.className = 'copy-code-btn';
+        button.addEventListener('click', () => copyCode(button, block));
         pre.style.position = 'relative';
         pre.appendChild(button);
     });
-});
+}
+
+function copyCode(button, codeBlock) {
+    const code = codeBlock.textContent;
+    navigator.clipboard.writeText(code).then(() => {
+        const originalText = button.textContent;
+        button.textContent = 'Copied!';
+        button.style.backgroundColor = 'var(--accent-success)';
+        button.style.color = 'var(--text-inverse)';
+        
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.style.backgroundColor = '';
+            button.style.color = '';
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+        button.textContent = 'Failed';
+        setTimeout(() => {
+            button.textContent = 'Copy';
+        }, 2000);
+    });
+}
+
+// Setup adaptive grid based on content
+function setupAdaptiveGrid() {
+    const categoryGrid = document.querySelector('.category-grid');
+    if (!categoryGrid) return;
+    
+    const categoryCount = categoryGrid.querySelectorAll('.category-section').length;
+    categoryGrid.setAttribute('data-category-count', categoryCount);
+    
+    // Optimize card grid spacing based on content
+    const cardGrids = document.querySelectorAll('.cards-grid');
+    cardGrids.forEach(grid => {
+        const cardCount = grid.querySelectorAll('.quickref-card').length;
+        grid.setAttribute('data-card-count', cardCount);
+        
+        // Adjust grid based on card count
+        if (cardCount === 1) {
+            grid.style.gridTemplateColumns = '1fr';
+            grid.style.maxWidth = '500px';
+        } else if (cardCount === 2) {
+            grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+        }
+    });
+}
+
+// Update grid on search
+function updateGridOnSearch() {
+    const categoryGrid = document.querySelector('.category-grid');
+    if (!categoryGrid) return;
+    
+    const visibleCategories = Array.from(categoryGrid.querySelectorAll('.category-section'))
+        .filter(category => category.style.display !== 'none');
+    
+    categoryGrid.setAttribute('data-category-count', visibleCategories.length);
+}
