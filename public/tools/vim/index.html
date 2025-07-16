@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vim - QuickRef - Developer Reference</title>
+    <meta name="description" content="Powerful text editor with modal editing, extensive customization, and efficient keyboard-driven workflow.">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    
+    <link href="/css/styles.css" rel="stylesheet">
+    
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:1313/">
+                <i class="fas fa-code"></i> QuickRef - Developer Reference
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <button class="theme-toggle me-3" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                
+                <a class="nav-link" href="/" >
+                    <i class="fas fa-home"></i>
+                    
+                    Home
+                </a>
+                
+                <a class="nav-link" href="https://github.com/yourusername/quickref" target="_blank">
+                    
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="ref-page">
+    <a href="http://localhost:1313/" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to QuickRef
+    </a>
+    
+    <div class="ref-header">
+        <h1 class="ref-title">Vim</h1>
+        <p class="ref-description">Powerful text editor with modal editing, extensive customization, and efficient keyboard-driven workflow.</p>
+        <div class="ref-tags">
+            
+            <span class="ref-tag">vim</span>
+            
+            <span class="ref-tag">editor</span>
+            
+            <span class="ref-tag">text-editing</span>
+            
+            <span class="ref-tag">productivity</span>
+            
+            <span class="ref-tag">cli</span>
+            
+        </div>
+    </div>
+
+    <div class="ref-content">
+        <h2 id="overview">Overview</h2>
+<p>Vim is a highly configurable text editor built to make creating and changing text very efficient. It&rsquo;s an improved version of the vi editor with additional features like syntax highlighting, plugin system, and extensive customization options.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>sudo apt install vim
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># macOS</span>
+</span></span><span style="display:flex;"><span>brew install vim
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># or use MacVim for GUI</span>
+</span></span><span style="display:flex;"><span>brew install --cask macvim
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># CentOS/RHEL</span>
+</span></span><span style="display:flex;"><span>sudo yum install vim
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Arch Linux</span>
+</span></span><span style="display:flex;"><span>sudo pacman -S vim
+</span></span></code></pre></div><h2 id="basic-concepts">Basic Concepts</h2>
+<h3 id="modal-editing">Modal Editing</h3>
+<p>Vim operates in different modes:</p>
+<ul>
+<li><strong>Normal Mode</strong>: Navigation and commands (default)</li>
+<li><strong>Insert Mode</strong>: Text insertion</li>
+<li><strong>Visual Mode</strong>: Text selection</li>
+<li><strong>Command-line Mode</strong>: Ex commands</li>
+</ul>
+<h3 id="mode-switching">Mode Switching</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># From Normal to Insert</span>
+</span></span><span style="display:flex;"><span>i           <span style="color:#8b949e;font-style:italic"># Insert before cursor</span>
+</span></span><span style="display:flex;"><span>I           <span style="color:#8b949e;font-style:italic"># Insert at beginning of line</span>
+</span></span><span style="display:flex;"><span>a           <span style="color:#8b949e;font-style:italic"># Insert after cursor</span>
+</span></span><span style="display:flex;"><span>A           <span style="color:#8b949e;font-style:italic"># Insert at end of line</span>
+</span></span><span style="display:flex;"><span>o           <span style="color:#8b949e;font-style:italic"># Open new line below</span>
+</span></span><span style="display:flex;"><span>O           <span style="color:#8b949e;font-style:italic"># Open new line above</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># From Insert to Normal</span>
+</span></span><span style="display:flex;"><span>&lt;Esc&gt;       <span style="color:#8b949e;font-style:italic"># Exit Insert mode</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+<span style="color:#ff7b72;font-weight:bold">[</span>&gt;    <span style="color:#8b949e;font-style:italic"># Alternative to Esc</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># From Normal to Visual</span>
+</span></span><span style="display:flex;"><span>v           <span style="color:#8b949e;font-style:italic"># Visual mode</span>
+</span></span><span style="display:flex;"><span>V           <span style="color:#8b949e;font-style:italic"># Visual line mode</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+v&gt;    <span style="color:#8b949e;font-style:italic"># Visual block mode</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># From any mode to Command-line</span>
+</span></span><span style="display:flex;"><span>:           <span style="color:#8b949e;font-style:italic"># Ex command mode</span>
+</span></span></code></pre></div><h2 id="basic-navigation">Basic Navigation</h2>
+<h3 id="character-movement">Character Movement</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>h           <span style="color:#8b949e;font-style:italic"># Move left</span>
+</span></span><span style="display:flex;"><span>j           <span style="color:#8b949e;font-style:italic"># Move down</span>
+</span></span><span style="display:flex;"><span>k           <span style="color:#8b949e;font-style:italic"># Move up</span>
+</span></span><span style="display:flex;"><span>l           <span style="color:#8b949e;font-style:italic"># Move right</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Arrow keys also work but are less efficient</span>
+</span></span></code></pre></div><h3 id="word-movement">Word Movement</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>w           <span style="color:#8b949e;font-style:italic"># Next word</span>
+</span></span><span style="display:flex;"><span>b           <span style="color:#8b949e;font-style:italic"># Previous word</span>
+</span></span><span style="display:flex;"><span>e           <span style="color:#8b949e;font-style:italic"># End of word</span>
+</span></span><span style="display:flex;"><span>ge          <span style="color:#8b949e;font-style:italic"># End of previous word</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Capital versions ignore punctuation</span>
+</span></span><span style="display:flex;"><span>W           <span style="color:#8b949e;font-style:italic"># Next WORD</span>
+</span></span><span style="display:flex;"><span>B           <span style="color:#8b949e;font-style:italic"># Previous WORD</span>
+</span></span><span style="display:flex;"><span>E           <span style="color:#8b949e;font-style:italic"># End of WORD</span>
+</span></span></code></pre></div><h3 id="line-movement">Line Movement</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#a5d6ff">0</span>           <span style="color:#8b949e;font-style:italic"># Beginning of line</span>
+</span></span><span style="display:flex;"><span>^           <span style="color:#8b949e;font-style:italic"># First non-blank character</span>
+</span></span><span style="display:flex;"><span>$           <span style="color:#8b949e;font-style:italic"># End of line</span>
+</span></span><span style="display:flex;"><span>g_          <span style="color:#8b949e;font-style:italic"># Last non-blank character</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Number + movement</span>
+</span></span><span style="display:flex;"><span>5w          <span style="color:#8b949e;font-style:italic"># Move 5 words forward</span>
+</span></span><span style="display:flex;"><span>3j          <span style="color:#8b949e;font-style:italic"># Move 3 lines down</span>
+</span></span></code></pre></div><h3 id="screen-movement">Screen Movement</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>H           <span style="color:#8b949e;font-style:italic"># Top of screen</span>
+</span></span><span style="display:flex;"><span>M           <span style="color:#8b949e;font-style:italic"># Middle of screen</span>
+</span></span><span style="display:flex;"><span>L           <span style="color:#8b949e;font-style:italic"># Bottom of screen</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+f&gt;    <span style="color:#8b949e;font-style:italic"># Page down</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+b&gt;    <span style="color:#8b949e;font-style:italic"># Page up</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+d&gt;    <span style="color:#8b949e;font-style:italic"># Half page down</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+u&gt;    <span style="color:#8b949e;font-style:italic"># Half page up</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gg          <span style="color:#8b949e;font-style:italic"># Go to first line</span>
+</span></span><span style="display:flex;"><span>G           <span style="color:#8b949e;font-style:italic"># Go to last line</span>
+</span></span><span style="display:flex;"><span>:n          <span style="color:#8b949e;font-style:italic"># Go to line n</span>
+</span></span><span style="display:flex;"><span>nG          <span style="color:#8b949e;font-style:italic"># Go to line n</span>
+</span></span></code></pre></div><h2 id="editing-commands">Editing Commands</h2>
+<h3 id="insertion">Insertion</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>i           <span style="color:#8b949e;font-style:italic"># Insert before cursor</span>
+</span></span><span style="display:flex;"><span>I           <span style="color:#8b949e;font-style:italic"># Insert at beginning of line</span>
+</span></span><span style="display:flex;"><span>a           <span style="color:#8b949e;font-style:italic"># Append after cursor</span>
+</span></span><span style="display:flex;"><span>A           <span style="color:#8b949e;font-style:italic"># Append at end of line</span>
+</span></span><span style="display:flex;"><span>o           <span style="color:#8b949e;font-style:italic"># Open line below</span>
+</span></span><span style="display:flex;"><span>O           <span style="color:#8b949e;font-style:italic"># Open line above</span>
+</span></span><span style="display:flex;"><span>s           <span style="color:#8b949e;font-style:italic"># Substitute character</span>
+</span></span><span style="display:flex;"><span>S           <span style="color:#8b949e;font-style:italic"># Substitute line</span>
+</span></span></code></pre></div><h3 id="deletion">Deletion</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>x           <span style="color:#8b949e;font-style:italic"># Delete character</span>
+</span></span><span style="display:flex;"><span>X           <span style="color:#8b949e;font-style:italic"># Delete character before cursor</span>
+</span></span><span style="display:flex;"><span>dd          <span style="color:#8b949e;font-style:italic"># Delete line</span>
+</span></span><span style="display:flex;"><span>D           <span style="color:#8b949e;font-style:italic"># Delete to end of line</span>
+</span></span><span style="display:flex;"><span>dw          <span style="color:#8b949e;font-style:italic"># Delete word</span>
+</span></span><span style="display:flex;"><span>db          <span style="color:#8b949e;font-style:italic"># Delete word backward</span>
+</span></span><span style="display:flex;"><span>d$          <span style="color:#8b949e;font-style:italic"># Delete to end of line</span>
+</span></span><span style="display:flex;"><span>d0          <span style="color:#8b949e;font-style:italic"># Delete to beginning of line</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Delete with motion</span>
+</span></span><span style="display:flex;"><span>d5w         <span style="color:#8b949e;font-style:italic"># Delete 5 words</span>
+</span></span><span style="display:flex;"><span>d3j         <span style="color:#8b949e;font-style:italic"># Delete current line and 3 below</span>
+</span></span></code></pre></div><h3 id="change">Change</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>c           <span style="color:#8b949e;font-style:italic"># Change (delete and enter insert mode)</span>
+</span></span><span style="display:flex;"><span>cw          <span style="color:#8b949e;font-style:italic"># Change word</span>
+</span></span><span style="display:flex;"><span>cc          <span style="color:#8b949e;font-style:italic"># Change line</span>
+</span></span><span style="display:flex;"><span>C           <span style="color:#8b949e;font-style:italic"># Change to end of line</span>
+</span></span><span style="display:flex;"><span>r           <span style="color:#8b949e;font-style:italic"># Replace character</span>
+</span></span><span style="display:flex;"><span>R           <span style="color:#8b949e;font-style:italic"># Replace mode</span>
+</span></span><span style="display:flex;"><span>~           <span style="color:#8b949e;font-style:italic"># Toggle case</span>
+</span></span></code></pre></div><h3 id="copy-and-paste">Copy and Paste</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>y           <span style="color:#8b949e;font-style:italic"># Yank (copy)</span>
+</span></span><span style="display:flex;"><span>yy          <span style="color:#8b949e;font-style:italic"># Yank line</span>
+</span></span><span style="display:flex;"><span>Y           <span style="color:#8b949e;font-style:italic"># Yank line</span>
+</span></span><span style="display:flex;"><span>yw          <span style="color:#8b949e;font-style:italic"># Yank word</span>
+</span></span><span style="display:flex;"><span>y$          <span style="color:#8b949e;font-style:italic"># Yank to end of line</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p           <span style="color:#8b949e;font-style:italic"># Paste after cursor</span>
+</span></span><span style="display:flex;"><span>P           <span style="color:#8b949e;font-style:italic"># Paste before cursor</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Numbered registers</span>
+</span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;1p         # Paste from register 1
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;</span>ay5w       <span style="color:#8b949e;font-style:italic"># Yank 5 words to register a</span>
+</span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;ap         # Paste from register a
+</span></span></span></code></pre></div><h2 id="search-and-replace">Search and Replace</h2>
+<h3 id="searching">Searching</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/pattern    <span style="color:#8b949e;font-style:italic"># Search forward</span>
+</span></span><span style="display:flex;"><span>?pattern    <span style="color:#8b949e;font-style:italic"># Search backward</span>
+</span></span><span style="display:flex;"><span>n           <span style="color:#8b949e;font-style:italic"># Next match</span>
+</span></span><span style="display:flex;"><span>N           <span style="color:#8b949e;font-style:italic"># Previous match</span>
+</span></span><span style="display:flex;"><span>*           <span style="color:#8b949e;font-style:italic"># Search for word under cursor (forward)</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#           # Search for word under cursor (backward)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Case sensitivity</span>
+</span></span><span style="display:flex;"><span>/<span style="color:#79c0ff">\c</span>pattern  <span style="color:#8b949e;font-style:italic"># Case insensitive</span>
+</span></span><span style="display:flex;"><span>/<span style="color:#79c0ff">\C</span>pattern  <span style="color:#8b949e;font-style:italic"># Case sensitive</span>
+</span></span></code></pre></div><h3 id="replace">Replace</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>:s/old/new/         <span style="color:#8b949e;font-style:italic"># Replace first occurrence in line</span>
+</span></span><span style="display:flex;"><span>:s/old/new/g        <span style="color:#8b949e;font-style:italic"># Replace all occurrences in line</span>
+</span></span><span style="display:flex;"><span>:%s/old/new/g       <span style="color:#8b949e;font-style:italic"># Replace all occurrences in file</span>
+</span></span><span style="display:flex;"><span>:%s/old/new/gc      <span style="color:#8b949e;font-style:italic"># Replace all with confirmation</span>
+</span></span><span style="display:flex;"><span>:1,10s/old/new/g    <span style="color:#8b949e;font-style:italic"># Replace in lines 1-10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Special characters</span>
+</span></span><span style="display:flex;"><span>:%s/<span style="color:#79c0ff">\n</span>/,/g          <span style="color:#8b949e;font-style:italic"># Replace newlines with commas</span>
+</span></span><span style="display:flex;"><span>:%s/<span style="color:#79c0ff">\s\+</span>$//g        <span style="color:#8b949e;font-style:italic"># Remove trailing whitespace</span>
+</span></span></code></pre></div><h2 id="visual-mode">Visual Mode</h2>
+<h3 id="selection">Selection</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>v           <span style="color:#8b949e;font-style:italic"># Visual mode</span>
+</span></span><span style="display:flex;"><span>V           <span style="color:#8b949e;font-style:italic"># Visual line mode</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+v&gt;    <span style="color:#8b949e;font-style:italic"># Visual block mode</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Extend selection</span>
+</span></span><span style="display:flex;"><span>w           <span style="color:#8b949e;font-style:italic"># Select word</span>
+</span></span><span style="display:flex;"><span>$           <span style="color:#8b949e;font-style:italic"># Select to end of line</span>
+</span></span><span style="display:flex;"><span>G           <span style="color:#8b949e;font-style:italic"># Select to end of file</span>
+</span></span></code></pre></div><h3 id="operations-on-selection">Operations on Selection</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>d           <span style="color:#8b949e;font-style:italic"># Delete selection</span>
+</span></span><span style="display:flex;"><span>y           <span style="color:#8b949e;font-style:italic"># Yank selection</span>
+</span></span><span style="display:flex;"><span>c           <span style="color:#8b949e;font-style:italic"># Change selection</span>
+</span></span><span style="display:flex;"><span>u           <span style="color:#8b949e;font-style:italic"># Lowercase</span>
+</span></span><span style="display:flex;"><span>U           <span style="color:#8b949e;font-style:italic"># Uppercase</span>
+</span></span><span style="display:flex;"><span>&gt;           <span style="color:#8b949e;font-style:italic"># Indent</span>
+</span></span><span style="display:flex;"><span>&lt;           <span style="color:#8b949e;font-style:italic"># Unindent</span>
+</span></span></code></pre></div><h3 id="block-operations">Block Operations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&lt;Ctrl+v&gt;    <span style="color:#8b949e;font-style:italic"># Start visual block</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Select block</span>
+</span></span><span style="display:flex;"><span>I           <span style="color:#8b949e;font-style:italic"># Insert at beginning of all lines</span>
+</span></span><span style="display:flex;"><span>A           <span style="color:#8b949e;font-style:italic"># Append at end of all lines</span>
+</span></span><span style="display:flex;"><span>c           <span style="color:#8b949e;font-style:italic"># Change all selected text</span>
+</span></span></code></pre></div><h2 id="file-operations">File Operations</h2>
+<h3 id="opening-files">Opening Files</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>:e filename         <span style="color:#8b949e;font-style:italic"># Edit file</span>
+</span></span><span style="display:flex;"><span>:o filename         <span style="color:#8b949e;font-style:italic"># Open file</span>
+</span></span><span style="display:flex;"><span>:r filename         <span style="color:#8b949e;font-style:italic"># Read file into current buffer</span>
+</span></span><span style="display:flex;"><span>:r !command         <span style="color:#8b949e;font-style:italic"># Read command output into buffer</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Tab completion</span>
+</span></span><span style="display:flex;"><span>:e &lt;Tab&gt;            <span style="color:#8b949e;font-style:italic"># Tab complete filename</span>
+</span></span></code></pre></div><h3 id="saving-and-quitting">Saving and Quitting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>:w              <span style="color:#8b949e;font-style:italic"># Write (save) file</span>
+</span></span><span style="display:flex;"><span>:w filename     <span style="color:#8b949e;font-style:italic"># Write to specific file</span>
+</span></span><span style="display:flex;"><span>:w!             <span style="color:#8b949e;font-style:italic"># Force write</span>
+</span></span><span style="display:flex;"><span>:q              <span style="color:#8b949e;font-style:italic"># Quit</span>
+</span></span><span style="display:flex;"><span>:q!             <span style="color:#8b949e;font-style:italic"># Quit without saving</span>
+</span></span><span style="display:flex;"><span>:wq             <span style="color:#8b949e;font-style:italic"># Write and quit</span>
+</span></span><span style="display:flex;"><span>ZZ              <span style="color:#8b949e;font-style:italic"># Write and quit</span>
+</span></span><span style="display:flex;"><span>ZQ              <span style="color:#8b949e;font-style:italic"># Quit without saving</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>:x              <span style="color:#8b949e;font-style:italic"># Write if changed and quit</span>
+</span></span><span style="display:flex;"><span>:xa             <span style="color:#8b949e;font-style:italic"># Write all and quit all</span>
+</span></span></code></pre></div><h3 id="multiple-files">Multiple Files</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>:n              <span style="color:#8b949e;font-style:italic"># Next file</span>
+</span></span><span style="display:flex;"><span>:N              <span style="color:#8b949e;font-style:italic"># Previous file</span>
+</span></span><span style="display:flex;"><span>:args           <span style="color:#8b949e;font-style:italic"># List files</span>
+</span></span><span style="display:flex;"><span>:args *.txt     <span style="color:#8b949e;font-style:italic"># Set file list</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Buffers</span>
+</span></span><span style="display:flex;"><span>:ls             <span style="color:#8b949e;font-style:italic"># List buffers</span>
+</span></span><span style="display:flex;"><span>:b number       <span style="color:#8b949e;font-style:italic"># Switch to buffer number</span>
+</span></span><span style="display:flex;"><span>:b name         <span style="color:#8b949e;font-style:italic"># Switch to buffer by name</span>
+</span></span><span style="display:flex;"><span>:bd             <span style="color:#8b949e;font-style:italic"># Delete buffer</span>
+</span></span></code></pre></div><h2 id="windows-and-tabs">Windows and Tabs</h2>
+<h3 id="windows">Windows</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>:split          <span style="color:#8b949e;font-style:italic"># Horizontal split</span>
+</span></span><span style="display:flex;"><span>:sp filename    <span style="color:#8b949e;font-style:italic"># Split and open file</span>
+</span></span><span style="display:flex;"><span>:vsplit         <span style="color:#8b949e;font-style:italic"># Vertical split</span>
+</span></span><span style="display:flex;"><span>:vsp filename   <span style="color:#8b949e;font-style:italic"># Vertical split and open file</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+w&gt;h       <span style="color:#8b949e;font-style:italic"># Move to left window</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+w&gt;j       <span style="color:#8b949e;font-style:italic"># Move to bottom window</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+w&gt;k       <span style="color:#8b949e;font-style:italic"># Move to top window</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+w&gt;l       <span style="color:#8b949e;font-style:italic"># Move to right window</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+w&gt;c       <span style="color:#8b949e;font-style:italic"># Close window</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+w&gt;o       <span style="color:#8b949e;font-style:italic"># Close all other windows</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+w&gt;<span style="color:#ff7b72;font-weight:bold">=</span>       <span style="color:#8b949e;font-style:italic"># Equalize window sizes</span>
+</span></span></code></pre></div><h3 id="tabs">Tabs</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>:tabnew         <span style="color:#8b949e;font-style:italic"># New tab</span>
+</span></span><span style="display:flex;"><span>:tabnew file    <span style="color:#8b949e;font-style:italic"># New tab with file</span>
+</span></span><span style="display:flex;"><span>:tabc           <span style="color:#8b949e;font-style:italic"># Close tab</span>
+</span></span><span style="display:flex;"><span>:tabo           <span style="color:#8b949e;font-style:italic"># Close all other tabs</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gt              <span style="color:#8b949e;font-style:italic"># Next tab</span>
+</span></span><span style="display:flex;"><span>gT              <span style="color:#8b949e;font-style:italic"># Previous tab</span>
+</span></span><span style="display:flex;"><span>2gt             <span style="color:#8b949e;font-style:italic"># Go to tab 2</span>
+</span></span></code></pre></div><h2 id="advanced-features">Advanced Features</h2>
+<h3 id="macros">Macros</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>q<span style="color:#ff7b72;font-weight:bold">{</span>letter<span style="color:#ff7b72;font-weight:bold">}</span>       <span style="color:#8b949e;font-style:italic"># Start recording macro</span>
+</span></span><span style="display:flex;"><span>q               <span style="color:#8b949e;font-style:italic"># Stop recording</span>
+</span></span><span style="display:flex;"><span>@<span style="color:#ff7b72;font-weight:bold">{</span>letter<span style="color:#ff7b72;font-weight:bold">}</span>       <span style="color:#8b949e;font-style:italic"># Execute macro</span>
+</span></span><span style="display:flex;"><span>@@              <span style="color:#8b949e;font-style:italic"># Repeat last macro</span>
+</span></span><span style="display:flex;"><span>5@a             <span style="color:#8b949e;font-style:italic"># Execute macro &#39;a&#39; 5 times</span>
+</span></span></code></pre></div><h3 id="marks">Marks</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>m<span style="color:#ff7b72;font-weight:bold">{</span>letter<span style="color:#ff7b72;font-weight:bold">}</span>       <span style="color:#8b949e;font-style:italic"># Set mark</span>
+</span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#39;{letter}       # Jump to mark
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#39;&#39;              # Jump to last position
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#39;</span>.              <span style="color:#8b949e;font-style:italic"># Jump to last edit</span>
+</span></span></code></pre></div><h3 id="folding">Folding</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>zf              <span style="color:#8b949e;font-style:italic"># Create fold</span>
+</span></span><span style="display:flex;"><span>zo              <span style="color:#8b949e;font-style:italic"># Open fold</span>
+</span></span><span style="display:flex;"><span>zc              <span style="color:#8b949e;font-style:italic"># Close fold</span>
+</span></span><span style="display:flex;"><span>za              <span style="color:#8b949e;font-style:italic"># Toggle fold</span>
+</span></span><span style="display:flex;"><span>zR              <span style="color:#8b949e;font-style:italic"># Open all folds</span>
+</span></span><span style="display:flex;"><span>zM              <span style="color:#8b949e;font-style:italic"># Close all folds</span>
+</span></span></code></pre></div><h3 id="completion">Completion</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># In Insert mode</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+n&gt;        <span style="color:#8b949e;font-style:italic"># Next completion</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+p&gt;        <span style="color:#8b949e;font-style:italic"># Previous completion</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+x&gt;&lt;Ctrl+f&gt; <span style="color:#8b949e;font-style:italic"># File completion</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+x&gt;&lt;Ctrl+l&gt; <span style="color:#8b949e;font-style:italic"># Line completion</span>
+</span></span></code></pre></div><h2 id="configuration">Configuration</h2>
+<h3 id="basic-configuration-vimrc">Basic Configuration (~/.vimrc)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">&#34; Basic settings</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> number              <span style="color:#8b949e;font-style:italic">&#34; Show line numbers</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> relativenumber      <span style="color:#8b949e;font-style:italic">&#34; Show relative line numbers</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> tabstop=<span style="color:#a5d6ff">4</span>           <span style="color:#8b949e;font-style:italic">&#34; Tab width</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> shiftwidth=<span style="color:#a5d6ff">4</span>        <span style="color:#8b949e;font-style:italic">&#34; Indent width</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> expandtab           <span style="color:#8b949e;font-style:italic">&#34; Use spaces instead of tabs</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> autoindent          <span style="color:#8b949e;font-style:italic">&#34; Auto indent</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> smartindent         <span style="color:#8b949e;font-style:italic">&#34; Smart indent</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> wrap                <span style="color:#8b949e;font-style:italic">&#34; Wrap lines</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> ignorecase          <span style="color:#8b949e;font-style:italic">&#34; Case insensitive search</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> smartcase           <span style="color:#8b949e;font-style:italic">&#34; Case sensitive if uppercase used</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> hlsearch            <span style="color:#8b949e;font-style:italic">&#34; Highlight search results</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> incsearch           <span style="color:#8b949e;font-style:italic">&#34; Incremental search</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> showmatch           <span style="color:#8b949e;font-style:italic">&#34; Show matching brackets</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> ruler               <span style="color:#8b949e;font-style:italic">&#34; Show cursor position</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> laststatus=<span style="color:#a5d6ff">2</span>        <span style="color:#8b949e;font-style:italic">&#34; Always show status line</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> wildmenu            <span style="color:#8b949e;font-style:italic">&#34; Enhanced command completion</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> clipboard=unnamedplus <span style="color:#8b949e;font-style:italic">&#34; Use system clipboard</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">&#34; Colors and appearance</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">syntax</span> enable           <span style="color:#8b949e;font-style:italic">&#34; Enable syntax highlighting</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">set</span> background=dark     <span style="color:#8b949e;font-style:italic">&#34; Dark background</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">colorscheme</span> default     <span style="color:#8b949e;font-style:italic">&#34; Color scheme</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">&#34; Key mappings</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">let</span> mapleader = <span style="color:#a5d6ff">&#34;,&#34;</span>     <span style="color:#8b949e;font-style:italic">&#34; Change leader key</span>
+</span></span><span style="display:flex;"><span>nnoremap &lt;leader&gt;w :w&lt;CR&gt;      <span style="color:#8b949e;font-style:italic">&#34; Quick save</span>
+</span></span><span style="display:flex;"><span>nnoremap &lt;leader&gt;q :q&lt;CR&gt;      <span style="color:#8b949e;font-style:italic">&#34; Quick quit</span>
+</span></span><span style="display:flex;"><span>nnoremap &lt;C-h&gt; &lt;C-w&gt;h          <span style="color:#8b949e;font-style:italic">&#34; Easy window navigation</span>
+</span></span><span style="display:flex;"><span>nnoremap &lt;C-j&gt; &lt;C-w&gt;j
+</span></span><span style="display:flex;"><span>nnoremap &lt;C-k&gt; &lt;C-w&gt;k
+</span></span><span style="display:flex;"><span>nnoremap &lt;C-l&gt; &lt;C-w&gt;l
+</span></span></code></pre></div><h3 id="plugin-management">Plugin Management</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">&#34; Using vim-plug</span>
+</span></span><span style="display:flex;"><span>call plug#begin(<span style="color:#a5d6ff">&#39;~/.vim/plugged&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">&#34; Essential plugins</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;preservim/nerdtree&#39;</span>           <span style="color:#8b949e;font-style:italic">&#34; File explorer</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;vim-airline/vim-airline&#39;</span>      <span style="color:#8b949e;font-style:italic">&#34; Status line</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;tpope/vim-fugitive&#39;</span>           <span style="color:#8b949e;font-style:italic">&#34; Git integration</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;tpope/vim-surround&#39;</span>           <span style="color:#8b949e;font-style:italic">&#34; Surrounding text</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;junegunn/fzf&#39;</span>, { <span style="color:#a5d6ff">&#39;do&#39;</span>: { -&gt; fzf#install() } }
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;junegunn/fzf.vim&#39;</span>             <span style="color:#8b949e;font-style:italic">&#34; Fuzzy finder</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>call plug#end()
+</span></span></code></pre></div><h2 id="useful-plugins">Useful Plugins</h2>
+<h3 id="essential-plugins">Essential Plugins</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">&#34; File management</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;preservim/nerdtree&#39;</span>           <span style="color:#8b949e;font-style:italic">&#34; File tree</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;junegunn/fzf.vim&#39;</span>             <span style="color:#8b949e;font-style:italic">&#34; Fuzzy finder</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;tpope/vim-vinegar&#39;</span>            <span style="color:#8b949e;font-style:italic">&#34; Better netrw</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">&#34; Git integration</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;tpope/vim-fugitive&#39;</span>           <span style="color:#8b949e;font-style:italic">&#34; Git commands</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;airblade/vim-gitgutter&#39;</span>       <span style="color:#8b949e;font-style:italic">&#34; Git diff in gutter</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">&#34; Text editing</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;tpope/vim-surround&#39;</span>           <span style="color:#8b949e;font-style:italic">&#34; Surround text</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;tpope/vim-commentary&#39;</span>         <span style="color:#8b949e;font-style:italic">&#34; Comment/uncomment</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;jiangmiao/auto-pairs&#39;</span>         <span style="color:#8b949e;font-style:italic">&#34; Auto brackets</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">&#34; Appearance</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;vim-airline/vim-airline&#39;</span>      <span style="color:#8b949e;font-style:italic">&#34; Status line</span>
+</span></span><span style="display:flex;"><span>Plug <span style="color:#a5d6ff">&#39;morhetz/gruvbox&#39;</span>              <span style="color:#8b949e;font-style:italic">&#34; Color scheme</span>
+</span></span></code></pre></div><h2 id="command-line-mode">Command-line Mode</h2>
+<h3 id="ex-commands">Ex Commands</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>:help           <span style="color:#8b949e;font-style:italic"># Help system</span>
+</span></span><span style="display:flex;"><span>:help command   <span style="color:#8b949e;font-style:italic"># Help for specific command</span>
+</span></span><span style="display:flex;"><span>:set            <span style="color:#8b949e;font-style:italic"># Show settings</span>
+</span></span><span style="display:flex;"><span>:set option     <span style="color:#8b949e;font-style:italic"># Set option</span>
+</span></span><span style="display:flex;"><span>:set option?    <span style="color:#8b949e;font-style:italic"># Show option value</span>
+</span></span><span style="display:flex;"><span>:set option!    <span style="color:#8b949e;font-style:italic"># Toggle option</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># File operations</span>
+</span></span><span style="display:flex;"><span>:pwd            <span style="color:#8b949e;font-style:italic"># Print working directory</span>
+</span></span><span style="display:flex;"><span>:cd path        <span style="color:#8b949e;font-style:italic"># Change directory</span>
+</span></span><span style="display:flex;"><span>:!command       <span style="color:#8b949e;font-style:italic"># Execute shell command</span>
+</span></span><span style="display:flex;"><span>:r !command     <span style="color:#8b949e;font-style:italic"># Read command output</span>
+</span></span></code></pre></div><h3 id="ranges">Ranges</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>:1,10d          <span style="color:#8b949e;font-style:italic"># Delete lines 1-10</span>
+</span></span><span style="display:flex;"><span>:5,15s/old/new/g <span style="color:#8b949e;font-style:italic"># Replace in lines 5-15</span>
+</span></span><span style="display:flex;"><span>:%s/old/new/g   <span style="color:#8b949e;font-style:italic"># Replace in entire file</span>
+</span></span><span style="display:flex;"><span>:.,<span style="color:#79c0ff">$d</span>           <span style="color:#8b949e;font-style:italic"># Delete from current line to end</span>
+</span></span><span style="display:flex;"><span>:1,.d           <span style="color:#8b949e;font-style:italic"># Delete from line 1 to current</span>
+</span></span></code></pre></div><h2 id="text-objects">Text Objects</h2>
+<h3 id="text-object-commands">Text Object Commands</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Inside objects</span>
+</span></span><span style="display:flex;"><span>ciw             <span style="color:#8b949e;font-style:italic"># Change inside word</span>
+</span></span><span style="display:flex;"><span>di<span style="color:#a5d6ff">&#34;             # Delete inside quotes
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">yi)             # Yank inside parentheses
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">ca}             # Change around braces
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff"># Around objects
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">daw             # Delete around word
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">ca&#34;</span>             <span style="color:#8b949e;font-style:italic"># Change around quotes</span>
+</span></span><span style="display:flex;"><span>ya<span style="color:#ff7b72;font-weight:bold">)</span>             <span style="color:#8b949e;font-style:italic"># Yank around parentheses</span>
+</span></span></code></pre></div><h3 id="object-types">Object Types</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>w               <span style="color:#8b949e;font-style:italic"># Word</span>
+</span></span><span style="display:flex;"><span>s               <span style="color:#8b949e;font-style:italic"># Sentence</span>
+</span></span><span style="display:flex;"><span>p               <span style="color:#8b949e;font-style:italic"># Paragraph</span>
+</span></span><span style="display:flex;"><span>t               <span style="color:#8b949e;font-style:italic"># Tag (HTML/XML)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;               # Double quotes
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#39;               # Single quotes
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">)               # Parentheses
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">}               # Braces
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">]               # Square brackets
+</span></span></span></code></pre></div><h2 id="practical-examples">Practical Examples</h2>
+<h3 id="quick-file-editing">Quick File Editing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Edit file and jump to line 25</span>
+</span></span><span style="display:flex;"><span>vim +25 file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Edit file and search for pattern</span>
+</span></span><span style="display:flex;"><span>vim +/pattern file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Edit multiple files</span>
+</span></span><span style="display:flex;"><span>vim file1.txt file2.txt file3.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Edit files matching pattern</span>
+</span></span><span style="display:flex;"><span>vim *.txt
+</span></span></code></pre></div><h3 id="bulk-operations">Bulk Operations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Replace in multiple files</span>
+</span></span><span style="display:flex;"><span>:args *.txt
+</span></span><span style="display:flex;"><span>:argdo %s/old/new/g | update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Execute command on all buffers</span>
+</span></span><span style="display:flex;"><span>:bufdo %s/old/new/g | update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Execute macro on all lines</span>
+</span></span><span style="display:flex;"><span>:%normal @a
+</span></span></code></pre></div><h3 id="working-with-code">Working with Code</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Jump to matching brace</span>
+</span></span><span style="display:flex;"><span>%
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Indent/unindent blocks</span>
+</span></span><span style="display:flex;"><span>&gt;&gt;              <span style="color:#8b949e;font-style:italic"># Indent line</span>
+</span></span><span style="display:flex;"><span>&lt;&lt;              <span style="color:#8b949e;font-style:italic"># Unindent line</span>
+</span></span><span style="display:flex;"><span>5&gt;&gt;             <span style="color:#8b949e;font-style:italic"># Indent 5 lines</span>
+</span></span><span style="display:flex;"><span>&gt;i<span style="color:#ff7b72;font-weight:bold">{</span>             <span style="color:#8b949e;font-style:italic"># Indent inside braces</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Comment/uncomment (with vim-commentary)</span>
+</span></span><span style="display:flex;"><span>gcc             <span style="color:#8b949e;font-style:italic"># Comment line</span>
+</span></span><span style="display:flex;"><span>gc              <span style="color:#8b949e;font-style:italic"># Comment selection</span>
+</span></span></code></pre></div><h2 id="tips-and-tricks">Tips and Tricks</h2>
+<h3 id="efficiency-tips">Efficiency Tips</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Jump to specific line</span>
+</span></span><span style="display:flex;"><span>:42             <span style="color:#8b949e;font-style:italic"># Go to line 42</span>
+</span></span><span style="display:flex;"><span>42G             <span style="color:#8b949e;font-style:italic"># Go to line 42</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Quick edits</span>
+</span></span><span style="display:flex;"><span>cw              <span style="color:#8b949e;font-style:italic"># Change word</span>
+</span></span><span style="display:flex;"><span>C               <span style="color:#8b949e;font-style:italic"># Change to end of line</span>
+</span></span><span style="display:flex;"><span>D               <span style="color:#8b949e;font-style:italic"># Delete to end of line</span>
+</span></span><span style="display:flex;"><span>J               <span style="color:#8b949e;font-style:italic"># Join lines</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Repeat commands</span>
+</span></span><span style="display:flex;"><span>.               <span style="color:#8b949e;font-style:italic"># Repeat last command</span>
+</span></span><span style="display:flex;"><span>2.              <span style="color:#8b949e;font-style:italic"># Repeat last command 2 times</span>
+</span></span></code></pre></div><h3 id="advanced-navigation">Advanced Navigation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Jump list</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+o&gt;        <span style="color:#8b949e;font-style:italic"># Go back in jump list</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+i&gt;        <span style="color:#8b949e;font-style:italic"># Go forward in jump list</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Change list</span>
+</span></span><span style="display:flex;"><span>g;              <span style="color:#8b949e;font-style:italic"># Go to older change</span>
+</span></span><span style="display:flex;"><span>g,              <span style="color:#8b949e;font-style:italic"># Go to newer change</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Search history</span>
+</span></span><span style="display:flex;"><span>/               <span style="color:#8b949e;font-style:italic"># Enter search</span>
+</span></span><span style="display:flex;"><span>&lt;Up&gt;            <span style="color:#8b949e;font-style:italic"># Previous search</span>
+</span></span><span style="display:flex;"><span>&lt;Down&gt;          <span style="color:#8b949e;font-style:italic"># Next search</span>
+</span></span></code></pre></div><h3 id="text-manipulation">Text Manipulation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Sort lines</span>
+</span></span><span style="display:flex;"><span>:sort           <span style="color:#8b949e;font-style:italic"># Sort all lines</span>
+</span></span><span style="display:flex;"><span>:5,10sort       <span style="color:#8b949e;font-style:italic"># Sort lines 5-10</span>
+</span></span><span style="display:flex;"><span>:sort u         <span style="color:#8b949e;font-style:italic"># Sort and remove duplicates</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Reverse lines</span>
+</span></span><span style="display:flex;"><span>:g/^/m0         <span style="color:#8b949e;font-style:italic"># Reverse all lines</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Remove blank lines</span>
+</span></span><span style="display:flex;"><span>:g/^<span style="color:#79c0ff">\s</span>*$/d      <span style="color:#8b949e;font-style:italic"># Remove blank/whitespace lines</span>
+</span></span></code></pre></div><h2 id="common-workflows">Common Workflows</h2>
+<h3 id="development-workflow">Development Workflow</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Open project</span>
+</span></span><span style="display:flex;"><span>vim .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Navigate files</span>
+</span></span><span style="display:flex;"><span>:e src/main.js
+</span></span><span style="display:flex;"><span>:find *.py
+</span></span><span style="display:flex;"><span>&lt;Ctrl+p&gt;        <span style="color:#8b949e;font-style:italic"># With fzf plugin</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Search in project</span>
+</span></span><span style="display:flex;"><span>:grep pattern **/*.js
+</span></span><span style="display:flex;"><span>:vimgrep pattern **/*.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Git operations (with vim-fugitive)</span>
+</span></span><span style="display:flex;"><span>:Git status
+</span></span><span style="display:flex;"><span>:Git diff
+</span></span><span style="display:flex;"><span>:Git blame
+</span></span></code></pre></div><h3 id="configuration-management">Configuration Management</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Edit vimrc</span>
+</span></span><span style="display:flex;"><span>:e <span style="color:#79c0ff">$MYVIMRC</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Reload vimrc</span>
+</span></span><span style="display:flex;"><span>:source <span style="color:#79c0ff">$MYVIMRC</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Install plugins (with vim-plug)</span>
+</span></span><span style="display:flex;"><span>:PlugInstall
+</span></span><span style="display:flex;"><span>:PlugUpdate
+</span></span><span style="display:flex;"><span>:PlugClean
+</span></span></code></pre></div><h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Stuck in Insert mode</span>
+</span></span><span style="display:flex;"><span>&lt;Esc&gt;           <span style="color:#8b949e;font-style:italic"># Exit Insert mode</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Accidental Ctrl+S (terminal freeze)</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+Q&gt;        <span style="color:#8b949e;font-style:italic"># Unfreeze terminal</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Undo tree navigation</span>
+</span></span><span style="display:flex;"><span>u               <span style="color:#8b949e;font-style:italic"># Undo</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+r&gt;        <span style="color:#8b949e;font-style:italic"># Redo</span>
+</span></span><span style="display:flex;"><span>:earlier 10m    <span style="color:#8b949e;font-style:italic"># Go to 10 minutes ago</span>
+</span></span><span style="display:flex;"><span>:later 5m       <span style="color:#8b949e;font-style:italic"># Go to 5 minutes later</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Reset highlighting</span>
+</span></span><span style="display:flex;"><span>:noh            <span style="color:#8b949e;font-style:italic"># No highlight</span>
+</span></span></code></pre></div><h3 id="recovery">Recovery</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Recover from swap file</span>
+</span></span><span style="display:flex;"><span>vim -r filename
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show swap files</span>
+</span></span><span style="display:flex;"><span>:sw
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Delete swap file</span>
+</span></span><span style="display:flex;"><span>:!rm .filename.swp
+</span></span></code></pre></div><h2 id="quick-reference">Quick Reference</h2>
+<h3 id="essential-commands">Essential Commands</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Movement</span>
+</span></span><span style="display:flex;"><span>h/j/k/l         <span style="color:#8b949e;font-style:italic"># Left/down/up/right</span>
+</span></span><span style="display:flex;"><span>w/b/e           <span style="color:#8b949e;font-style:italic"># Word forward/back/end</span>
+</span></span><span style="display:flex;"><span>0/^/$           <span style="color:#8b949e;font-style:italic"># Line start/first-char/end</span>
+</span></span><span style="display:flex;"><span>gg/G            <span style="color:#8b949e;font-style:italic"># File start/end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Editing</span>
+</span></span><span style="display:flex;"><span>i/a/o           <span style="color:#8b949e;font-style:italic"># Insert before/after/newline</span>
+</span></span><span style="display:flex;"><span>x/dd            <span style="color:#8b949e;font-style:italic"># Delete char/line</span>
+</span></span><span style="display:flex;"><span>yy/p            <span style="color:#8b949e;font-style:italic"># Copy line/paste</span>
+</span></span><span style="display:flex;"><span>u/&lt;Ctrl+r&gt;      <span style="color:#8b949e;font-style:italic"># Undo/redo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Search/Replace</span>
+</span></span><span style="display:flex;"><span>/pattern        <span style="color:#8b949e;font-style:italic"># Search</span>
+</span></span><span style="display:flex;"><span>:%s/old/new/g   <span style="color:#8b949e;font-style:italic"># Replace all</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Files</span>
+</span></span><span style="display:flex;"><span>:w              <span style="color:#8b949e;font-style:italic"># Save</span>
+</span></span><span style="display:flex;"><span>:q              <span style="color:#8b949e;font-style:italic"># Quit</span>
+</span></span><span style="display:flex;"><span>:wq             <span style="color:#8b949e;font-style:italic"># Save and quit</span>
+</span></span></code></pre></div><h3 id="mode-indicators">Mode Indicators</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Check current mode</span>
+</span></span><span style="display:flex;"><span>:echo mode<span style="color:#ff7b72;font-weight:bold">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Mode abbreviations</span>
+</span></span><span style="display:flex;"><span>n               <span style="color:#8b949e;font-style:italic"># Normal</span>
+</span></span><span style="display:flex;"><span>i               <span style="color:#8b949e;font-style:italic"># Insert</span>
+</span></span><span style="display:flex;"><span>v               <span style="color:#8b949e;font-style:italic"># Visual</span>
+</span></span><span style="display:flex;"><span>V               <span style="color:#8b949e;font-style:italic"># Visual line</span>
+</span></span><span style="display:flex;"><span>&lt;Ctrl+v&gt;        <span style="color:#8b949e;font-style:italic"># Visual block</span>
+</span></span><span style="display:flex;"><span>c               <span style="color:#8b949e;font-style:italic"># Command-line</span>
+</span></span></code></pre></div><h2 id="see-also">See Also</h2>
+<ul>
+<li><code>vimtutor</code> - Interactive Vim tutorial</li>
+<li><code>:help</code> - Built-in help system</li>
+<li><a href="https://vimdoc.sourceforge.net/">Vim Documentation</a> - Complete docs</li>
+<li><a href="https://vimawesome.com/">Vim Awesome</a> - Plugin directory</li>
+<li><code>nvim</code> - Neovim (modern Vim fork)</li>
+<li><code>emacs</code> - Alternative editor</li>
+</ul>
+
+    </div>
+
+    
+    <div class="mt-4">
+        <h5>Categories:</h5>
+        
+        <a href="/categories/tools" class="badge bg-secondary text-decoration-none me-2">tools</a>
+        
+    </div>
+    
+
+    <div class="mt-4">
+        <small class="text-muted">
+            Last updated: January 1, 2024
+        </small>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 QuickRef - Developer Reference. Built with <i class="fas fa-heart text-danger"></i> for developers.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="/js/app.js"></script>
+    
+    
+</body>
+</html>

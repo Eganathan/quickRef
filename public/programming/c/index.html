@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C - QuickRef - Developer Reference</title>
+    <meta name="description" content="C programming language reference covering syntax, memory management, system programming, and best practices.">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    
+    <link href="/css/styles.css" rel="stylesheet">
+    
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:1313/">
+                <i class="fas fa-code"></i> QuickRef - Developer Reference
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <button class="theme-toggle me-3" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                
+                <a class="nav-link" href="/" >
+                    <i class="fas fa-home"></i>
+                    
+                    Home
+                </a>
+                
+                <a class="nav-link" href="https://github.com/yourusername/quickref" target="_blank">
+                    
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="ref-page">
+    <a href="http://localhost:1313/" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to QuickRef
+    </a>
+    
+    <div class="ref-header">
+        <h1 class="ref-title">C</h1>
+        <p class="ref-description">C programming language reference covering syntax, memory management, system programming, and best practices.</p>
+        <div class="ref-tags">
+            
+            <span class="ref-tag">c</span>
+            
+            <span class="ref-tag">programming</span>
+            
+            <span class="ref-tag">systems</span>
+            
+            <span class="ref-tag">low-level</span>
+            
+            <span class="ref-tag">performance</span>
+            
+        </div>
+    </div>
+
+    <div class="ref-content">
+        <h2 id="overview">Overview</h2>
+<p>C is a general-purpose programming language that provides low-level access to memory and system resources. It&rsquo;s the foundation for many operating systems, embedded systems, and performance-critical applications.</p>
+<h2 id="installation">Installation</h2>
+<h3 id="compilers">Compilers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GCC (GNU Compiler Collection)</span>
+</span></span><span style="display:flex;"><span>sudo apt install gcc                    <span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>brew install gcc                        <span style="color:#8b949e;font-style:italic"># macOS</span>
+</span></span><span style="display:flex;"><span>sudo yum install gcc                    <span style="color:#8b949e;font-style:italic"># CentOS/RHEL</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Clang</span>
+</span></span><span style="display:flex;"><span>sudo apt install clang                  <span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>brew install llvm                       <span style="color:#8b949e;font-style:italic"># macOS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Microsoft Visual Studio (Windows)</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download from https://visualstudio.microsoft.com/</span>
+</span></span></code></pre></div><h3 id="build-tools">Build Tools</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Make</span>
+</span></span><span style="display:flex;"><span>sudo apt install make                   <span style="color:#8b949e;font-style:italic"># Usually pre-installed</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GDB (GNU Debugger)</span>
+</span></span><span style="display:flex;"><span>sudo apt install gdb                    <span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>brew install gdb                        <span style="color:#8b949e;font-style:italic"># macOS</span>
+</span></span></code></pre></div><h2 id="basic-syntax">Basic Syntax</h2>
+<h3 id="hello-world">Hello World</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Hello, World!</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="compilation">Compilation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Basic compilation</span>
+</span></span><span style="display:flex;"><span>gcc -o program program.c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># With debugging info</span>
+</span></span><span style="display:flex;"><span>gcc -g -o program program.c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># With warnings</span>
+</span></span><span style="display:flex;"><span>gcc -Wall -Wextra -o program program.c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># C standard version</span>
+</span></span><span style="display:flex;"><span>gcc -std<span style="color:#ff7b72;font-weight:bold">=</span>c99 -o program program.c
+</span></span></code></pre></div><h2 id="data-types">Data Types</h2>
+<h3 id="primitive-types">Primitive Types</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Integer types
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> num <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">42</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">short</span> s <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">long</span> l <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1000000L</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">long</span> <span style="color:#ff7b72">long</span> ll <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1000000000LL</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Unsigned types
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">int</span> u <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">42U</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">short</span> us <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10U</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">long</span> ul <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1000000UL</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">long</span> <span style="color:#ff7b72">long</span> ull <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1000000000ULL</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Floating point
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">float</span> f <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14f</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">double</span> d <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14159</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">long</span> <span style="color:#ff7b72">double</span> ld <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.141592653589793</span>L;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Character
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">char</span> c <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">char</span> uc <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">255</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Boolean (C99)
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdbool.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span><span style="color:#ff7b72">bool</span> flag <span style="color:#ff7b72;font-weight:bold">=</span> true;
+</span></span></code></pre></div><h3 id="size-information">Size Information</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;limits.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Size of int: %zu bytes</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">int</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Size of long: %zu bytes</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">long</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Size of float: %zu bytes</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">float</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Size of double: %zu bytes</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">double</span>));
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;INT_MAX: %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, INT_MAX);
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;INT_MIN: %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, INT_MIN);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="constants-and-macros">Constants and Macros</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#define PI 3.14159
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#define MAX_SIZE 100
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#define SQUARE(x) ((x) * (x))
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">const</span> <span style="color:#ff7b72">int</span> BUFFER_SIZE <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1024</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Enumeration
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">enum</span> Color {
+</span></span><span style="display:flex;"><span>    RED,
+</span></span><span style="display:flex;"><span>    GREEN,
+</span></span><span style="display:flex;"><span>    BLUE
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">enum</span> Status {
+</span></span><span style="display:flex;"><span>    ACTIVE <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>,
+</span></span><span style="display:flex;"><span>    INACTIVE <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>,
+</span></span><span style="display:flex;"><span>    PENDING <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="variables-and-scope">Variables and Scope</h2>
+<h3 id="variable-declaration">Variable Declaration</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">int</span> x;              <span style="color:#8b949e;font-style:italic">// Declaration
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> y <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;         <span style="color:#8b949e;font-style:italic">// Initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> z <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>;          <span style="color:#8b949e;font-style:italic">// Always initialize
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Multiple declarations
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> a <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>, b <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">2</span>, c <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Storage classes
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">auto</span> <span style="color:#ff7b72">int</span> local_var <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;        <span style="color:#8b949e;font-style:italic">// Default for local variables
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">static</span> <span style="color:#ff7b72">int</span> static_var <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">20</span>;     <span style="color:#8b949e;font-style:italic">// Retains value between calls
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">extern</span> <span style="color:#ff7b72">int</span> global_var;          <span style="color:#8b949e;font-style:italic">// Declared elsewhere
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">register</span> <span style="color:#ff7b72">int</span> fast_var <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">30</span>;     <span style="color:#8b949e;font-style:italic">// Hint for compiler optimization
+</span></span></span></code></pre></div><h3 id="scope">Scope</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">int</span> global_var <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;    <span style="color:#8b949e;font-style:italic">// Global scope
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">static</span> <span style="color:#ff7b72">int</span> count <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>;   <span style="color:#8b949e;font-style:italic">// Static local variable
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    count<span style="color:#ff7b72;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Count: %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, count);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> local_var <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">20</span>;     <span style="color:#8b949e;font-style:italic">// Local scope
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">int</span> block_var <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">30</span>;  <span style="color:#8b949e;font-style:italic">// Block scope
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>        <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Block var: %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, block_var);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// block_var is not accessible here
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="functions">Functions</h2>
+<h3 id="function-declaration-and-definition">Function Declaration and Definition</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function prototype
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">add</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">print_message</span>(<span style="color:#ff7b72">void</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function definition
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">add</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> a <span style="color:#ff7b72;font-weight:bold">+</span> b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">print_message</span>(<span style="color:#ff7b72">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Hello from function!</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function with no return value
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">swap</span>(<span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>a, <span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> temp <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">*</span>a;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72;font-weight:bold">*</span>a <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">*</span>b;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72;font-weight:bold">*</span>b <span style="color:#ff7b72;font-weight:bold">=</span> temp;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="function-pointers">Function Pointers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function pointer declaration
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> (<span style="color:#ff7b72;font-weight:bold">*</span>operation)(<span style="color:#ff7b72">int</span>, <span style="color:#ff7b72">int</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Functions to point to
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">add</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b) { <span style="color:#ff7b72">return</span> a <span style="color:#ff7b72;font-weight:bold">+</span> b; }
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">multiply</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b) { <span style="color:#ff7b72">return</span> a <span style="color:#ff7b72;font-weight:bold">*</span> b; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    operation <span style="color:#ff7b72;font-weight:bold">=</span> add;
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;5 + 3 = %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#d2a8ff;font-weight:bold">operation</span>(<span style="color:#a5d6ff">5</span>, <span style="color:#a5d6ff">3</span>));
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    operation <span style="color:#ff7b72;font-weight:bold">=</span> multiply;
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;5 * 3 = %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#d2a8ff;font-weight:bold">operation</span>(<span style="color:#a5d6ff">5</span>, <span style="color:#a5d6ff">3</span>));
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="variadic-functions">Variadic Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdarg.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">sum</span>(<span style="color:#ff7b72">int</span> count, ...) {
+</span></span><span style="display:flex;"><span>    va_list args;
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">va_start</span>(args, count);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> total <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">int</span> i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>; i <span style="color:#ff7b72;font-weight:bold">&lt;</span> count; i<span style="color:#ff7b72;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>        total <span style="color:#ff7b72;font-weight:bold">+=</span> <span style="color:#d2a8ff;font-weight:bold">va_arg</span>(args, <span style="color:#ff7b72">int</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">va_end</span>(args);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> total;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Sum: %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#d2a8ff;font-weight:bold">sum</span>(<span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">20</span>, <span style="color:#a5d6ff">30</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="control-structures">Control Structures</h2>
+<h3 id="conditionals">Conditionals</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// if-else
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">if</span> (x <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Positive</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">else</span> <span style="color:#ff7b72">if</span> (x <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Negative</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Zero</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Ternary operator
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> result <span style="color:#ff7b72;font-weight:bold">=</span> (x <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">0</span>) <span style="color:#ff7b72;font-weight:bold">?</span> <span style="color:#a5d6ff">1</span> <span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Switch statement
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">switch</span> (choice) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">case</span> <span style="color:#a5d6ff">1</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Option 1</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">case</span> <span style="color:#a5d6ff">2</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Option 2</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">case</span> <span style="color:#a5d6ff">3</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">case</span> <span style="color:#a5d6ff">4</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Option 3 or 4</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">default</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Invalid option</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="loops">Loops</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// for loop
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">int</span> i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>; i <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">10</span>; i<span style="color:#ff7b72;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%d &#34;</span>, i);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// while loop
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">while</span> (i <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">10</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%d &#34;</span>, i);
+</span></span><span style="display:flex;"><span>    i<span style="color:#ff7b72;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// do-while loop
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> j <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">do</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%d &#34;</span>, j);
+</span></span><span style="display:flex;"><span>    j<span style="color:#ff7b72;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">while</span> (j <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">10</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Loop control
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">int</span> i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>; i <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">10</span>; i<span style="color:#ff7b72;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (i <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">5</span>) <span style="color:#ff7b72">continue</span>;   <span style="color:#8b949e;font-style:italic">// Skip iteration
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">if</span> (i <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">8</span>) <span style="color:#ff7b72">break</span>;      <span style="color:#8b949e;font-style:italic">// Exit loop
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%d &#34;</span>, i);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="arrays-and-strings">Arrays and Strings</h2>
+<h3 id="arrays">Arrays</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Array declaration and initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> numbers[<span style="color:#a5d6ff">5</span>] <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>};
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> values[] <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">20</span>, <span style="color:#a5d6ff">30</span>};        <span style="color:#8b949e;font-style:italic">// Size inferred
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> matrix[<span style="color:#a5d6ff">3</span>][<span style="color:#a5d6ff">3</span>] <span style="color:#ff7b72;font-weight:bold">=</span> {{<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>}, {<span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>, <span style="color:#a5d6ff">6</span>}, {<span style="color:#a5d6ff">7</span>, <span style="color:#a5d6ff">8</span>, <span style="color:#a5d6ff">9</span>}};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Array access
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">int</span> i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>; i <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">5</span>; i<span style="color:#ff7b72;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%d &#34;</span>, numbers[i]);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Array size
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> size <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">sizeof</span>(numbers) <span style="color:#ff7b72;font-weight:bold">/</span> <span style="color:#ff7b72">sizeof</span>(numbers[<span style="color:#a5d6ff">0</span>]);
+</span></span></code></pre></div><h3 id="strings">Strings</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;string.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// String declaration
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">char</span> str1[<span style="color:#a5d6ff">20</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;Hello&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">char</span> str2[] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;World&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>str3 <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;C Programming&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// String functions
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> len <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">strlen</span>(str1);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">strcpy</span>(str1, <span style="color:#a5d6ff">&#34;New string&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">strcat</span>(str1, <span style="color:#a5d6ff">&#34; appended&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> cmp <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">strcmp</span>(str1, str2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// String input/output
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">char</span> buffer[<span style="color:#a5d6ff">100</span>];
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Enter a string: &#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">fgets</span>(buffer, <span style="color:#ff7b72">sizeof</span>(buffer), stdin);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;You entered: %s&#34;</span>, buffer);
+</span></span></code></pre></div><h3 id="string-manipulation">String Manipulation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;string.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;ctype.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Convert to uppercase
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">to_upper</span>(<span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>str) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">while</span> (<span style="color:#ff7b72;font-weight:bold">*</span>str) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72;font-weight:bold">*</span>str <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">toupper</span>(<span style="color:#ff7b72;font-weight:bold">*</span>str);
+</span></span><span style="display:flex;"><span>        str<span style="color:#ff7b72;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Find substring
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span><span style="color:#d2a8ff;font-weight:bold">find_substr</span>(<span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>haystack, <span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>needle) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#d2a8ff;font-weight:bold">strstr</span>(haystack, needle);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Split string
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">split_string</span>(<span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>str, <span style="color:#ff7b72">char</span> delimiter) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>token <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">strtok</span>(str, <span style="color:#ff7b72;font-weight:bold">&amp;</span>delimiter);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">while</span> (token <span style="color:#ff7b72;font-weight:bold">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>        <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%s</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, token);
+</span></span><span style="display:flex;"><span>        token <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">strtok</span>(NULL, <span style="color:#ff7b72;font-weight:bold">&amp;</span>delimiter);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="pointers">Pointers</h2>
+<h3 id="basic-pointers">Basic Pointers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">int</span> x <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>ptr <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">&amp;</span>x;      <span style="color:#8b949e;font-style:italic">// Pointer to x
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> value <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">*</span>ptr;   <span style="color:#8b949e;font-style:italic">// Dereference pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Value: %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, value);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Address: %p</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, (<span style="color:#ff7b72">void</span><span style="color:#ff7b72;font-weight:bold">*</span>)ptr);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Null pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>null_ptr <span style="color:#ff7b72;font-weight:bold">=</span> NULL;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> (null_ptr <span style="color:#ff7b72;font-weight:bold">==</span> NULL) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Pointer is null</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="pointer-arithmetic">Pointer Arithmetic</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">int</span> arr[] <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>};
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>ptr <span style="color:#ff7b72;font-weight:bold">=</span> arr;  <span style="color:#8b949e;font-style:italic">// Points to first element
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Pointer arithmetic
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>ptr<span style="color:#ff7b72;font-weight:bold">++</span>;           <span style="color:#8b949e;font-style:italic">// Move to next element
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>ptr <span style="color:#ff7b72;font-weight:bold">+=</span> <span style="color:#a5d6ff">2</span>;        <span style="color:#8b949e;font-style:italic">// Move 2 elements forward
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>ptr<span style="color:#ff7b72;font-weight:bold">--</span>;           <span style="color:#8b949e;font-style:italic">// Move to previous element
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Array traversal using pointers
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>start <span style="color:#ff7b72;font-weight:bold">=</span> arr;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>end <span style="color:#ff7b72;font-weight:bold">=</span> arr <span style="color:#ff7b72;font-weight:bold">+</span> <span style="color:#a5d6ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">while</span> (start <span style="color:#ff7b72;font-weight:bold">&lt;</span> end) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%d &#34;</span>, <span style="color:#ff7b72;font-weight:bold">*</span>start);
+</span></span><span style="display:flex;"><span>    start<span style="color:#ff7b72;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="pointers-and-functions">Pointers and Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Pass by reference
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">increment</span>(<span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>num) {
+</span></span><span style="display:flex;"><span>    (<span style="color:#ff7b72;font-weight:bold">*</span>num)<span style="color:#ff7b72;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Return pointer from function
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#d2a8ff;font-weight:bold">get_max</span>(<span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>a, <span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> (<span style="color:#ff7b72;font-weight:bold">*</span>a <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#ff7b72;font-weight:bold">*</span>b) <span style="color:#ff7b72;font-weight:bold">?</span> <span style="color:#79c0ff;font-weight:bold">a</span> : b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Array as function parameter
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">print_array</span>(<span style="color:#ff7b72">int</span> arr[], <span style="color:#ff7b72">int</span> size) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">int</span> i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>; i <span style="color:#ff7b72;font-weight:bold">&lt;</span> size; i<span style="color:#ff7b72;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%d &#34;</span>, arr[i]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="double-pointers">Double Pointers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">int</span> x <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>ptr <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">&amp;</span>x;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">**</span>double_ptr <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">&amp;</span>ptr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Value: %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#ff7b72;font-weight:bold">**</span>double_ptr);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Address of x: %p</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, (<span style="color:#ff7b72">void</span><span style="color:#ff7b72;font-weight:bold">*</span>)ptr);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Address of ptr: %p</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, (<span style="color:#ff7b72">void</span><span style="color:#ff7b72;font-weight:bold">*</span>)double_ptr);
+</span></span></code></pre></div><h2 id="memory-management">Memory Management</h2>
+<h3 id="dynamic-memory-allocation">Dynamic Memory Allocation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdlib.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// malloc - allocate memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>ptr <span style="color:#ff7b72;font-weight:bold">=</span> (<span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span>)<span style="color:#d2a8ff;font-weight:bold">malloc</span>(<span style="color:#a5d6ff">5</span> <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">int</span>));
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> (ptr <span style="color:#ff7b72;font-weight:bold">==</span> NULL) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Memory allocation failed</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Initialize allocated memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">int</span> i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>; i <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">5</span>; i<span style="color:#ff7b72;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>    ptr[i] <span style="color:#ff7b72;font-weight:bold">=</span> i <span style="color:#ff7b72;font-weight:bold">+</span> <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// calloc - allocate and initialize to zero
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>arr <span style="color:#ff7b72;font-weight:bold">=</span> (<span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span>)<span style="color:#d2a8ff;font-weight:bold">calloc</span>(<span style="color:#a5d6ff">5</span>, <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">int</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// realloc - resize memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>ptr <span style="color:#ff7b72;font-weight:bold">=</span> (<span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span>)<span style="color:#d2a8ff;font-weight:bold">realloc</span>(ptr, <span style="color:#a5d6ff">10</span> <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">int</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// free - deallocate memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">free</span>(ptr);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">free</span>(arr);
+</span></span><span style="display:flex;"><span>ptr <span style="color:#ff7b72;font-weight:bold">=</span> NULL;  <span style="color:#8b949e;font-style:italic">// Avoid dangling pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>arr <span style="color:#ff7b72;font-weight:bold">=</span> NULL;
+</span></span></code></pre></div><h3 id="memory-management-best-practices">Memory Management Best Practices</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Check for allocation failure
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span><span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#d2a8ff;font-weight:bold">safe_malloc</span>(<span style="color:#ff7b72">size_t</span> size) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> <span style="color:#ff7b72;font-weight:bold">*</span>ptr <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">malloc</span>(size);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (ptr <span style="color:#ff7b72;font-weight:bold">==</span> NULL) {
+</span></span><span style="display:flex;"><span>        <span style="color:#d2a8ff;font-weight:bold">fprintf</span>(stderr, <span style="color:#a5d6ff">&#34;Memory allocation failed</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#d2a8ff;font-weight:bold">exit</span>(<span style="color:#a5d6ff">1</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> ptr;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Always free allocated memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">process_data</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>data <span style="color:#ff7b72;font-weight:bold">=</span> (<span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span>)<span style="color:#d2a8ff;font-weight:bold">malloc</span>(<span style="color:#a5d6ff">100</span> <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">int</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (data <span style="color:#ff7b72;font-weight:bold">==</span> NULL) <span style="color:#ff7b72">return</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Process data...
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">free</span>(data);
+</span></span><span style="display:flex;"><span>    data <span style="color:#ff7b72;font-weight:bold">=</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="structures-and-unions">Structures and Unions</h2>
+<h3 id="structures">Structures</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Structure definition
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">struct</span> Person {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">char</span> name[<span style="color:#a5d6ff">50</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> age;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">float</span> salary;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Structure usage
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">struct</span> Person person1 <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">&#34;John Doe&#34;</span>, <span style="color:#a5d6ff">30</span>, <span style="color:#a5d6ff">50000.0</span>};
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">struct</span> Person person2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Accessing members
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">strcpy</span>(person2.name, <span style="color:#a5d6ff">&#34;Jane Smith&#34;</span>);
+</span></span><span style="display:flex;"><span>person2.age <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">25</span>;
+</span></span><span style="display:flex;"><span>person2.salary <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">45000.0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Pointer to structure
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">struct</span> Person <span style="color:#ff7b72;font-weight:bold">*</span>ptr <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">&amp;</span>person1;
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Name: %s</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, ptr<span style="color:#ff7b72;font-weight:bold">-&gt;</span>name);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Age: %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, ptr<span style="color:#ff7b72;font-weight:bold">-&gt;</span>age);
+</span></span></code></pre></div><h3 id="typedef">Typedef</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Define structure with typedef
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">typedef</span> <span style="color:#ff7b72">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> x;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> y;
+</span></span><span style="display:flex;"><span>} Point;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Usage
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>Point p1 <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">20</span>};
+</span></span><span style="display:flex;"><span>Point p2 <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">0</span>};  <span style="color:#8b949e;font-style:italic">// Initialize to zero
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function with structure
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">double</span> <span style="color:#d2a8ff;font-weight:bold">distance</span>(Point p1, Point p2) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> dx <span style="color:#ff7b72;font-weight:bold">=</span> p1.x <span style="color:#ff7b72;font-weight:bold">-</span> p2.x;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> dy <span style="color:#ff7b72;font-weight:bold">=</span> p1.y <span style="color:#ff7b72;font-weight:bold">-</span> p2.y;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#d2a8ff;font-weight:bold">sqrt</span>(dx<span style="color:#ff7b72;font-weight:bold">*</span>dx <span style="color:#ff7b72;font-weight:bold">+</span> dy<span style="color:#ff7b72;font-weight:bold">*</span>dy);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="unions">Unions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">union</span> Data {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> i;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">float</span> f;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">char</span> str[<span style="color:#a5d6ff">20</span>];
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">union</span> Data data;
+</span></span><span style="display:flex;"><span>data.i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Integer: %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, data.i);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>data.f <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14</span>;
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Float: %.2f</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, data.f);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">strcpy</span>(data.str, <span style="color:#a5d6ff">&#34;Hello&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;String: %s</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, data.str);
+</span></span></code></pre></div><h3 id="bit-fields">Bit Fields</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">struct</span> Flags {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">int</span> <span style="color:#79c0ff;font-weight:bold">flag1</span> : <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">int</span> <span style="color:#79c0ff;font-weight:bold">flag2</span> : <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">int</span> <span style="color:#79c0ff;font-weight:bold">flag3</span> : <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">int</span> <span style="color:#79c0ff;font-weight:bold">reserved</span> : <span style="color:#a5d6ff">5</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">struct</span> Flags flags <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">0</span>};
+</span></span><span style="display:flex;"><span>flags.flag1 <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>flags.flag2 <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>flags.flag3 <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>;
+</span></span></code></pre></div><h2 id="file-io">File I/O</h2>
+<h3 id="file-operations">File Operations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Open file
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;input.txt&#34;</span>, <span style="color:#a5d6ff">&#34;r&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> (file <span style="color:#ff7b72;font-weight:bold">==</span> NULL) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">perror</span>(<span style="color:#a5d6ff">&#34;Error opening file&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Read from file
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">char</span> buffer[<span style="color:#a5d6ff">100</span>];
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">while</span> (<span style="color:#d2a8ff;font-weight:bold">fgets</span>(buffer, <span style="color:#ff7b72">sizeof</span>(buffer), file) <span style="color:#ff7b72;font-weight:bold">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%s&#34;</span>, buffer);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Close file
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">fclose</span>(file);
+</span></span></code></pre></div><h3 id="file-modes">File Modes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// File modes
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>read_file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;file.txt&#34;</span>, <span style="color:#a5d6ff">&#34;r&#34;</span>);     <span style="color:#8b949e;font-style:italic">// Read
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>write_file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;file.txt&#34;</span>, <span style="color:#a5d6ff">&#34;w&#34;</span>);    <span style="color:#8b949e;font-style:italic">// Write (truncate)
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>append_file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;file.txt&#34;</span>, <span style="color:#a5d6ff">&#34;a&#34;</span>);   <span style="color:#8b949e;font-style:italic">// Append
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>read_write <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;file.txt&#34;</span>, <span style="color:#a5d6ff">&#34;r+&#34;</span>);   <span style="color:#8b949e;font-style:italic">// Read/Write
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>binary_file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;file.bin&#34;</span>, <span style="color:#a5d6ff">&#34;rb&#34;</span>);  <span style="color:#8b949e;font-style:italic">// Binary read
+</span></span></span></code></pre></div><h3 id="formatted-io">Formatted I/O</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Writing formatted data
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;output.txt&#34;</span>, <span style="color:#a5d6ff">&#34;w&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">fprintf</span>(file, <span style="color:#a5d6ff">&#34;Name: %s, Age: %d, Salary: %.2f</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#a5d6ff">&#34;John&#34;</span>, <span style="color:#a5d6ff">30</span>, <span style="color:#a5d6ff">50000.0</span>);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">fclose</span>(file);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Reading formatted data
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;input.txt&#34;</span>, <span style="color:#a5d6ff">&#34;r&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">char</span> name[<span style="color:#a5d6ff">50</span>];
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> age;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">float</span> salary;
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">fscanf</span>(file, <span style="color:#a5d6ff">&#34;Name: %s, Age: %d, Salary: %f&#34;</span>, name, <span style="color:#ff7b72;font-weight:bold">&amp;</span>age, <span style="color:#ff7b72;font-weight:bold">&amp;</span>salary);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">fclose</span>(file);
+</span></span></code></pre></div><h3 id="binary-io">Binary I/O</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Write binary data
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">struct</span> Person person <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">&#34;John&#34;</span>, <span style="color:#a5d6ff">30</span>, <span style="color:#a5d6ff">50000.0</span>};
+</span></span><span style="display:flex;"><span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;person.bin&#34;</span>, <span style="color:#a5d6ff">&#34;wb&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">fwrite</span>(<span style="color:#ff7b72;font-weight:bold">&amp;</span>person, <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">struct</span> Person), <span style="color:#a5d6ff">1</span>, file);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">fclose</span>(file);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Read binary data
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">struct</span> Person read_person;
+</span></span><span style="display:flex;"><span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;person.bin&#34;</span>, <span style="color:#a5d6ff">&#34;rb&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">fread</span>(<span style="color:#ff7b72;font-weight:bold">&amp;</span>read_person, <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">struct</span> Person), <span style="color:#a5d6ff">1</span>, file);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">fclose</span>(file);
+</span></span></code></pre></div><h2 id="preprocessor">Preprocessor</h2>
+<h3 id="macros">Macros</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#define MAX(a, b) ((a) &gt; (b) ? (a) : (b))
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#define MIN(a, b) ((a) &lt; (b) ? (a) : (b))
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#define SWAP(a, b) do { \
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">    typeof(a) temp = a; \
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">    a = b; \
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">    b = temp; \
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">} while(0)
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Conditional compilation
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#ifdef DEBUG
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>    <span style="color:#8b949e;font-weight:bold;font-style:italic">#define DBG_PRINT(x) printf(&#34;DEBUG: %s\n&#34;, x)
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>    <span style="color:#8b949e;font-weight:bold;font-style:italic">#define DBG_PRINT(x)
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Predefined macros
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;File: %s</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, __FILE__);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Line: %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, __LINE__);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Function: %s</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, __func__);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Date: %s</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, __DATE__);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Time: %s</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, __TIME__);
+</span></span></code></pre></div><h3 id="header-guards">Header Guards</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// header.h
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#ifndef HEADER_H
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#define HEADER_H
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Header content here
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#endif </span><span style="color:#8b949e;font-style:italic">// HEADER_H
+</span></span></span></code></pre></div><h3 id="include-files">Include Files</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdio.h&gt;      // Standard library</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdlib.h&gt;     // Standard library</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;string.h&gt;     // String functions</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;math.h&gt;       // Math functions</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;time.h&gt;       // Time functions</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&#34;myheader.h&#34;   // User-defined header</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span></code></pre></div><h2 id="error-handling">Error Handling</h2>
+<h3 id="error-codes">Error Codes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;errno.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">divide</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b, <span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>result) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (b <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>;  <span style="color:#8b949e;font-style:italic">// Error code
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72;font-weight:bold">*</span>result <span style="color:#ff7b72;font-weight:bold">=</span> a <span style="color:#ff7b72;font-weight:bold">/</span> b;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;  <span style="color:#8b949e;font-style:italic">// Success
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> result;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (<span style="color:#d2a8ff;font-weight:bold">divide</span>(<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">0</span>, <span style="color:#ff7b72;font-weight:bold">&amp;</span>result) <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#a5d6ff">0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Error: Division by zero</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="error-messages">Error Messages</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;errno.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;string.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>FILE <span style="color:#ff7b72;font-weight:bold">*</span>file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">fopen</span>(<span style="color:#a5d6ff">&#34;nonexistent.txt&#34;</span>, <span style="color:#a5d6ff">&#34;r&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> (file <span style="color:#ff7b72;font-weight:bold">==</span> NULL) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">fprintf</span>(stderr, <span style="color:#a5d6ff">&#34;Error opening file: %s</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#d2a8ff;font-weight:bold">strerror</span>(errno));
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="assert">Assert</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;assert.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">process_array</span>(<span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>arr, <span style="color:#ff7b72">int</span> size) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">assert</span>(arr <span style="color:#ff7b72;font-weight:bold">!=</span> NULL);
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">assert</span>(size <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">0</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Process array...
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>}
+</span></span></code></pre></div><h2 id="standard-library">Standard Library</h2>
+<h3 id="common-functions">Common Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// String functions
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;string.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">strlen</span>(str)         <span style="color:#8b949e;font-style:italic">// String length
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">strcpy</span>(dest, src)   <span style="color:#8b949e;font-style:italic">// Copy string
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">strcat</span>(dest, src)   <span style="color:#8b949e;font-style:italic">// Concatenate strings
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">strcmp</span>(str1, str2)  <span style="color:#8b949e;font-style:italic">// Compare strings
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">strstr</span>(haystack, needle)  <span style="color:#8b949e;font-style:italic">// Find substring
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Memory functions
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">memset</span>(ptr, value, size)        <span style="color:#8b949e;font-style:italic">// Set memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">memcpy</span>(dest, src, size)         <span style="color:#8b949e;font-style:italic">// Copy memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">memmove</span>(dest, src, size)        <span style="color:#8b949e;font-style:italic">// Move memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">memcmp</span>(ptr1, ptr2, size)        <span style="color:#8b949e;font-style:italic">// Compare memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Math functions
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;math.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">sqrt</span>(x)     <span style="color:#8b949e;font-style:italic">// Square root
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">pow</span>(x, y)   <span style="color:#8b949e;font-style:italic">// Power
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">sin</span>(x)      <span style="color:#8b949e;font-style:italic">// Sine
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">cos</span>(x)      <span style="color:#8b949e;font-style:italic">// Cosine
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">log</span>(x)      <span style="color:#8b949e;font-style:italic">// Natural logarithm
+</span></span></span></code></pre></div><h3 id="character-functions">Character Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;ctype.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">isalpha</span>(c)      <span style="color:#8b949e;font-style:italic">// Is alphabetic
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">isdigit</span>(c)      <span style="color:#8b949e;font-style:italic">// Is digit
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">isalnum</span>(c)      <span style="color:#8b949e;font-style:italic">// Is alphanumeric
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">isspace</span>(c)      <span style="color:#8b949e;font-style:italic">// Is whitespace
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">isupper</span>(c)      <span style="color:#8b949e;font-style:italic">// Is uppercase
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">islower</span>(c)      <span style="color:#8b949e;font-style:italic">// Is lowercase
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">toupper</span>(c)      <span style="color:#8b949e;font-style:italic">// Convert to uppercase
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">tolower</span>(c)      <span style="color:#8b949e;font-style:italic">// Convert to lowercase
+</span></span></span></code></pre></div><h2 id="common-patterns">Common Patterns</h2>
+<h3 id="linked-list">Linked List</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">typedef</span> <span style="color:#ff7b72">struct</span> Node {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> data;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">struct</span> Node <span style="color:#ff7b72;font-weight:bold">*</span>next;
+</span></span><span style="display:flex;"><span>} Node;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Node<span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#d2a8ff;font-weight:bold">create_node</span>(<span style="color:#ff7b72">int</span> data) {
+</span></span><span style="display:flex;"><span>    Node <span style="color:#ff7b72;font-weight:bold">*</span>node <span style="color:#ff7b72;font-weight:bold">=</span> (Node<span style="color:#ff7b72;font-weight:bold">*</span>)<span style="color:#d2a8ff;font-weight:bold">malloc</span>(<span style="color:#ff7b72">sizeof</span>(Node));
+</span></span><span style="display:flex;"><span>    node<span style="color:#ff7b72;font-weight:bold">-&gt;</span>data <span style="color:#ff7b72;font-weight:bold">=</span> data;
+</span></span><span style="display:flex;"><span>    node<span style="color:#ff7b72;font-weight:bold">-&gt;</span>next <span style="color:#ff7b72;font-weight:bold">=</span> NULL;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> node;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">insert_at_head</span>(Node <span style="color:#ff7b72;font-weight:bold">**</span>head, <span style="color:#ff7b72">int</span> data) {
+</span></span><span style="display:flex;"><span>    Node <span style="color:#ff7b72;font-weight:bold">*</span>new_node <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">create_node</span>(data);
+</span></span><span style="display:flex;"><span>    new_node<span style="color:#ff7b72;font-weight:bold">-&gt;</span>next <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">*</span>head;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72;font-weight:bold">*</span>head <span style="color:#ff7b72;font-weight:bold">=</span> new_node;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">print_list</span>(Node <span style="color:#ff7b72;font-weight:bold">*</span>head) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">while</span> (head <span style="color:#ff7b72;font-weight:bold">!=</span> NULL) {
+</span></span><span style="display:flex;"><span>        <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%d -&gt; &#34;</span>, head<span style="color:#ff7b72;font-weight:bold">-&gt;</span>data);
+</span></span><span style="display:flex;"><span>        head <span style="color:#ff7b72;font-weight:bold">=</span> head<span style="color:#ff7b72;font-weight:bold">-&gt;</span>next;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;NULL</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="generic-programming-with-void">Generic Programming with void*</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Generic stack implementation
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">typedef</span> <span style="color:#ff7b72">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> <span style="color:#ff7b72;font-weight:bold">**</span>data;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> top;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> capacity;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">size_t</span> element_size;
+</span></span><span style="display:flex;"><span>} Stack;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Stack<span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#d2a8ff;font-weight:bold">create_stack</span>(<span style="color:#ff7b72">int</span> capacity, <span style="color:#ff7b72">size_t</span> element_size) {
+</span></span><span style="display:flex;"><span>    Stack <span style="color:#ff7b72;font-weight:bold">*</span>stack <span style="color:#ff7b72;font-weight:bold">=</span> (Stack<span style="color:#ff7b72;font-weight:bold">*</span>)<span style="color:#d2a8ff;font-weight:bold">malloc</span>(<span style="color:#ff7b72">sizeof</span>(Stack));
+</span></span><span style="display:flex;"><span>    stack<span style="color:#ff7b72;font-weight:bold">-&gt;</span>data <span style="color:#ff7b72;font-weight:bold">=</span> (<span style="color:#ff7b72">void</span><span style="color:#ff7b72;font-weight:bold">**</span>)<span style="color:#d2a8ff;font-weight:bold">malloc</span>(capacity <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">void</span><span style="color:#ff7b72;font-weight:bold">*</span>));
+</span></span><span style="display:flex;"><span>    stack<span style="color:#ff7b72;font-weight:bold">-&gt;</span>top <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>    stack<span style="color:#ff7b72;font-weight:bold">-&gt;</span>capacity <span style="color:#ff7b72;font-weight:bold">=</span> capacity;
+</span></span><span style="display:flex;"><span>    stack<span style="color:#ff7b72;font-weight:bold">-&gt;</span>element_size <span style="color:#ff7b72;font-weight:bold">=</span> element_size;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> stack;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">push</span>(Stack <span style="color:#ff7b72;font-weight:bold">*</span>stack, <span style="color:#ff7b72">void</span> <span style="color:#ff7b72;font-weight:bold">*</span>element) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (stack<span style="color:#ff7b72;font-weight:bold">-&gt;</span>top <span style="color:#ff7b72;font-weight:bold">&gt;=</span> stack<span style="color:#ff7b72;font-weight:bold">-&gt;</span>capacity <span style="color:#ff7b72;font-weight:bold">-</span> <span style="color:#a5d6ff">1</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;  <span style="color:#8b949e;font-style:italic">// Stack full
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> <span style="color:#ff7b72;font-weight:bold">*</span>copy <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">malloc</span>(stack<span style="color:#ff7b72;font-weight:bold">-&gt;</span>element_size);
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">memcpy</span>(copy, element, stack<span style="color:#ff7b72;font-weight:bold">-&gt;</span>element_size);
+</span></span><span style="display:flex;"><span>    stack<span style="color:#ff7b72;font-weight:bold">-&gt;</span>data[<span style="color:#ff7b72;font-weight:bold">++</span>stack<span style="color:#ff7b72;font-weight:bold">-&gt;</span>top] <span style="color:#ff7b72;font-weight:bold">=</span> copy;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">1</span>;  <span style="color:#8b949e;font-style:italic">// Success
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>}
+</span></span></code></pre></div><h2 id="debugging">Debugging</h2>
+<h3 id="gdb-usage">GDB Usage</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Compile with debug information</span>
+</span></span><span style="display:flex;"><span>gcc -g -o program program.c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Run with GDB</span>
+</span></span><span style="display:flex;"><span>gdb ./program
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GDB commands</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">(</span>gdb<span style="color:#ff7b72;font-weight:bold">)</span> break main          <span style="color:#8b949e;font-style:italic"># Set breakpoint</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">(</span>gdb<span style="color:#ff7b72;font-weight:bold">)</span> run                 <span style="color:#8b949e;font-style:italic"># Run program</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">(</span>gdb<span style="color:#ff7b72;font-weight:bold">)</span> next                <span style="color:#8b949e;font-style:italic"># Next line</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">(</span>gdb<span style="color:#ff7b72;font-weight:bold">)</span> step                <span style="color:#8b949e;font-style:italic"># Step into function</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">(</span>gdb<span style="color:#ff7b72;font-weight:bold">)</span> print variable      <span style="color:#8b949e;font-style:italic"># Print variable value</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">(</span>gdb<span style="color:#ff7b72;font-weight:bold">)</span> <span style="color:#ff7b72">continue</span>            <span style="color:#8b949e;font-style:italic"># Continue execution</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">(</span>gdb<span style="color:#ff7b72;font-weight:bold">)</span> quit                <span style="color:#8b949e;font-style:italic"># Exit GDB</span>
+</span></span></code></pre></div><h3 id="debug-prints">Debug Prints</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#ifdef DEBUG
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>    <span style="color:#8b949e;font-weight:bold;font-style:italic">#define DEBUG_PRINT(fmt, ...) \
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">        fprintf(stderr, &#34;DEBUG: %s:%d: &#34; fmt, __FILE__, __LINE__, ##__VA_ARGS__)
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>    <span style="color:#8b949e;font-weight:bold;font-style:italic">#define DEBUG_PRINT(fmt, ...)
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> x <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">DEBUG_PRINT</span>(<span style="color:#a5d6ff">&#34;x = %d</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, x);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="best-practices">Best Practices</h2>
+<h3 id="code-organization">Code Organization</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function prototypes at top
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">add</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">print_array</span>(<span style="color:#ff7b72">int</span> arr[], <span style="color:#ff7b72">int</span> size);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Constants and macros
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#define MAX_SIZE 100
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span><span style="color:#ff7b72">const</span> <span style="color:#ff7b72">int</span> BUFFER_SIZE <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1024</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Main function
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Variable declarations at top of function
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">int</span> result;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> numbers[MAX_SIZE];
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Code logic
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    result <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">add</span>(<span style="color:#a5d6ff">5</span>, <span style="color:#a5d6ff">3</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function implementations
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">add</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> a <span style="color:#ff7b72;font-weight:bold">+</span> b;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="memory-safety">Memory Safety</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Always check malloc return
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>ptr <span style="color:#ff7b72;font-weight:bold">=</span> (<span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span>)<span style="color:#d2a8ff;font-weight:bold">malloc</span>(<span style="color:#ff7b72">sizeof</span>(<span style="color:#ff7b72">int</span>) <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">10</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> (ptr <span style="color:#ff7b72;font-weight:bold">==</span> NULL) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Handle allocation failure
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">return</span> <span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Always free allocated memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#d2a8ff;font-weight:bold">free</span>(ptr);
+</span></span><span style="display:flex;"><span>ptr <span style="color:#ff7b72;font-weight:bold">=</span> NULL;  <span style="color:#8b949e;font-style:italic">// Avoid dangling pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use const for read-only data
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">print_string</span>(<span style="color:#ff7b72">const</span> <span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>str) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;%s</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, str);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="error-handling-1">Error Handling</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Return error codes
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">safe_divide</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b, <span style="color:#ff7b72">int</span> <span style="color:#ff7b72;font-weight:bold">*</span>result) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (b <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>;  <span style="color:#8b949e;font-style:italic">// Error
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72;font-weight:bold">*</span>result <span style="color:#ff7b72;font-weight:bold">=</span> a <span style="color:#ff7b72;font-weight:bold">/</span> b;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;  <span style="color:#8b949e;font-style:italic">// Success
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Check return values
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">if</span> (<span style="color:#d2a8ff;font-weight:bold">safe_divide</span>(<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#ff7b72;font-weight:bold">&amp;</span>result) <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#a5d6ff">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">printf</span>(<span style="color:#a5d6ff">&#34;Error in division</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="performance-tips">Performance Tips</h2>
+<h3 id="optimization">Optimization</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use appropriate data types
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">uint8_t</span> small_number <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">255</span>;  <span style="color:#8b949e;font-style:italic">// Instead of int for small values
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use register hint for frequently used variables
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">register</span> <span style="color:#ff7b72">int</span> i;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> (i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>; i <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">1000000</span>; i<span style="color:#ff7b72;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Loop body
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Minimize function calls in loops
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> len <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">strlen</span>(str);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">int</span> i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>; i <span style="color:#ff7b72;font-weight:bold">&lt;</span> len; i<span style="color:#ff7b72;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Process str[i]
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>}
+</span></span></code></pre></div><h3 id="memory-optimization">Memory Optimization</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Align structures for better performance
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">struct</span> AlignedStruct {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">char</span> a;     <span style="color:#8b949e;font-style:italic">// 1 byte
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">char</span> pad[<span style="color:#a5d6ff">3</span>]; <span style="color:#8b949e;font-style:italic">// 3 bytes padding
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">int</span> b;      <span style="color:#8b949e;font-style:italic">// 4 bytes
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">double</span> c;   <span style="color:#8b949e;font-style:italic">// 8 bytes
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use bit fields for flags
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">struct</span> Flags {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">int</span> <span style="color:#79c0ff;font-weight:bold">flag1</span> : <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">int</span> <span style="color:#79c0ff;font-weight:bold">flag2</span> : <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">int</span> <span style="color:#79c0ff;font-weight:bold">flag3</span> : <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">int</span> <span style="color:#79c0ff;font-weight:bold">reserved</span> : <span style="color:#a5d6ff">5</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="build-systems">Build Systems</h2>
+<h3 id="makefile">Makefile</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#79c0ff">CC</span> <span style="color:#ff7b72;font-weight:bold">=</span> gcc
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">CFLAGS</span> <span style="color:#ff7b72;font-weight:bold">=</span> -Wall -Wextra -std<span style="color:#ff7b72;font-weight:bold">=</span>c99 -g
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">TARGET</span> <span style="color:#ff7b72;font-weight:bold">=</span> myprogram
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">SOURCES</span> <span style="color:#ff7b72;font-weight:bold">=</span> main.c utils.c
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">OBJECTS</span> <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">$(</span>SOURCES:.c<span style="color:#ff7b72;font-weight:bold">=</span>.o<span style="color:#ff7b72">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">$(TARGET)</span><span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">$(</span><span style="color:#79c0ff">OBJECTS</span><span style="color:#ff7b72">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">$(</span>CC<span style="color:#ff7b72">)</span> <span style="color:#ff7b72">$(</span>OBJECTS<span style="color:#ff7b72">)</span> -o <span style="color:#ff7b72">$(</span>TARGET<span style="color:#ff7b72">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">%.o</span><span style="color:#ff7b72;font-weight:bold">:</span> %.c
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">$(</span>CC<span style="color:#ff7b72">)</span> <span style="color:#ff7b72">$(</span>CFLAGS<span style="color:#ff7b72">)</span> -c $&lt; -o <span style="color:#79c0ff">$@</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">clean</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>	rm -f <span style="color:#ff7b72">$(</span>OBJECTS<span style="color:#ff7b72">)</span> <span style="color:#ff7b72">$(</span>TARGET<span style="color:#ff7b72">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">.PHONY</span><span style="color:#ff7b72;font-weight:bold">:</span> clean
+</span></span></code></pre></div><h3 id="cmake">CMake</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>cmake_minimum_required(<span style="color:#a5d6ff">VERSION</span> <span style="color:#a5d6ff">3.10</span>)<span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span>project(<span style="color:#a5d6ff">MyProject</span> <span style="color:#a5d6ff">C</span>)<span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span>set(<span style="color:#a5d6ff">CMAKE_C_STANDARD</span> <span style="color:#a5d6ff">99</span>)<span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span>set(<span style="color:#a5d6ff">CMAKE_C_FLAGS</span> <span style="color:#a5d6ff">&#34;${CMAKE_C_FLAGS} -Wall -Wextra&#34;</span>)<span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span>add_executable(<span style="color:#a5d6ff">myprogram</span> <span style="color:#a5d6ff">main.c</span> <span style="color:#a5d6ff">utils.c</span>)<span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span><span style="color:#8b949e;font-style:italic"># Link math library
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>target_link_libraries(<span style="color:#a5d6ff">myprogram</span> <span style="color:#a5d6ff">m</span>)<span style="color:#f85149">
+</span></span></span></code></pre></div><h2 id="quick-reference">Quick Reference</h2>
+<h3 id="format-specifiers">Format Specifiers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72;font-weight:bold">%</span>d      <span style="color:#8b949e;font-style:italic">// int
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">%</span>ld     <span style="color:#8b949e;font-style:italic">// long
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">%</span>u      <span style="color:#8b949e;font-style:italic">// unsigned int
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">%</span>f      <span style="color:#8b949e;font-style:italic">// float
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">%</span>lf     <span style="color:#8b949e;font-style:italic">// double
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">%</span>c      <span style="color:#8b949e;font-style:italic">// char
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">%</span>s      <span style="color:#8b949e;font-style:italic">// string
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">%</span>p      <span style="color:#8b949e;font-style:italic">// pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">%</span>x      <span style="color:#8b949e;font-style:italic">// hexadecimal
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">%</span>o      <span style="color:#8b949e;font-style:italic">// octal
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">%</span>zu     <span style="color:#8b949e;font-style:italic">// size_t
+</span></span></span></code></pre></div><h3 id="common-headers">Common Headers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdio.h&gt;      // Input/output</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdlib.h&gt;     // Memory management, utilities</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;string.h&gt;     // String functions</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;math.h&gt;       // Mathematical functions</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;time.h&gt;       // Time functions</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;ctype.h&gt;      // Character functions</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;errno.h&gt;      // Error handling</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;assert.h&gt;     // Assertions</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span></code></pre></div><h3 id="operators">Operators</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Arithmetic
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">+</span> <span style="color:#ff7b72;font-weight:bold">-</span> <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#ff7b72;font-weight:bold">/</span> <span style="color:#ff7b72;font-weight:bold">%</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Comparison
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#ff7b72;font-weight:bold">&lt;=</span> <span style="color:#ff7b72;font-weight:bold">&gt;=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Logical
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> <span style="color:#ff7b72;font-weight:bold">||</span> <span style="color:#ff7b72;font-weight:bold">!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Bitwise
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">&amp;</span> <span style="color:#ff7b72;font-weight:bold">|</span> <span style="color:#ff7b72;font-weight:bold">^</span> <span style="color:#ff7b72;font-weight:bold">~</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#ff7b72;font-weight:bold">&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Assignment
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">+=</span> <span style="color:#ff7b72;font-weight:bold">-=</span> <span style="color:#ff7b72;font-weight:bold">*=</span> <span style="color:#ff7b72;font-weight:bold">/=</span> <span style="color:#ff7b72;font-weight:bold">%=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Increment/Decrement
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">++</span> <span style="color:#ff7b72;font-weight:bold">--</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Member access
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>. <span style="color:#ff7b72;font-weight:bold">-&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Ternary
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">?</span> <span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span></code></pre></div><h2 id="see-also">See Also</h2>
+<ul>
+<li><code>man gcc</code> - GCC compiler manual</li>
+<li><code>man gdb</code> - GNU Debugger manual</li>
+<li><a href="https://en.cppreference.com/w/c">C Reference</a> - Comprehensive C reference</li>
+<li><a href="https://en.wikipedia.org/wiki/The_C_Programming_Language">The C Programming Language</a> - K&amp;R book</li>
+<li><code>splint</code> - Static code analysis tool</li>
+<li><code>valgrind</code> - Memory debugging tool</li>
+</ul>
+
+    </div>
+
+    
+    <div class="mt-4">
+        <h5>Categories:</h5>
+        
+        <a href="/categories/programming" class="badge bg-secondary text-decoration-none me-2">programming</a>
+        
+    </div>
+    
+
+    <div class="mt-4">
+        <small class="text-muted">
+            Last updated: January 1, 2024
+        </small>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 QuickRef - Developer Reference. Built with <i class="fas fa-heart text-danger"></i> for developers.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="/js/app.js"></script>
+    
+    
+</body>
+</html>

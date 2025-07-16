@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - QuickRef - Developer Reference</title>
+    <meta name="description" content="Python programming language reference covering syntax, data structures, libraries, and best practices.">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    
+    <link href="/css/styles.css" rel="stylesheet">
+    
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:1313/">
+                <i class="fas fa-code"></i> QuickRef - Developer Reference
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <button class="theme-toggle me-3" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                
+                <a class="nav-link" href="/" >
+                    <i class="fas fa-home"></i>
+                    
+                    Home
+                </a>
+                
+                <a class="nav-link" href="https://github.com/yourusername/quickref" target="_blank">
+                    
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="ref-page">
+    <a href="http://localhost:1313/" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to QuickRef
+    </a>
+    
+    <div class="ref-header">
+        <h1 class="ref-title">Python</h1>
+        <p class="ref-description">Python programming language reference covering syntax, data structures, libraries, and best practices.</p>
+        <div class="ref-tags">
+            
+            <span class="ref-tag">python</span>
+            
+            <span class="ref-tag">programming</span>
+            
+            <span class="ref-tag">scripting</span>
+            
+            <span class="ref-tag">data-science</span>
+            
+            <span class="ref-tag">web-development</span>
+            
+        </div>
+    </div>
+
+    <div class="ref-content">
+        <h2 id="overview">Overview</h2>
+<p>Python is a high-level, interpreted programming language known for its simplicity and readability. It&rsquo;s widely used for web development, data science, automation, artificial intelligence, and rapid prototyping.</p>
+<h2 id="installation">Installation</h2>
+<h3 id="python-installation">Python Installation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>sudo apt install python3 python3-pip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># macOS</span>
+</span></span><span style="display:flex;"><span>brew install python3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Windows</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download from https://python.org/downloads/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Check version</span>
+</span></span><span style="display:flex;"><span>python3 --version
+</span></span><span style="display:flex;"><span>pip3 --version
+</span></span></code></pre></div><h3 id="package-management">Package Management</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Install package</span>
+</span></span><span style="display:flex;"><span>pip install package_name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Install specific version</span>
+</span></span><span style="display:flex;"><span>pip install <span style="color:#79c0ff">package_name</span><span style="color:#ff7b72;font-weight:bold">==</span>1.2.3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Install from requirements file</span>
+</span></span><span style="display:flex;"><span>pip install -r requirements.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># List installed packages</span>
+</span></span><span style="display:flex;"><span>pip list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create virtual environment</span>
+</span></span><span style="display:flex;"><span>python3 -m venv myenv
+</span></span><span style="display:flex;"><span>source myenv/bin/activate  <span style="color:#8b949e;font-style:italic"># Linux/Mac</span>
+</span></span><span style="display:flex;"><span>myenv<span style="color:#79c0ff">\S</span>cripts<span style="color:#79c0ff">\a</span>ctivate     <span style="color:#8b949e;font-style:italic"># Windows</span>
+</span></span></code></pre></div><h2 id="basic-syntax">Basic Syntax</h2>
+<h3 id="hello-world">Hello World</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#a5d6ff">&#34;Hello, World!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Multi-line string</span>
+</span></span><span style="display:flex;"><span>message <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">This is a
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">multi-line string
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>print(message)
+</span></span></code></pre></div><h3 id="running-python">Running Python</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Interactive mode</span>
+</span></span><span style="display:flex;"><span>python3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Run script</span>
+</span></span><span style="display:flex;"><span>python3 script.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Run module</span>
+</span></span><span style="display:flex;"><span>python3 -m module_name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># One-liner</span>
+</span></span><span style="display:flex;"><span>python3 -c <span style="color:#a5d6ff">&#34;print(&#39;Hello, World!&#39;)&#34;</span>
+</span></span></code></pre></div><h2 id="data-types">Data Types</h2>
+<h3 id="basic-types">Basic Types</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Numbers</span>
+</span></span><span style="display:flex;"><span>integer <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">42</span>
+</span></span><span style="display:flex;"><span>float_num <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14</span>
+</span></span><span style="display:flex;"><span>complex_num <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3</span> <span style="color:#ff7b72;font-weight:bold">+</span> <span style="color:#a5d6ff">4</span>j
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># String</span>
+</span></span><span style="display:flex;"><span>text <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;Hello, World!&#34;</span>
+</span></span><span style="display:flex;"><span>multiline <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;&#34;&#34;Line 1
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Line 2
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Line 3&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Boolean</span>
+</span></span><span style="display:flex;"><span>flag <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">True</span>
+</span></span><span style="display:flex;"><span>is_valid <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># None</span>
+</span></span><span style="display:flex;"><span>value <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">None</span>
+</span></span></code></pre></div><h3 id="type-checking">Type Checking</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Type function</span>
+</span></span><span style="display:flex;"><span>print(type(<span style="color:#a5d6ff">42</span>))        <span style="color:#8b949e;font-style:italic"># &lt;class &#39;int&#39;&gt;</span>
+</span></span><span style="display:flex;"><span>print(type(<span style="color:#a5d6ff">3.14</span>))      <span style="color:#8b949e;font-style:italic"># &lt;class &#39;float&#39;&gt;</span>
+</span></span><span style="display:flex;"><span>print(type(<span style="color:#a5d6ff">&#34;hello&#34;</span>))   <span style="color:#8b949e;font-style:italic"># &lt;class &#39;str&#39;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># isinstance function</span>
+</span></span><span style="display:flex;"><span>print(isinstance(<span style="color:#a5d6ff">42</span>, int))      <span style="color:#8b949e;font-style:italic"># True</span>
+</span></span><span style="display:flex;"><span>print(isinstance(<span style="color:#a5d6ff">3.14</span>, float))  <span style="color:#8b949e;font-style:italic"># True</span>
+</span></span><span style="display:flex;"><span>print(isinstance(<span style="color:#a5d6ff">&#34;hello&#34;</span>, str)) <span style="color:#8b949e;font-style:italic"># True</span>
+</span></span></code></pre></div><h3 id="type-conversion">Type Conversion</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># String to number</span>
+</span></span><span style="display:flex;"><span>num <span style="color:#ff7b72;font-weight:bold">=</span> int(<span style="color:#a5d6ff">&#34;123&#34;</span>)
+</span></span><span style="display:flex;"><span>float_num <span style="color:#ff7b72;font-weight:bold">=</span> float(<span style="color:#a5d6ff">&#34;3.14&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Number to string</span>
+</span></span><span style="display:flex;"><span>text <span style="color:#ff7b72;font-weight:bold">=</span> str(<span style="color:#a5d6ff">123</span>)
+</span></span><span style="display:flex;"><span>text <span style="color:#ff7b72;font-weight:bold">=</span> str(<span style="color:#a5d6ff">3.14</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># List to string</span>
+</span></span><span style="display:flex;"><span>numbers <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>]
+</span></span><span style="display:flex;"><span>text <span style="color:#ff7b72;font-weight:bold">=</span> str(numbers)
+</span></span><span style="display:flex;"><span>joined <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;, &#34;</span><span style="color:#ff7b72;font-weight:bold">.</span>join(map(str, numbers))
+</span></span></code></pre></div><h2 id="variables-and-constants">Variables and Constants</h2>
+<h3 id="variable-assignment">Variable Assignment</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Basic assignment</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>
+</span></span><span style="display:flex;"><span>y <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Multiple assignment</span>
+</span></span><span style="display:flex;"><span>a, b, c <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#ff7b72;font-weight:bold">=</span> y <span style="color:#ff7b72;font-weight:bold">=</span> z <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Swapping</span>
+</span></span><span style="display:flex;"><span>a, b <span style="color:#ff7b72;font-weight:bold">=</span> b, a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Unpacking</span>
+</span></span><span style="display:flex;"><span>numbers <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>]
+</span></span><span style="display:flex;"><span>first, second, third <span style="color:#ff7b72;font-weight:bold">=</span> numbers
+</span></span></code></pre></div><h3 id="constants-convention">Constants (Convention)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Constants are uppercase by convention</span>
+</span></span><span style="display:flex;"><span>PI <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14159</span>
+</span></span><span style="display:flex;"><span>MAX_SIZE <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1000</span>
+</span></span><span style="display:flex;"><span>API_URL <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;https://api.example.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use enum for related constants</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">enum</span> <span style="color:#ff7b72">import</span> Enum
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Status</span>(Enum):
+</span></span><span style="display:flex;"><span>    PENDING <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span>    APPROVED <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span>    REJECTED <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3</span>
+</span></span></code></pre></div><h2 id="strings">Strings</h2>
+<h3 id="string-operations">String Operations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># String creation</span>
+</span></span><span style="display:flex;"><span>name <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;John&#34;</span>
+</span></span><span style="display:flex;"><span>greeting <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#39;Hello&#39;</span>
+</span></span><span style="display:flex;"><span>template <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Hello, </span><span style="color:#a5d6ff">{</span>name<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># String methods</span>
+</span></span><span style="display:flex;"><span>text <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;Hello, World!&#34;</span>
+</span></span><span style="display:flex;"><span>print(text<span style="color:#ff7b72;font-weight:bold">.</span>upper())        <span style="color:#8b949e;font-style:italic"># HELLO, WORLD!</span>
+</span></span><span style="display:flex;"><span>print(text<span style="color:#ff7b72;font-weight:bold">.</span>lower())        <span style="color:#8b949e;font-style:italic"># hello, world!</span>
+</span></span><span style="display:flex;"><span>print(text<span style="color:#ff7b72;font-weight:bold">.</span>title())        <span style="color:#8b949e;font-style:italic"># Hello, World!</span>
+</span></span><span style="display:flex;"><span>print(text<span style="color:#ff7b72;font-weight:bold">.</span>replace(<span style="color:#a5d6ff">&#34;World&#34;</span>, <span style="color:#a5d6ff">&#34;Python&#34;</span>))  <span style="color:#8b949e;font-style:italic"># Hello, Python!</span>
+</span></span><span style="display:flex;"><span>print(text<span style="color:#ff7b72;font-weight:bold">.</span>split(<span style="color:#a5d6ff">&#34;,&#34;</span>))     <span style="color:#8b949e;font-style:italic"># [&#39;Hello&#39;, &#39; World!&#39;]</span>
+</span></span><span style="display:flex;"><span>print(text<span style="color:#ff7b72;font-weight:bold">.</span>strip())        <span style="color:#8b949e;font-style:italic"># Remove whitespace</span>
+</span></span><span style="display:flex;"><span>print(text<span style="color:#ff7b72;font-weight:bold">.</span>startswith(<span style="color:#a5d6ff">&#34;Hello&#34;</span>))  <span style="color:#8b949e;font-style:italic"># True</span>
+</span></span><span style="display:flex;"><span>print(text<span style="color:#ff7b72;font-weight:bold">.</span>endswith(<span style="color:#a5d6ff">&#34;!&#34;</span>))  <span style="color:#8b949e;font-style:italic"># True</span>
+</span></span></code></pre></div><h3 id="string-formatting">String Formatting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>name <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;Alice&#34;</span>
+</span></span><span style="display:flex;"><span>age <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># f-strings (Python 3.6+)</span>
+</span></span><span style="display:flex;"><span>message <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;My name is </span><span style="color:#a5d6ff">{</span>name<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> and I&#39;m </span><span style="color:#a5d6ff">{</span>age<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> years old&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># format method</span>
+</span></span><span style="display:flex;"><span>message <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;My name is </span><span style="color:#a5d6ff">{}</span><span style="color:#a5d6ff"> and I&#39;m </span><span style="color:#a5d6ff">{}</span><span style="color:#a5d6ff"> years old&#34;</span><span style="color:#ff7b72;font-weight:bold">.</span>format(name, age)
+</span></span><span style="display:flex;"><span>message <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;My name is </span><span style="color:#a5d6ff">{name}</span><span style="color:#a5d6ff"> and I&#39;m </span><span style="color:#a5d6ff">{age}</span><span style="color:#a5d6ff"> years old&#34;</span><span style="color:#ff7b72;font-weight:bold">.</span>format(name<span style="color:#ff7b72;font-weight:bold">=</span>name, age<span style="color:#ff7b72;font-weight:bold">=</span>age)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># % formatting (older style)</span>
+</span></span><span style="display:flex;"><span>message <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;My name is </span><span style="color:#a5d6ff">%s</span><span style="color:#a5d6ff"> and I&#39;m </span><span style="color:#a5d6ff">%d</span><span style="color:#a5d6ff"> years old&#34;</span> <span style="color:#ff7b72;font-weight:bold">%</span> (name, age)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Advanced formatting</span>
+</span></span><span style="display:flex;"><span>number <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14159</span>
+</span></span><span style="display:flex;"><span>formatted <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">{</span>number<span style="color:#a5d6ff">:</span><span style="color:#a5d6ff">.2f</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>  <span style="color:#8b949e;font-style:italic"># 3.14</span>
+</span></span></code></pre></div><h3 id="string-indexing-and-slicing">String Indexing and Slicing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>text <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;Python&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Indexing</span>
+</span></span><span style="display:flex;"><span>print(text[<span style="color:#a5d6ff">0</span>])     <span style="color:#8b949e;font-style:italic"># P</span>
+</span></span><span style="display:flex;"><span>print(text[<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>])    <span style="color:#8b949e;font-style:italic"># n</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Slicing</span>
+</span></span><span style="display:flex;"><span>print(text[<span style="color:#a5d6ff">1</span>:<span style="color:#a5d6ff">4</span>])   <span style="color:#8b949e;font-style:italic"># yth</span>
+</span></span><span style="display:flex;"><span>print(text[:<span style="color:#a5d6ff">3</span>])    <span style="color:#8b949e;font-style:italic"># Pyt</span>
+</span></span><span style="display:flex;"><span>print(text[<span style="color:#a5d6ff">2</span>:])    <span style="color:#8b949e;font-style:italic"># thon</span>
+</span></span><span style="display:flex;"><span>print(text[::<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>])  <span style="color:#8b949e;font-style:italic"># nohtyP (reverse)</span>
+</span></span></code></pre></div><h2 id="data-structures">Data Structures</h2>
+<h3 id="lists">Lists</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># List creation</span>
+</span></span><span style="display:flex;"><span>numbers <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>]
+</span></span><span style="display:flex;"><span>mixed <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">&#34;hello&#34;</span>, <span style="color:#a5d6ff">3.14</span>, <span style="color:#79c0ff">True</span>]
+</span></span><span style="display:flex;"><span>empty <span style="color:#ff7b72;font-weight:bold">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># List methods</span>
+</span></span><span style="display:flex;"><span>numbers<span style="color:#ff7b72;font-weight:bold">.</span>append(<span style="color:#a5d6ff">6</span>)           <span style="color:#8b949e;font-style:italic"># Add to end</span>
+</span></span><span style="display:flex;"><span>numbers<span style="color:#ff7b72;font-weight:bold">.</span>insert(<span style="color:#a5d6ff">0</span>, <span style="color:#a5d6ff">0</span>)        <span style="color:#8b949e;font-style:italic"># Insert at index</span>
+</span></span><span style="display:flex;"><span>numbers<span style="color:#ff7b72;font-weight:bold">.</span>remove(<span style="color:#a5d6ff">3</span>)           <span style="color:#8b949e;font-style:italic"># Remove first occurrence</span>
+</span></span><span style="display:flex;"><span>popped <span style="color:#ff7b72;font-weight:bold">=</span> numbers<span style="color:#ff7b72;font-weight:bold">.</span>pop()      <span style="color:#8b949e;font-style:italic"># Remove and return last</span>
+</span></span><span style="display:flex;"><span>numbers<span style="color:#ff7b72;font-weight:bold">.</span>extend([<span style="color:#a5d6ff">7</span>, <span style="color:#a5d6ff">8</span>])      <span style="color:#8b949e;font-style:italic"># Add multiple items</span>
+</span></span><span style="display:flex;"><span>numbers<span style="color:#ff7b72;font-weight:bold">.</span>sort()              <span style="color:#8b949e;font-style:italic"># Sort in place</span>
+</span></span><span style="display:flex;"><span>numbers<span style="color:#ff7b72;font-weight:bold">.</span>reverse()           <span style="color:#8b949e;font-style:italic"># Reverse in place</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># List comprehension</span>
+</span></span><span style="display:flex;"><span>squares <span style="color:#ff7b72;font-weight:bold">=</span> [x<span style="color:#ff7b72;font-weight:bold">**</span><span style="color:#a5d6ff">2</span> <span style="color:#ff7b72">for</span> x <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">10</span>)]
+</span></span><span style="display:flex;"><span>evens <span style="color:#ff7b72;font-weight:bold">=</span> [x <span style="color:#ff7b72">for</span> x <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">20</span>) <span style="color:#ff7b72">if</span> x <span style="color:#ff7b72;font-weight:bold">%</span> <span style="color:#a5d6ff">2</span> <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">0</span>]
+</span></span></code></pre></div><h3 id="tuples">Tuples</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Tuple creation</span>
+</span></span><span style="display:flex;"><span>coordinates <span style="color:#ff7b72;font-weight:bold">=</span> (<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">20</span>)
+</span></span><span style="display:flex;"><span>single <span style="color:#ff7b72;font-weight:bold">=</span> (<span style="color:#a5d6ff">42</span>,)  <span style="color:#8b949e;font-style:italic"># Single element tuple</span>
+</span></span><span style="display:flex;"><span>empty <span style="color:#ff7b72;font-weight:bold">=</span> ()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Tuple unpacking</span>
+</span></span><span style="display:flex;"><span>x, y <span style="color:#ff7b72;font-weight:bold">=</span> coordinates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Named tuples</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">collections</span> <span style="color:#ff7b72">import</span> namedtuple
+</span></span><span style="display:flex;"><span>Point <span style="color:#ff7b72;font-weight:bold">=</span> namedtuple(<span style="color:#a5d6ff">&#39;Point&#39;</span>, [<span style="color:#a5d6ff">&#39;x&#39;</span>, <span style="color:#a5d6ff">&#39;y&#39;</span>])
+</span></span><span style="display:flex;"><span>p <span style="color:#ff7b72;font-weight:bold">=</span> Point(<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">20</span>)
+</span></span><span style="display:flex;"><span>print(p<span style="color:#ff7b72;font-weight:bold">.</span>x, p<span style="color:#ff7b72;font-weight:bold">.</span>y)
+</span></span></code></pre></div><h3 id="dictionaries">Dictionaries</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Dictionary creation</span>
+</span></span><span style="display:flex;"><span>person <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;John&#34;</span>, <span style="color:#a5d6ff">&#34;age&#34;</span>: <span style="color:#a5d6ff">30</span>, <span style="color:#a5d6ff">&#34;city&#34;</span>: <span style="color:#a5d6ff">&#34;New York&#34;</span>}
+</span></span><span style="display:flex;"><span>empty <span style="color:#ff7b72;font-weight:bold">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Dictionary methods</span>
+</span></span><span style="display:flex;"><span>person[<span style="color:#a5d6ff">&#34;email&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;john@example.com&#34;</span>  <span style="color:#8b949e;font-style:italic"># Add/update</span>
+</span></span><span style="display:flex;"><span>age <span style="color:#ff7b72;font-weight:bold">=</span> person<span style="color:#ff7b72;font-weight:bold">.</span>get(<span style="color:#a5d6ff">&#34;age&#34;</span>, <span style="color:#a5d6ff">0</span>)            <span style="color:#8b949e;font-style:italic"># Get with default</span>
+</span></span><span style="display:flex;"><span>person<span style="color:#ff7b72;font-weight:bold">.</span>pop(<span style="color:#a5d6ff">&#34;city&#34;</span>)                    <span style="color:#8b949e;font-style:italic"># Remove and return</span>
+</span></span><span style="display:flex;"><span>person<span style="color:#ff7b72;font-weight:bold">.</span>update({<span style="color:#a5d6ff">&#34;country&#34;</span>: <span style="color:#a5d6ff">&#34;USA&#34;</span>})     <span style="color:#8b949e;font-style:italic"># Update multiple</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Dictionary comprehension</span>
+</span></span><span style="display:flex;"><span>squares <span style="color:#ff7b72;font-weight:bold">=</span> {x: x<span style="color:#ff7b72;font-weight:bold">**</span><span style="color:#a5d6ff">2</span> <span style="color:#ff7b72">for</span> x <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">5</span>)}
+</span></span><span style="display:flex;"><span>filtered <span style="color:#ff7b72;font-weight:bold">=</span> {k: v <span style="color:#ff7b72">for</span> k, v <span style="color:#ff7b72;font-weight:bold">in</span> person<span style="color:#ff7b72;font-weight:bold">.</span>items() <span style="color:#ff7b72">if</span> v <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#a5d6ff">&#34;John&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Iteration</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> key <span style="color:#ff7b72;font-weight:bold">in</span> person:
+</span></span><span style="display:flex;"><span>    print(key, person[key])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> key, value <span style="color:#ff7b72;font-weight:bold">in</span> person<span style="color:#ff7b72;font-weight:bold">.</span>items():
+</span></span><span style="display:flex;"><span>    print(key, value)
+</span></span></code></pre></div><h3 id="sets">Sets</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Set creation</span>
+</span></span><span style="display:flex;"><span>numbers <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>}
+</span></span><span style="display:flex;"><span>empty <span style="color:#ff7b72;font-weight:bold">=</span> set()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Set operations</span>
+</span></span><span style="display:flex;"><span>numbers<span style="color:#ff7b72;font-weight:bold">.</span>add(<span style="color:#a5d6ff">6</span>)          <span style="color:#8b949e;font-style:italic"># Add element</span>
+</span></span><span style="display:flex;"><span>numbers<span style="color:#ff7b72;font-weight:bold">.</span>remove(<span style="color:#a5d6ff">3</span>)       <span style="color:#8b949e;font-style:italic"># Remove element (raises error if not found)</span>
+</span></span><span style="display:flex;"><span>numbers<span style="color:#ff7b72;font-weight:bold">.</span>discard(<span style="color:#a5d6ff">3</span>)      <span style="color:#8b949e;font-style:italic"># Remove element (no error if not found)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Set operations</span>
+</span></span><span style="display:flex;"><span>set1 <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>}
+</span></span><span style="display:flex;"><span>set2 <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>}
+</span></span><span style="display:flex;"><span>union <span style="color:#ff7b72;font-weight:bold">=</span> set1 <span style="color:#ff7b72;font-weight:bold">|</span> set2           <span style="color:#8b949e;font-style:italic"># {1, 2, 3, 4, 5}</span>
+</span></span><span style="display:flex;"><span>intersection <span style="color:#ff7b72;font-weight:bold">=</span> set1 <span style="color:#ff7b72;font-weight:bold">&amp;</span> set2    <span style="color:#8b949e;font-style:italic"># {3}</span>
+</span></span><span style="display:flex;"><span>difference <span style="color:#ff7b72;font-weight:bold">=</span> set1 <span style="color:#ff7b72;font-weight:bold">-</span> set2      <span style="color:#8b949e;font-style:italic"># {1, 2}</span>
+</span></span></code></pre></div><h2 id="control-structures">Control Structures</h2>
+<h3 id="conditionals">Conditionals</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># if-elif-else</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> x <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">0</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;Positive&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">elif</span> x <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">0</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;Negative&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;Zero&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Ternary operator</span>
+</span></span><span style="display:flex;"><span>result <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;positive&#34;</span> <span style="color:#ff7b72">if</span> x <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">0</span> <span style="color:#ff7b72">else</span> <span style="color:#a5d6ff">&#34;not positive&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Multiple conditions</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> x <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">0</span> <span style="color:#ff7b72;font-weight:bold">and</span> x <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">100</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;Between 0 and 100&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> x <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">0</span> <span style="color:#ff7b72;font-weight:bold">or</span> x <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">100</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;Outside range&#34;</span>)
+</span></span></code></pre></div><h3 id="loops">Loops</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># for loop</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> i <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">5</span>):
+</span></span><span style="display:flex;"><span>    print(i)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># for loop with list</span>
+</span></span><span style="display:flex;"><span>fruits <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">&#34;apple&#34;</span>, <span style="color:#a5d6ff">&#34;banana&#34;</span>, <span style="color:#a5d6ff">&#34;orange&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> fruit <span style="color:#ff7b72;font-weight:bold">in</span> fruits:
+</span></span><span style="display:flex;"><span>    print(fruit)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># for loop with index</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> i, fruit <span style="color:#ff7b72;font-weight:bold">in</span> enumerate(fruits):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">{</span>i<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">: </span><span style="color:#a5d6ff">{</span>fruit<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># while loop</span>
+</span></span><span style="display:flex;"><span>count <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">while</span> count <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">5</span>:
+</span></span><span style="display:flex;"><span>    print(count)
+</span></span><span style="display:flex;"><span>    count <span style="color:#ff7b72;font-weight:bold">+=</span> <span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Loop control</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> i <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">10</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> i <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">3</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">continue</span>    <span style="color:#8b949e;font-style:italic"># Skip iteration</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> i <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">7</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">break</span>       <span style="color:#8b949e;font-style:italic"># Exit loop</span>
+</span></span><span style="display:flex;"><span>    print(i)
+</span></span></code></pre></div><h3 id="loop-patterns">Loop Patterns</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Loop with else</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> i <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">5</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> i <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">10</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">break</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;Loop completed normally&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Nested loops</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> i <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">3</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> j <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">3</span>):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;(</span><span style="color:#a5d6ff">{</span>i<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">, </span><span style="color:#a5d6ff">{</span>j<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">)&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Dictionary iteration</span>
+</span></span><span style="display:flex;"><span>person <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;John&#34;</span>, <span style="color:#a5d6ff">&#34;age&#34;</span>: <span style="color:#a5d6ff">30</span>}
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> key, value <span style="color:#ff7b72;font-weight:bold">in</span> person<span style="color:#ff7b72;font-weight:bold">.</span>items():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">{</span>key<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">: </span><span style="color:#a5d6ff">{</span>value<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span></code></pre></div><h2 id="functions">Functions</h2>
+<h3 id="function-definition">Function Definition</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Basic function</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">greet</span>(name):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Hello, </span><span style="color:#a5d6ff">{</span>name<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Function with default parameters</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">greet</span>(name<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;World&#34;</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Hello, </span><span style="color:#a5d6ff">{</span>name<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Function with multiple parameters</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">add</span>(a, b):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> a <span style="color:#ff7b72;font-weight:bold">+</span> b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Function with variable arguments</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">sum_all</span>(<span style="color:#ff7b72;font-weight:bold">*</span>args):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> sum(args)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Function with keyword arguments</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">create_profile</span>(<span style="color:#ff7b72;font-weight:bold">**</span>kwargs):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> kwargs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Mixed arguments</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">process_data</span>(required, <span style="color:#ff7b72;font-weight:bold">*</span>args, <span style="color:#ff7b72;font-weight:bold">**</span>kwargs):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Required: </span><span style="color:#a5d6ff">{</span>required<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Args: </span><span style="color:#a5d6ff">{</span>args<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Kwargs: </span><span style="color:#a5d6ff">{</span>kwargs<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span></code></pre></div><h3 id="lambda-functions">Lambda Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Lambda function</span>
+</span></span><span style="display:flex;"><span>square <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">lambda</span> x: x<span style="color:#ff7b72;font-weight:bold">**</span><span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span>add <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">lambda</span> x, y: x <span style="color:#ff7b72;font-weight:bold">+</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Lambda with higher-order functions</span>
+</span></span><span style="display:flex;"><span>numbers <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>]
+</span></span><span style="display:flex;"><span>squared <span style="color:#ff7b72;font-weight:bold">=</span> list(map(<span style="color:#ff7b72">lambda</span> x: x<span style="color:#ff7b72;font-weight:bold">**</span><span style="color:#a5d6ff">2</span>, numbers))
+</span></span><span style="display:flex;"><span>evens <span style="color:#ff7b72;font-weight:bold">=</span> list(filter(<span style="color:#ff7b72">lambda</span> x: x <span style="color:#ff7b72;font-weight:bold">%</span> <span style="color:#a5d6ff">2</span> <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">0</span>, numbers))
+</span></span></code></pre></div><h3 id="decorators">Decorators</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Simple decorator</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">my_decorator</span>(func):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">wrapper</span>():
+</span></span><span style="display:flex;"><span>        print(<span style="color:#a5d6ff">&#34;Before function&#34;</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#ff7b72;font-weight:bold">=</span> func()
+</span></span><span style="display:flex;"><span>        print(<span style="color:#a5d6ff">&#34;After function&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> result
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> wrapper
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">@my_decorator</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">say_hello</span>():
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;Hello!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Decorator with arguments</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">timing_decorator</span>(func):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">import</span> <span style="color:#ff7b72">time</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">wrapper</span>(<span style="color:#ff7b72;font-weight:bold">*</span>args, <span style="color:#ff7b72;font-weight:bold">**</span>kwargs):
+</span></span><span style="display:flex;"><span>        start <span style="color:#ff7b72;font-weight:bold">=</span> time<span style="color:#ff7b72;font-weight:bold">.</span>time()
+</span></span><span style="display:flex;"><span>        result <span style="color:#ff7b72;font-weight:bold">=</span> func(<span style="color:#ff7b72;font-weight:bold">*</span>args, <span style="color:#ff7b72;font-weight:bold">**</span>kwargs)
+</span></span><span style="display:flex;"><span>        end <span style="color:#ff7b72;font-weight:bold">=</span> time<span style="color:#ff7b72;font-weight:bold">.</span>time()
+</span></span><span style="display:flex;"><span>        print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">{</span>func<span style="color:#ff7b72;font-weight:bold">.</span>__name__<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> took </span><span style="color:#a5d6ff">{</span>end <span style="color:#ff7b72;font-weight:bold">-</span> start<span style="color:#a5d6ff">:</span><span style="color:#a5d6ff">.2f</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> seconds&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> result
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> wrapper
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">@timing_decorator</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">slow_function</span>():
+</span></span><span style="display:flex;"><span>    time<span style="color:#ff7b72;font-weight:bold">.</span>sleep(<span style="color:#a5d6ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">&#34;Done&#34;</span>
+</span></span></code></pre></div><h2 id="object-oriented-programming">Object-Oriented Programming</h2>
+<h3 id="classes-and-objects">Classes and Objects</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Person</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Class variable</span>
+</span></span><span style="display:flex;"><span>    species <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;Homo sapiens&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Constructor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __init__(self, name, age):
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>name <span style="color:#ff7b72;font-weight:bold">=</span> name    <span style="color:#8b949e;font-style:italic"># Instance variable</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>age <span style="color:#ff7b72;font-weight:bold">=</span> age
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Instance method</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">greet</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Hello, I&#39;m </span><span style="color:#a5d6ff">{</span>self<span style="color:#ff7b72;font-weight:bold">.</span>name<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Class method</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">@classmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">create_child</span>(cls, name):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> cls(name, <span style="color:#a5d6ff">0</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Static method</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">@staticmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">is_adult</span>(age):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> age <span style="color:#ff7b72;font-weight:bold">&gt;=</span> <span style="color:#a5d6ff">18</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># String representation</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Person(name=</span><span style="color:#a5d6ff">{</span>self<span style="color:#ff7b72;font-weight:bold">.</span>name<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">, age=</span><span style="color:#a5d6ff">{</span>self<span style="color:#ff7b72;font-weight:bold">.</span>age<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">)&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Usage</span>
+</span></span><span style="display:flex;"><span>person <span style="color:#ff7b72;font-weight:bold">=</span> Person(<span style="color:#a5d6ff">&#34;Alice&#34;</span>, <span style="color:#a5d6ff">30</span>)
+</span></span><span style="display:flex;"><span>print(person<span style="color:#ff7b72;font-weight:bold">.</span>greet())
+</span></span><span style="display:flex;"><span>print(person)
+</span></span></code></pre></div><h3 id="inheritance">Inheritance</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Base class</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Animal</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __init__(self, name):
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>name <span style="color:#ff7b72;font-weight:bold">=</span> name
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">make_sound</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">pass</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">info</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;I am </span><span style="color:#a5d6ff">{</span>self<span style="color:#ff7b72;font-weight:bold">.</span>name<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Derived class</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Dog</span>(Animal):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __init__(self, name, breed):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#ff7b72;font-weight:bold">.</span>__init__(name)  <span style="color:#8b949e;font-style:italic"># Call parent constructor</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>breed <span style="color:#ff7b72;font-weight:bold">=</span> breed
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">make_sound</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">&#34;Woof!&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">info</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">{</span>super()<span style="color:#ff7b72;font-weight:bold">.</span>info()<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> and I&#39;m a </span><span style="color:#a5d6ff">{</span>self<span style="color:#ff7b72;font-weight:bold">.</span>breed<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Usage</span>
+</span></span><span style="display:flex;"><span>dog <span style="color:#ff7b72;font-weight:bold">=</span> Dog(<span style="color:#a5d6ff">&#34;Buddy&#34;</span>, <span style="color:#a5d6ff">&#34;Golden Retriever&#34;</span>)
+</span></span><span style="display:flex;"><span>print(dog<span style="color:#ff7b72;font-weight:bold">.</span>info())
+</span></span><span style="display:flex;"><span>print(dog<span style="color:#ff7b72;font-weight:bold">.</span>make_sound())
+</span></span></code></pre></div><h3 id="properties-and-magic-methods">Properties and Magic Methods</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Circle</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __init__(self, radius):
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>_radius <span style="color:#ff7b72;font-weight:bold">=</span> radius
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">radius</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> self<span style="color:#ff7b72;font-weight:bold">.</span>_radius
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">@radius.setter</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">radius</span>(self, value):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> value <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">raise</span> <span style="color:#f0883e;font-weight:bold">ValueError</span>(<span style="color:#a5d6ff">&#34;Radius cannot be negative&#34;</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>_radius <span style="color:#ff7b72;font-weight:bold">=</span> value
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">@property</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">area</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">3.14159</span> <span style="color:#ff7b72;font-weight:bold">*</span> self<span style="color:#ff7b72;font-weight:bold">.</span>_radius <span style="color:#ff7b72;font-weight:bold">**</span> <span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Magic methods</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Circle(radius=</span><span style="color:#a5d6ff">{</span>self<span style="color:#ff7b72;font-weight:bold">.</span>radius<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">)&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __repr__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Circle(</span><span style="color:#a5d6ff">{</span>self<span style="color:#ff7b72;font-weight:bold">.</span>radius<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">)&#34;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __eq__(self, other):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> self<span style="color:#ff7b72;font-weight:bold">.</span>radius <span style="color:#ff7b72;font-weight:bold">==</span> other<span style="color:#ff7b72;font-weight:bold">.</span>radius
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __lt__(self, other):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> self<span style="color:#ff7b72;font-weight:bold">.</span>radius <span style="color:#ff7b72;font-weight:bold">&lt;</span> other<span style="color:#ff7b72;font-weight:bold">.</span>radius
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Usage</span>
+</span></span><span style="display:flex;"><span>circle <span style="color:#ff7b72;font-weight:bold">=</span> Circle(<span style="color:#a5d6ff">5</span>)
+</span></span><span style="display:flex;"><span>print(circle<span style="color:#ff7b72;font-weight:bold">.</span>area)
+</span></span><span style="display:flex;"><span>circle<span style="color:#ff7b72;font-weight:bold">.</span>radius <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>
+</span></span><span style="display:flex;"><span>print(circle)
+</span></span></code></pre></div><h2 id="error-handling">Error Handling</h2>
+<h3 id="try-except">Try-Except</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">try</span>:
+</span></span><span style="display:flex;"><span>    result <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span> <span style="color:#ff7b72;font-weight:bold">/</span> <span style="color:#a5d6ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">except</span> <span style="color:#f0883e;font-weight:bold">ZeroDivisionError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;Cannot divide by zero&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">except</span> <span style="color:#f0883e;font-weight:bold">ValueError</span> <span style="color:#ff7b72">as</span> e:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Value error: </span><span style="color:#a5d6ff">{</span>e<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">except</span> <span style="color:#f0883e;font-weight:bold">Exception</span> <span style="color:#ff7b72">as</span> e:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;General error: </span><span style="color:#a5d6ff">{</span>e<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;No error occurred&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">finally</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;This always runs&#34;</span>)
+</span></span></code></pre></div><h3 id="custom-exceptions">Custom Exceptions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">CustomError</span>(<span style="color:#f0883e;font-weight:bold">Exception</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __init__(self, message):
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>message <span style="color:#ff7b72;font-weight:bold">=</span> message
+</span></span><span style="display:flex;"><span>        super()<span style="color:#ff7b72;font-weight:bold">.</span>__init__(self<span style="color:#ff7b72;font-weight:bold">.</span>message)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">validate_age</span>(age):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> age <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">raise</span> CustomError(<span style="color:#a5d6ff">&#34;Age cannot be negative&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> age <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">150</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">raise</span> CustomError(<span style="color:#a5d6ff">&#34;Age seems unrealistic&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> age
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Usage</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">try</span>:
+</span></span><span style="display:flex;"><span>    validate_age(<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">except</span> CustomError <span style="color:#ff7b72">as</span> e:
+</span></span><span style="display:flex;"><span>    print(e<span style="color:#ff7b72;font-weight:bold">.</span>message)
+</span></span></code></pre></div><h2 id="file-io">File I/O</h2>
+<h3 id="reading-files">Reading Files</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Read entire file</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">with</span> open(<span style="color:#a5d6ff">&#39;file.txt&#39;</span>, <span style="color:#a5d6ff">&#39;r&#39;</span>) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>    content <span style="color:#ff7b72;font-weight:bold">=</span> f<span style="color:#ff7b72;font-weight:bold">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Read line by line</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">with</span> open(<span style="color:#a5d6ff">&#39;file.txt&#39;</span>, <span style="color:#a5d6ff">&#39;r&#39;</span>) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> line <span style="color:#ff7b72;font-weight:bold">in</span> f:
+</span></span><span style="display:flex;"><span>        print(line<span style="color:#ff7b72;font-weight:bold">.</span>strip())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Read all lines</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">with</span> open(<span style="color:#a5d6ff">&#39;file.txt&#39;</span>, <span style="color:#a5d6ff">&#39;r&#39;</span>) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>    lines <span style="color:#ff7b72;font-weight:bold">=</span> f<span style="color:#ff7b72;font-weight:bold">.</span>readlines()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Read with error handling</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">with</span> open(<span style="color:#a5d6ff">&#39;file.txt&#39;</span>, <span style="color:#a5d6ff">&#39;r&#39;</span>) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>        content <span style="color:#ff7b72;font-weight:bold">=</span> f<span style="color:#ff7b72;font-weight:bold">.</span>read()
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">except</span> <span style="color:#f0883e;font-weight:bold">FileNotFoundError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;File not found&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">except</span> <span style="color:#f0883e;font-weight:bold">IOError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;Error reading file&#34;</span>)
+</span></span></code></pre></div><h3 id="writing-files">Writing Files</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Write to file</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">with</span> open(<span style="color:#a5d6ff">&#39;output.txt&#39;</span>, <span style="color:#a5d6ff">&#39;w&#39;</span>) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>    f<span style="color:#ff7b72;font-weight:bold">.</span>write(<span style="color:#a5d6ff">&#34;Hello, World!</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span><span style="display:flex;"><span>    f<span style="color:#ff7b72;font-weight:bold">.</span>write(<span style="color:#a5d6ff">&#34;Second line</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Append to file</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">with</span> open(<span style="color:#a5d6ff">&#39;output.txt&#39;</span>, <span style="color:#a5d6ff">&#39;a&#39;</span>) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>    f<span style="color:#ff7b72;font-weight:bold">.</span>write(<span style="color:#a5d6ff">&#34;Appended line</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Write list to file</span>
+</span></span><span style="display:flex;"><span>lines <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">&#34;Line 1</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#a5d6ff">&#34;Line 2</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>, <span style="color:#a5d6ff">&#34;Line 3</span><span style="color:#79c0ff">\n</span><span style="color:#a5d6ff">&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">with</span> open(<span style="color:#a5d6ff">&#39;output.txt&#39;</span>, <span style="color:#a5d6ff">&#39;w&#39;</span>) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>    f<span style="color:#ff7b72;font-weight:bold">.</span>writelines(lines)
+</span></span></code></pre></div><h3 id="json-files">JSON Files</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">json</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Write JSON</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">&#34;name&#34;</span>: <span style="color:#a5d6ff">&#34;John&#34;</span>, <span style="color:#a5d6ff">&#34;age&#34;</span>: <span style="color:#a5d6ff">30</span>, <span style="color:#a5d6ff">&#34;city&#34;</span>: <span style="color:#a5d6ff">&#34;New York&#34;</span>}
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">with</span> open(<span style="color:#a5d6ff">&#39;data.json&#39;</span>, <span style="color:#a5d6ff">&#39;w&#39;</span>) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>    json<span style="color:#ff7b72;font-weight:bold">.</span>dump(data, f, indent<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Read JSON</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">with</span> open(<span style="color:#a5d6ff">&#39;data.json&#39;</span>, <span style="color:#a5d6ff">&#39;r&#39;</span>) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>    data <span style="color:#ff7b72;font-weight:bold">=</span> json<span style="color:#ff7b72;font-weight:bold">.</span>load(f)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># JSON strings</span>
+</span></span><span style="display:flex;"><span>json_string <span style="color:#ff7b72;font-weight:bold">=</span> json<span style="color:#ff7b72;font-weight:bold">.</span>dumps(data)
+</span></span><span style="display:flex;"><span>data <span style="color:#ff7b72;font-weight:bold">=</span> json<span style="color:#ff7b72;font-weight:bold">.</span>loads(json_string)
+</span></span></code></pre></div><h2 id="modules-and-packages">Modules and Packages</h2>
+<h3 id="importing">Importing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Import entire module</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">math</span>
+</span></span><span style="display:flex;"><span>print(math<span style="color:#ff7b72;font-weight:bold">.</span>sqrt(<span style="color:#a5d6ff">16</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Import specific functions</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">math</span> <span style="color:#ff7b72">import</span> sqrt, pi
+</span></span><span style="display:flex;"><span>print(sqrt(<span style="color:#a5d6ff">16</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Import with alias</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">numpy</span> <span style="color:#ff7b72">as</span> <span style="color:#ff7b72">np</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">pandas</span> <span style="color:#ff7b72">as</span> <span style="color:#ff7b72">pd</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Import all (not recommended)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">math</span> <span style="color:#ff7b72">import</span> <span style="color:#ff7b72;font-weight:bold">*</span>
+</span></span></code></pre></div><h3 id="creating-modules">Creating Modules</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># utils.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">add</span>(a, b):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> a <span style="color:#ff7b72;font-weight:bold">+</span> b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">multiply</span>(a, b):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> a <span style="color:#ff7b72;font-weight:bold">*</span> b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># main.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">utils</span>
+</span></span><span style="display:flex;"><span>result <span style="color:#ff7b72;font-weight:bold">=</span> utils<span style="color:#ff7b72;font-weight:bold">.</span>add(<span style="color:#a5d6ff">5</span>, <span style="color:#a5d6ff">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Or</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">utils</span> <span style="color:#ff7b72">import</span> add, multiply
+</span></span><span style="display:flex;"><span>result <span style="color:#ff7b72;font-weight:bold">=</span> add(<span style="color:#a5d6ff">5</span>, <span style="color:#a5d6ff">3</span>)
+</span></span></code></pre></div><h3 id="package-structure">Package Structure</h3>
+<pre tabindex="0"><code>mypackage/
+    __init__.py
+    module1.py
+    module2.py
+    subpackage/
+        __init__.py
+        submodule.py
+</code></pre><h2 id="standard-library">Standard Library</h2>
+<h3 id="common-modules">Common Modules</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># os - Operating system interface</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">os</span>
+</span></span><span style="display:flex;"><span>current_dir <span style="color:#ff7b72;font-weight:bold">=</span> os<span style="color:#ff7b72;font-weight:bold">.</span>getcwd()
+</span></span><span style="display:flex;"><span>os<span style="color:#ff7b72;font-weight:bold">.</span>mkdir(<span style="color:#a5d6ff">&#39;new_directory&#39;</span>)
+</span></span><span style="display:flex;"><span>os<span style="color:#ff7b72;font-weight:bold">.</span>remove(<span style="color:#a5d6ff">&#39;file.txt&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># sys - System-specific parameters</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">sys</span>
+</span></span><span style="display:flex;"><span>print(sys<span style="color:#ff7b72;font-weight:bold">.</span>version)
+</span></span><span style="display:flex;"><span>sys<span style="color:#ff7b72;font-weight:bold">.</span>exit(<span style="color:#a5d6ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># datetime - Date and time handling</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">datetime</span> <span style="color:#ff7b72">import</span> datetime, date, timedelta
+</span></span><span style="display:flex;"><span>now <span style="color:#ff7b72;font-weight:bold">=</span> datetime<span style="color:#ff7b72;font-weight:bold">.</span>now()
+</span></span><span style="display:flex;"><span>today <span style="color:#ff7b72;font-weight:bold">=</span> date<span style="color:#ff7b72;font-weight:bold">.</span>today()
+</span></span><span style="display:flex;"><span>future <span style="color:#ff7b72;font-weight:bold">=</span> now <span style="color:#ff7b72;font-weight:bold">+</span> timedelta(days<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">7</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># random - Random number generation</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">random</span>
+</span></span><span style="display:flex;"><span>random_int <span style="color:#ff7b72;font-weight:bold">=</span> random<span style="color:#ff7b72;font-weight:bold">.</span>randint(<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">10</span>)
+</span></span><span style="display:flex;"><span>random_choice <span style="color:#ff7b72;font-weight:bold">=</span> random<span style="color:#ff7b72;font-weight:bold">.</span>choice([<span style="color:#a5d6ff">&#39;apple&#39;</span>, <span style="color:#a5d6ff">&#39;banana&#39;</span>, <span style="color:#a5d6ff">&#39;orange&#39;</span>])
+</span></span><span style="display:flex;"><span>random<span style="color:#ff7b72;font-weight:bold">.</span>shuffle(my_list)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># collections - Specialized container datatypes</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">collections</span> <span style="color:#ff7b72">import</span> Counter, defaultdict, deque
+</span></span><span style="display:flex;"><span>counter <span style="color:#ff7b72;font-weight:bold">=</span> Counter([<span style="color:#a5d6ff">&#39;a&#39;</span>, <span style="color:#a5d6ff">&#39;b&#39;</span>, <span style="color:#a5d6ff">&#39;a&#39;</span>, <span style="color:#a5d6ff">&#39;c&#39;</span>, <span style="color:#a5d6ff">&#39;b&#39;</span>, <span style="color:#a5d6ff">&#39;a&#39;</span>])
+</span></span><span style="display:flex;"><span>dd <span style="color:#ff7b72;font-weight:bold">=</span> defaultdict(list)
+</span></span><span style="display:flex;"><span>queue <span style="color:#ff7b72;font-weight:bold">=</span> deque([<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>])
+</span></span></code></pre></div><h3 id="regular-expressions">Regular Expressions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">re</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Match patterns</span>
+</span></span><span style="display:flex;"><span>pattern <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">r</span><span style="color:#a5d6ff">&#39;\d+&#39;</span>
+</span></span><span style="display:flex;"><span>text <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;I have 5 apples and 3 oranges&#34;</span>
+</span></span><span style="display:flex;"><span>matches <span style="color:#ff7b72;font-weight:bold">=</span> re<span style="color:#ff7b72;font-weight:bold">.</span>findall(pattern, text)  <span style="color:#8b949e;font-style:italic"># [&#39;5&#39;, &#39;3&#39;]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Replace patterns</span>
+</span></span><span style="display:flex;"><span>new_text <span style="color:#ff7b72;font-weight:bold">=</span> re<span style="color:#ff7b72;font-weight:bold">.</span>sub(<span style="color:#79c0ff">r</span><span style="color:#a5d6ff">&#39;\d+&#39;</span>, <span style="color:#a5d6ff">&#39;X&#39;</span>, text)  <span style="color:#8b949e;font-style:italic"># &#34;I have X apples and X oranges&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Search and groups</span>
+</span></span><span style="display:flex;"><span>pattern <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">r</span><span style="color:#a5d6ff">&#39;(\w+)@(\w+\.\w+)&#39;</span>
+</span></span><span style="display:flex;"><span>email <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;user@example.com&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">match</span> <span style="color:#ff7b72;font-weight:bold">=</span> re<span style="color:#ff7b72;font-weight:bold">.</span>search(pattern, email)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> <span style="color:#ff7b72">match</span>:
+</span></span><span style="display:flex;"><span>    username <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">match</span><span style="color:#ff7b72;font-weight:bold">.</span>group(<span style="color:#a5d6ff">1</span>)
+</span></span><span style="display:flex;"><span>    domain <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">match</span><span style="color:#ff7b72;font-weight:bold">.</span>group(<span style="color:#a5d6ff">2</span>)
+</span></span></code></pre></div><h2 id="list-comprehensions-and-generators">List Comprehensions and Generators</h2>
+<h3 id="list-comprehensions">List Comprehensions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Basic list comprehension</span>
+</span></span><span style="display:flex;"><span>squares <span style="color:#ff7b72;font-weight:bold">=</span> [x<span style="color:#ff7b72;font-weight:bold">**</span><span style="color:#a5d6ff">2</span> <span style="color:#ff7b72">for</span> x <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">10</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># With condition</span>
+</span></span><span style="display:flex;"><span>evens <span style="color:#ff7b72;font-weight:bold">=</span> [x <span style="color:#ff7b72">for</span> x <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">20</span>) <span style="color:#ff7b72">if</span> x <span style="color:#ff7b72;font-weight:bold">%</span> <span style="color:#a5d6ff">2</span> <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Nested comprehension</span>
+</span></span><span style="display:flex;"><span>matrix <span style="color:#ff7b72;font-weight:bold">=</span> [[i<span style="color:#ff7b72;font-weight:bold">*</span>j <span style="color:#ff7b72">for</span> j <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">3</span>)] <span style="color:#ff7b72">for</span> i <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">3</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Dictionary comprehension</span>
+</span></span><span style="display:flex;"><span>word_lengths <span style="color:#ff7b72;font-weight:bold">=</span> {word: len(word) <span style="color:#ff7b72">for</span> word <span style="color:#ff7b72;font-weight:bold">in</span> [<span style="color:#a5d6ff">&#39;hello&#39;</span>, <span style="color:#a5d6ff">&#39;world&#39;</span>, <span style="color:#a5d6ff">&#39;python&#39;</span>]}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Set comprehension</span>
+</span></span><span style="display:flex;"><span>unique_lengths <span style="color:#ff7b72;font-weight:bold">=</span> {len(word) <span style="color:#ff7b72">for</span> word <span style="color:#ff7b72;font-weight:bold">in</span> [<span style="color:#a5d6ff">&#39;hello&#39;</span>, <span style="color:#a5d6ff">&#39;world&#39;</span>, <span style="color:#a5d6ff">&#39;python&#39;</span>]}
+</span></span></code></pre></div><h3 id="generators">Generators</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Generator function</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">fibonacci</span>(n):
+</span></span><span style="display:flex;"><span>    a, b <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>, <span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> _ <span style="color:#ff7b72;font-weight:bold">in</span> range(n):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">yield</span> a
+</span></span><span style="display:flex;"><span>        a, b <span style="color:#ff7b72;font-weight:bold">=</span> b, a <span style="color:#ff7b72;font-weight:bold">+</span> b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Usage</span>
+</span></span><span style="display:flex;"><span>fib <span style="color:#ff7b72;font-weight:bold">=</span> fibonacci(<span style="color:#a5d6ff">10</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> num <span style="color:#ff7b72;font-weight:bold">in</span> fib:
+</span></span><span style="display:flex;"><span>    print(num)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Generator expression</span>
+</span></span><span style="display:flex;"><span>squares <span style="color:#ff7b72;font-weight:bold">=</span> (x<span style="color:#ff7b72;font-weight:bold">**</span><span style="color:#a5d6ff">2</span> <span style="color:#ff7b72">for</span> x <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">10</span>))
+</span></span><span style="display:flex;"><span>print(list(squares))
+</span></span></code></pre></div><h2 id="advanced-features">Advanced Features</h2>
+<h3 id="context-managers">Context Managers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Custom context manager</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">FileManager</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __init__(self, filename, mode):
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>filename <span style="color:#ff7b72;font-weight:bold">=</span> filename
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>mode <span style="color:#ff7b72;font-weight:bold">=</span> mode
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>file <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">None</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __enter__(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>file <span style="color:#ff7b72;font-weight:bold">=</span> open(self<span style="color:#ff7b72;font-weight:bold">.</span>filename, self<span style="color:#ff7b72;font-weight:bold">.</span>mode)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> self<span style="color:#ff7b72;font-weight:bold">.</span>file
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __exit__(self, exc_type, exc_val, exc_tb):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> self<span style="color:#ff7b72;font-weight:bold">.</span>file:
+</span></span><span style="display:flex;"><span>            self<span style="color:#ff7b72;font-weight:bold">.</span>file<span style="color:#ff7b72;font-weight:bold">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Usage</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">with</span> FileManager(<span style="color:#a5d6ff">&#39;test.txt&#39;</span>, <span style="color:#a5d6ff">&#39;w&#39;</span>) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>    f<span style="color:#ff7b72;font-weight:bold">.</span>write(<span style="color:#a5d6ff">&#39;Hello, World!&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Using contextlib</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">from</span> <span style="color:#ff7b72">contextlib</span> <span style="color:#ff7b72">import</span> contextmanager
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">@contextmanager</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">timer</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">import</span> <span style="color:#ff7b72">time</span>
+</span></span><span style="display:flex;"><span>    start <span style="color:#ff7b72;font-weight:bold">=</span> time<span style="color:#ff7b72;font-weight:bold">.</span>time()
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">yield</span>
+</span></span><span style="display:flex;"><span>    end <span style="color:#ff7b72;font-weight:bold">=</span> time<span style="color:#ff7b72;font-weight:bold">.</span>time()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Time elapsed: </span><span style="color:#a5d6ff">{</span>end <span style="color:#ff7b72;font-weight:bold">-</span> start<span style="color:#a5d6ff">:</span><span style="color:#a5d6ff">.2f</span><span style="color:#a5d6ff">}</span><span style="color:#a5d6ff"> seconds&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Usage</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">with</span> timer():
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic"># Some time-consuming operation</span>
+</span></span><span style="display:flex;"><span>    time<span style="color:#ff7b72;font-weight:bold">.</span>sleep(<span style="color:#a5d6ff">1</span>)
+</span></span></code></pre></div><h3 id="iterators">Iterators</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Counter</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __init__(self, max_count):
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>max_count <span style="color:#ff7b72;font-weight:bold">=</span> max_count
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>count <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __iter__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> self
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __next__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> self<span style="color:#ff7b72;font-weight:bold">.</span>count <span style="color:#ff7b72;font-weight:bold">&lt;</span> self<span style="color:#ff7b72;font-weight:bold">.</span>max_count:
+</span></span><span style="display:flex;"><span>            self<span style="color:#ff7b72;font-weight:bold">.</span>count <span style="color:#ff7b72;font-weight:bold">+=</span> <span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">return</span> self<span style="color:#ff7b72;font-weight:bold">.</span>count
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">raise</span> <span style="color:#f0883e;font-weight:bold">StopIteration</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Usage</span>
+</span></span><span style="display:flex;"><span>counter <span style="color:#ff7b72;font-weight:bold">=</span> Counter(<span style="color:#a5d6ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> num <span style="color:#ff7b72;font-weight:bold">in</span> counter:
+</span></span><span style="display:flex;"><span>    print(num)  <span style="color:#8b949e;font-style:italic"># 1, 2, 3</span>
+</span></span></code></pre></div><h2 id="popular-libraries">Popular Libraries</h2>
+<h3 id="numpy">NumPy</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">numpy</span> <span style="color:#ff7b72">as</span> <span style="color:#ff7b72">np</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create arrays</span>
+</span></span><span style="display:flex;"><span>arr <span style="color:#ff7b72;font-weight:bold">=</span> np<span style="color:#ff7b72;font-weight:bold">.</span>array([<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>])
+</span></span><span style="display:flex;"><span>matrix <span style="color:#ff7b72;font-weight:bold">=</span> np<span style="color:#ff7b72;font-weight:bold">.</span>array([[<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>], [<span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>]])
+</span></span><span style="display:flex;"><span>zeros <span style="color:#ff7b72;font-weight:bold">=</span> np<span style="color:#ff7b72;font-weight:bold">.</span>zeros((<span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">3</span>))
+</span></span><span style="display:flex;"><span>ones <span style="color:#ff7b72;font-weight:bold">=</span> np<span style="color:#ff7b72;font-weight:bold">.</span>ones((<span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Array operations</span>
+</span></span><span style="display:flex;"><span>result <span style="color:#ff7b72;font-weight:bold">=</span> arr <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span>dot_product <span style="color:#ff7b72;font-weight:bold">=</span> np<span style="color:#ff7b72;font-weight:bold">.</span>dot(matrix, matrix)
+</span></span></code></pre></div><h3 id="pandas">Pandas</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">pandas</span> <span style="color:#ff7b72">as</span> <span style="color:#ff7b72">pd</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create DataFrame</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#ff7b72;font-weight:bold">=</span> pd<span style="color:#ff7b72;font-weight:bold">.</span>DataFrame({
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;name&#39;</span>: [<span style="color:#a5d6ff">&#39;Alice&#39;</span>, <span style="color:#a5d6ff">&#39;Bob&#39;</span>, <span style="color:#a5d6ff">&#39;Charlie&#39;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;age&#39;</span>: [<span style="color:#a5d6ff">25</span>, <span style="color:#a5d6ff">30</span>, <span style="color:#a5d6ff">35</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#39;city&#39;</span>: [<span style="color:#a5d6ff">&#39;New York&#39;</span>, <span style="color:#a5d6ff">&#39;London&#39;</span>, <span style="color:#a5d6ff">&#39;Tokyo&#39;</span>]
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># DataFrame operations</span>
+</span></span><span style="display:flex;"><span>filtered <span style="color:#ff7b72;font-weight:bold">=</span> df[df[<span style="color:#a5d6ff">&#39;age&#39;</span>] <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">25</span>]
+</span></span><span style="display:flex;"><span>grouped <span style="color:#ff7b72;font-weight:bold">=</span> df<span style="color:#ff7b72;font-weight:bold">.</span>groupby(<span style="color:#a5d6ff">&#39;city&#39;</span>)<span style="color:#ff7b72;font-weight:bold">.</span>mean()
+</span></span></code></pre></div><h3 id="requests">Requests</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">requests</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GET request</span>
+</span></span><span style="display:flex;"><span>response <span style="color:#ff7b72;font-weight:bold">=</span> requests<span style="color:#ff7b72;font-weight:bold">.</span>get(<span style="color:#a5d6ff">&#39;https://api.example.com/data&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> response<span style="color:#ff7b72;font-weight:bold">.</span>status_code <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">200</span>:
+</span></span><span style="display:flex;"><span>    data <span style="color:#ff7b72;font-weight:bold">=</span> response<span style="color:#ff7b72;font-weight:bold">.</span>json()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># POST request</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">&#39;key&#39;</span>: <span style="color:#a5d6ff">&#39;value&#39;</span>}
+</span></span><span style="display:flex;"><span>response <span style="color:#ff7b72;font-weight:bold">=</span> requests<span style="color:#ff7b72;font-weight:bold">.</span>post(<span style="color:#a5d6ff">&#39;https://api.example.com/create&#39;</span>, json<span style="color:#ff7b72;font-weight:bold">=</span>payload)
+</span></span></code></pre></div><h2 id="testing">Testing</h2>
+<h3 id="unit-testing">Unit Testing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">unittest</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">TestMathFunctions</span>(unittest<span style="color:#ff7b72;font-weight:bold">.</span>TestCase):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">test_add</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>assertEqual(add(<span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>), <span style="color:#a5d6ff">5</span>)
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>assertEqual(add(<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">1</span>), <span style="color:#a5d6ff">0</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">test_divide</span>(self):
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>assertEqual(divide(<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">2</span>), <span style="color:#a5d6ff">5</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">with</span> self<span style="color:#ff7b72;font-weight:bold">.</span>assertRaises(<span style="color:#f0883e;font-weight:bold">ZeroDivisionError</span>):
+</span></span><span style="display:flex;"><span>            divide(<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">0</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">setUp</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic"># Run before each test</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>calculator <span style="color:#ff7b72;font-weight:bold">=</span> Calculator()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">tearDown</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic"># Run after each test</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> __name__ <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>    unittest<span style="color:#ff7b72;font-weight:bold">.</span>main()
+</span></span></code></pre></div><h3 id="pytest">Pytest</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">pytest</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">test_add</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">assert</span> add(<span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>) <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">5</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">assert</span> add(<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">1</span>) <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">test_divide</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">assert</span> divide(<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">2</span>) <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">5</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">with</span> pytest<span style="color:#ff7b72;font-weight:bold">.</span>raises(<span style="color:#f0883e;font-weight:bold">ZeroDivisionError</span>):
+</span></span><span style="display:flex;"><span>        divide(<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Fixtures</span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">@pytest.fixture</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">sample_data</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> [<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">test_sum</span>(sample_data):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">assert</span> sum(sample_data) <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">15</span>
+</span></span></code></pre></div><h2 id="best-practices">Best Practices</h2>
+<h3 id="code-style-pep-8">Code Style (PEP 8)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Good</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">calculate_area</span>(radius):
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#34;&#34;&#34;Calculate the area of a circle.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    pi <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14159</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> pi <span style="color:#ff7b72;font-weight:bold">*</span> radius <span style="color:#ff7b72;font-weight:bold">**</span> <span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Variable naming</span>
+</span></span><span style="display:flex;"><span>user_name <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;john_doe&#34;</span>
+</span></span><span style="display:flex;"><span>MAX_RETRIES <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Class naming</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">UserManager</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Constants</span>
+</span></span><span style="display:flex;"><span>API_BASE_URL <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;https://api.example.com&#34;</span>
+</span></span></code></pre></div><h3 id="documentation">Documentation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">fibonacci</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#a5d6ff">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">    Generate Fibonacci sequence up to n terms.
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">    Args:
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">        n (int): Number of terms to generate
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">    Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">        list: List of Fibonacci numbers
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">    
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">    Raises:
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">        ValueError: If n is negative
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> n <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">raise</span> <span style="color:#f0883e;font-weight:bold">ValueError</span>(<span style="color:#a5d6ff">&#34;n must be non-negative&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> n <span style="color:#ff7b72;font-weight:bold">&lt;=</span> <span style="color:#a5d6ff">1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> [<span style="color:#a5d6ff">0</span>] <span style="color:#ff7b72">if</span> n <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">1</span> <span style="color:#ff7b72">else</span> []
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    fib <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">0</span>, <span style="color:#a5d6ff">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> i <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">2</span>, n):
+</span></span><span style="display:flex;"><span>        fib<span style="color:#ff7b72;font-weight:bold">.</span>append(fib[i<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>] <span style="color:#ff7b72;font-weight:bold">+</span> fib[i<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">2</span>])
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> fib
+</span></span></code></pre></div><h3 id="virtual-environments">Virtual Environments</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create virtual environment</span>
+</span></span><span style="display:flex;"><span>python3 -m venv myenv
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Activate</span>
+</span></span><span style="display:flex;"><span>source myenv/bin/activate  <span style="color:#8b949e;font-style:italic"># Linux/Mac</span>
+</span></span><span style="display:flex;"><span>myenv<span style="color:#79c0ff">\S</span>cripts<span style="color:#79c0ff">\a</span>ctivate     <span style="color:#8b949e;font-style:italic"># Windows</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Install packages</span>
+</span></span><span style="display:flex;"><span>pip install requests pandas
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Save requirements</span>
+</span></span><span style="display:flex;"><span>pip freeze &gt; requirements.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Deactivate</span>
+</span></span><span style="display:flex;"><span>deactivate
+</span></span></code></pre></div><h2 id="performance-tips">Performance Tips</h2>
+<h3 id="optimization">Optimization</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use list comprehensions instead of loops</span>
+</span></span><span style="display:flex;"><span>squares <span style="color:#ff7b72;font-weight:bold">=</span> [x<span style="color:#ff7b72;font-weight:bold">**</span><span style="color:#a5d6ff">2</span> <span style="color:#ff7b72">for</span> x <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">1000</span>)]  <span style="color:#8b949e;font-style:italic"># Faster</span>
+</span></span><span style="display:flex;"><span>squares <span style="color:#ff7b72;font-weight:bold">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> x <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">1000</span>):
+</span></span><span style="display:flex;"><span>    squares<span style="color:#ff7b72;font-weight:bold">.</span>append(x<span style="color:#ff7b72;font-weight:bold">**</span><span style="color:#a5d6ff">2</span>)  <span style="color:#8b949e;font-style:italic"># Slower</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use generators for large datasets</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">large_sequence</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">for</span> i <span style="color:#ff7b72;font-weight:bold">in</span> range(<span style="color:#a5d6ff">1000000</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">yield</span> i <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use built-in functions</span>
+</span></span><span style="display:flex;"><span>numbers <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>]
+</span></span><span style="display:flex;"><span>total <span style="color:#ff7b72;font-weight:bold">=</span> sum(numbers)  <span style="color:#8b949e;font-style:italic"># Faster than manual loop</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use sets for membership testing</span>
+</span></span><span style="display:flex;"><span>large_set <span style="color:#ff7b72;font-weight:bold">=</span> set(range(<span style="color:#a5d6ff">1000</span>))
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> <span style="color:#a5d6ff">500</span> <span style="color:#ff7b72;font-weight:bold">in</span> large_set:  <span style="color:#8b949e;font-style:italic"># O(1) average case</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#a5d6ff">&#34;Found&#34;</span>)
+</span></span></code></pre></div><h3 id="memory-management">Memory Management</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use slots for memory-efficient classes</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Point</span>:
+</span></span><span style="display:flex;"><span>    __slots__ <span style="color:#ff7b72;font-weight:bold">=</span> [<span style="color:#a5d6ff">&#39;x&#39;</span>, <span style="color:#a5d6ff">&#39;y&#39;</span>]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">def</span> __init__(self, x, y):
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>x <span style="color:#ff7b72;font-weight:bold">=</span> x
+</span></span><span style="display:flex;"><span>        self<span style="color:#ff7b72;font-weight:bold">.</span>y <span style="color:#ff7b72;font-weight:bold">=</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use generators for large datasets</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">read_large_file</span>(filename):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">with</span> open(filename) <span style="color:#ff7b72">as</span> f:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">for</span> line <span style="color:#ff7b72;font-weight:bold">in</span> f:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">yield</span> line<span style="color:#ff7b72;font-weight:bold">.</span>strip()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Profile code</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">cProfile</span>
+</span></span><span style="display:flex;"><span>cProfile<span style="color:#ff7b72;font-weight:bold">.</span>run(<span style="color:#a5d6ff">&#39;my_function()&#39;</span>)
+</span></span></code></pre></div><h2 id="debugging">Debugging</h2>
+<h3 id="print-debugging">Print Debugging</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">def</span> <span style="color:#d2a8ff;font-weight:bold">debug_function</span>(x, y):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Input: x=</span><span style="color:#a5d6ff">{</span>x<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">, y=</span><span style="color:#a5d6ff">{</span>y<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span><span style="display:flex;"><span>    result <span style="color:#ff7b72;font-weight:bold">=</span> x <span style="color:#ff7b72;font-weight:bold">+</span> y
+</span></span><span style="display:flex;"><span>    print(<span style="color:#79c0ff">f</span><span style="color:#a5d6ff">&#34;Result: </span><span style="color:#a5d6ff">{</span>result<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> result
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Using pdb</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">pdb</span>
+</span></span><span style="display:flex;"><span>pdb<span style="color:#ff7b72;font-weight:bold">.</span>set_trace()  <span style="color:#8b949e;font-style:italic"># Debugger will stop here</span>
+</span></span></code></pre></div><h3 id="logging">Logging</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">logging</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Configure logging</span>
+</span></span><span style="display:flex;"><span>logging<span style="color:#ff7b72;font-weight:bold">.</span>basicConfig(level<span style="color:#ff7b72;font-weight:bold">=</span>logging<span style="color:#ff7b72;font-weight:bold">.</span>INFO)
+</span></span><span style="display:flex;"><span>logger <span style="color:#ff7b72;font-weight:bold">=</span> logging<span style="color:#ff7b72;font-weight:bold">.</span>getLogger(__name__)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use logging instead of print</span>
+</span></span><span style="display:flex;"><span>logger<span style="color:#ff7b72;font-weight:bold">.</span>info(<span style="color:#a5d6ff">&#34;This is an info message&#34;</span>)
+</span></span><span style="display:flex;"><span>logger<span style="color:#ff7b72;font-weight:bold">.</span>warning(<span style="color:#a5d6ff">&#34;This is a warning&#34;</span>)
+</span></span><span style="display:flex;"><span>logger<span style="color:#ff7b72;font-weight:bold">.</span>error(<span style="color:#a5d6ff">&#34;This is an error&#34;</span>)
+</span></span></code></pre></div><h2 id="quick-reference">Quick Reference</h2>
+<h3 id="built-in-functions">Built-in Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>len(obj)          <span style="color:#8b949e;font-style:italic"># Length</span>
+</span></span><span style="display:flex;"><span>type(obj)         <span style="color:#8b949e;font-style:italic"># Type</span>
+</span></span><span style="display:flex;"><span>isinstance(obj, type)  <span style="color:#8b949e;font-style:italic"># Type checking</span>
+</span></span><span style="display:flex;"><span>str(obj)          <span style="color:#8b949e;font-style:italic"># String conversion</span>
+</span></span><span style="display:flex;"><span>int(obj)          <span style="color:#8b949e;font-style:italic"># Integer conversion</span>
+</span></span><span style="display:flex;"><span>float(obj)        <span style="color:#8b949e;font-style:italic"># Float conversion</span>
+</span></span><span style="display:flex;"><span>list(obj)         <span style="color:#8b949e;font-style:italic"># List conversion</span>
+</span></span><span style="display:flex;"><span>dict(obj)         <span style="color:#8b949e;font-style:italic"># Dictionary conversion</span>
+</span></span><span style="display:flex;"><span>max(iterable)     <span style="color:#8b949e;font-style:italic"># Maximum value</span>
+</span></span><span style="display:flex;"><span>min(iterable)     <span style="color:#8b949e;font-style:italic"># Minimum value</span>
+</span></span><span style="display:flex;"><span>sum(iterable)     <span style="color:#8b949e;font-style:italic"># Sum of values</span>
+</span></span><span style="display:flex;"><span>sorted(iterable)  <span style="color:#8b949e;font-style:italic"># Sorted list</span>
+</span></span><span style="display:flex;"><span>reversed(iterable) <span style="color:#8b949e;font-style:italic"># Reversed iterator</span>
+</span></span><span style="display:flex;"><span>enumerate(iterable) <span style="color:#8b949e;font-style:italic"># Index-value pairs</span>
+</span></span><span style="display:flex;"><span>zip(iter1, iter2) <span style="color:#8b949e;font-style:italic"># Parallel iteration</span>
+</span></span></code></pre></div><h3 id="string-methods">String Methods</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>lower()         <span style="color:#8b949e;font-style:italic"># Lowercase</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>upper()         <span style="color:#8b949e;font-style:italic"># Uppercase</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>strip()         <span style="color:#8b949e;font-style:italic"># Remove whitespace</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>split(sep)      <span style="color:#8b949e;font-style:italic"># Split string</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>join(iterable)  <span style="color:#8b949e;font-style:italic"># Join strings</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>replace(old, new) <span style="color:#8b949e;font-style:italic"># Replace substring</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>startswith(prefix) <span style="color:#8b949e;font-style:italic"># Check prefix</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>endswith(suffix)   <span style="color:#8b949e;font-style:italic"># Check suffix</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>find(substring)    <span style="color:#8b949e;font-style:italic"># Find position</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>isdigit()          <span style="color:#8b949e;font-style:italic"># Check if digits</span>
+</span></span><span style="display:flex;"><span>s<span style="color:#ff7b72;font-weight:bold">.</span>isalpha()          <span style="color:#8b949e;font-style:italic"># Check if alphabetic</span>
+</span></span></code></pre></div><h3 id="list-methods">List Methods</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>l<span style="color:#ff7b72;font-weight:bold">.</span>append(item)    <span style="color:#8b949e;font-style:italic"># Add to end</span>
+</span></span><span style="display:flex;"><span>l<span style="color:#ff7b72;font-weight:bold">.</span>insert(i, item) <span style="color:#8b949e;font-style:italic"># Insert at index</span>
+</span></span><span style="display:flex;"><span>l<span style="color:#ff7b72;font-weight:bold">.</span>remove(item)    <span style="color:#8b949e;font-style:italic"># Remove first occurrence</span>
+</span></span><span style="display:flex;"><span>l<span style="color:#ff7b72;font-weight:bold">.</span>pop(i)          <span style="color:#8b949e;font-style:italic"># Remove and return</span>
+</span></span><span style="display:flex;"><span>l<span style="color:#ff7b72;font-weight:bold">.</span>sort()          <span style="color:#8b949e;font-style:italic"># Sort in place</span>
+</span></span><span style="display:flex;"><span>l<span style="color:#ff7b72;font-weight:bold">.</span>reverse()       <span style="color:#8b949e;font-style:italic"># Reverse in place</span>
+</span></span><span style="display:flex;"><span>l<span style="color:#ff7b72;font-weight:bold">.</span>extend(iterable) <span style="color:#8b949e;font-style:italic"># Add multiple items</span>
+</span></span><span style="display:flex;"><span>l<span style="color:#ff7b72;font-weight:bold">.</span>index(item)     <span style="color:#8b949e;font-style:italic"># Find index</span>
+</span></span><span style="display:flex;"><span>l<span style="color:#ff7b72;font-weight:bold">.</span>count(item)     <span style="color:#8b949e;font-style:italic"># Count occurrences</span>
+</span></span></code></pre></div><h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://docs.python.org/3/">Python Documentation</a> - Official documentation</li>
+<li><a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> - Style guide</li>
+<li><a href="https://realpython.com/">Real Python</a> - Tutorials and articles</li>
+<li><a href="https://pypi.org/">Python Package Index (PyPI)</a> - Package repository</li>
+<li><code>python -m pdb script.py</code> - Python debugger</li>
+<li><code>python -m profile script.py</code> - Performance profiler</li>
+</ul>
+
+    </div>
+
+    
+    <div class="mt-4">
+        <h5>Categories:</h5>
+        
+        <a href="/categories/programming" class="badge bg-secondary text-decoration-none me-2">programming</a>
+        
+    </div>
+    
+
+    <div class="mt-4">
+        <small class="text-muted">
+            Last updated: January 1, 2024
+        </small>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 QuickRef - Developer Reference. Built with <i class="fas fa-heart text-danger"></i> for developers.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="/js/app.js"></script>
+    
+    
+</body>
+</html>

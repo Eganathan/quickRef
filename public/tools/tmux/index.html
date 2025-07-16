@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tmux - QuickRef - Developer Reference</title>
+    <meta name="description" content="Terminal multiplexer for managing multiple terminal sessions, windows, and panes in a single interface.">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    
+    <link href="/css/styles.css" rel="stylesheet">
+    
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:1313/">
+                <i class="fas fa-code"></i> QuickRef - Developer Reference
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <button class="theme-toggle me-3" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                
+                <a class="nav-link" href="/" >
+                    <i class="fas fa-home"></i>
+                    
+                    Home
+                </a>
+                
+                <a class="nav-link" href="https://github.com/yourusername/quickref" target="_blank">
+                    
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="ref-page">
+    <a href="http://localhost:1313/" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to QuickRef
+    </a>
+    
+    <div class="ref-header">
+        <h1 class="ref-title">Tmux</h1>
+        <p class="ref-description">Terminal multiplexer for managing multiple terminal sessions, windows, and panes in a single interface.</p>
+        <div class="ref-tags">
+            
+            <span class="ref-tag">tmux</span>
+            
+            <span class="ref-tag">terminal</span>
+            
+            <span class="ref-tag">multiplexer</span>
+            
+            <span class="ref-tag">session</span>
+            
+            <span class="ref-tag">productivity</span>
+            
+        </div>
+    </div>
+
+    <div class="ref-content">
+        <h2 id="overview">Overview</h2>
+<p>Tmux is a terminal multiplexer that allows you to run multiple terminal sessions, windows, and panes within a single terminal window. It&rsquo;s essential for remote work, development environments, and maintaining persistent sessions.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>sudo apt install tmux
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># macOS</span>
+</span></span><span style="display:flex;"><span>brew install tmux
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># CentOS/RHEL</span>
+</span></span><span style="display:flex;"><span>sudo yum install tmux
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Arch Linux</span>
+</span></span><span style="display:flex;"><span>sudo pacman -S tmux
+</span></span></code></pre></div><h2 id="basic-concepts">Basic Concepts</h2>
+<h3 id="hierarchy">Hierarchy</h3>
+<ul>
+<li><strong>Session</strong>: Top-level container for windows</li>
+<li><strong>Window</strong>: Contains one or more panes</li>
+<li><strong>Pane</strong>: Individual terminal instance</li>
+</ul>
+<h3 id="default-prefix-key">Default Prefix Key</h3>
+<ul>
+<li><strong>Prefix</strong>: <code>Ctrl+b</code> (can be customized)</li>
+<li>All tmux commands start with the prefix key</li>
+</ul>
+<h2 id="session-management">Session Management</h2>
+<h3 id="creating-sessions">Creating Sessions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create new session</span>
+</span></span><span style="display:flex;"><span>tmux new-session
+</span></span><span style="display:flex;"><span>tmux new
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create named session</span>
+</span></span><span style="display:flex;"><span>tmux new-session -s session_name
+</span></span><span style="display:flex;"><span>tmux new -s work
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create detached session</span>
+</span></span><span style="display:flex;"><span>tmux new-session -d -s background
+</span></span></code></pre></div><h3 id="listing-sessions">Listing Sessions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># List all sessions</span>
+</span></span><span style="display:flex;"><span>tmux list-sessions
+</span></span><span style="display:flex;"><span>tmux ls
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show sessions in tmux</span>
+</span></span><span style="display:flex;"><span>Ctrl+b s
+</span></span></code></pre></div><h3 id="attaching-to-sessions">Attaching to Sessions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Attach to last session</span>
+</span></span><span style="display:flex;"><span>tmux attach
+</span></span><span style="display:flex;"><span>tmux a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Attach to specific session</span>
+</span></span><span style="display:flex;"><span>tmux attach -t session_name
+</span></span><span style="display:flex;"><span>tmux a -t work
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Attach or create session</span>
+</span></span><span style="display:flex;"><span>tmux new-session -A -s session_name
+</span></span></code></pre></div><h3 id="detaching-from-sessions">Detaching from Sessions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Detach from current session</span>
+</span></span><span style="display:flex;"><span>Ctrl+b d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Detach from command line</span>
+</span></span><span style="display:flex;"><span>tmux detach
+</span></span></code></pre></div><h3 id="session-control">Session Control</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Kill session</span>
+</span></span><span style="display:flex;"><span>tmux kill-session -t session_name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Kill all sessions</span>
+</span></span><span style="display:flex;"><span>tmux kill-server
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Rename session</span>
+</span></span><span style="display:flex;"><span>Ctrl+b $
+</span></span></code></pre></div><h2 id="window-management">Window Management</h2>
+<h3 id="creating-windows">Creating Windows</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create new window</span>
+</span></span><span style="display:flex;"><span>Ctrl+b c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create window with name</span>
+</span></span><span style="display:flex;"><span>Ctrl+b c
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Then rename: Ctrl+b ,</span>
+</span></span></code></pre></div><h3 id="navigating-windows">Navigating Windows</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Next window</span>
+</span></span><span style="display:flex;"><span>Ctrl+b n
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Previous window</span>
+</span></span><span style="display:flex;"><span>Ctrl+b p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Go to window by number</span>
+</span></span><span style="display:flex;"><span>Ctrl+b 0-9
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Go to window by name</span>
+</span></span><span style="display:flex;"><span>Ctrl+b f
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># List windows</span>
+</span></span><span style="display:flex;"><span>Ctrl+b w
+</span></span></code></pre></div><h3 id="window-control">Window Control</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Rename window</span>
+</span></span><span style="display:flex;"><span>Ctrl+b ,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Kill window</span>
+</span></span><span style="display:flex;"><span>Ctrl+b &amp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Move window</span>
+</span></span><span style="display:flex;"><span>Ctrl+b .
+</span></span></code></pre></div><h2 id="pane-management">Pane Management</h2>
+<h3 id="creating-panes">Creating Panes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Split horizontally (top/bottom)</span>
+</span></span><span style="display:flex;"><span>Ctrl+b <span style="color:#a5d6ff">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff"># Split vertically (left/right)
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Ctrl+b %
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff"># Split with custom command
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Ctrl+b &#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Then type command</span>
+</span></span></code></pre></div><h3 id="navigating-panes">Navigating Panes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Move between panes</span>
+</span></span><span style="display:flex;"><span>Ctrl+b arrow keys
+</span></span><span style="display:flex;"><span>Ctrl+b h/j/k/l  <span style="color:#8b949e;font-style:italic"># vim-style (if configured)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Go to next pane</span>
+</span></span><span style="display:flex;"><span>Ctrl+b o
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Go to previous pane</span>
+</span></span><span style="display:flex;"><span>Ctrl+b ;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show pane numbers</span>
+</span></span><span style="display:flex;"><span>Ctrl+b q
+</span></span></code></pre></div><h3 id="resizing-panes">Resizing Panes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Resize pane (arrow keys)</span>
+</span></span><span style="display:flex;"><span>Ctrl+b Ctrl+arrow keys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Resize by 5 cells</span>
+</span></span><span style="display:flex;"><span>Ctrl+b Alt+arrow keys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Make pane full screen</span>
+</span></span><span style="display:flex;"><span>Ctrl+b z
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Balance panes</span>
+</span></span><span style="display:flex;"><span>Ctrl+b Alt+1  <span style="color:#8b949e;font-style:italic"># horizontal</span>
+</span></span><span style="display:flex;"><span>Ctrl+b Alt+2  <span style="color:#8b949e;font-style:italic"># vertical</span>
+</span></span></code></pre></div><h3 id="pane-control">Pane Control</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Kill pane</span>
+</span></span><span style="display:flex;"><span>Ctrl+b x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Break pane to new window</span>
+</span></span><span style="display:flex;"><span>Ctrl+b !
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Move pane to another window</span>
+</span></span><span style="display:flex;"><span>Ctrl+b :
+</span></span><span style="display:flex;"><span>move-pane -t window_name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Swap panes</span>
+</span></span><span style="display:flex;"><span>Ctrl+b <span style="color:#ff7b72;font-weight:bold">{</span>  <span style="color:#8b949e;font-style:italic"># swap with previous</span>
+</span></span><span style="display:flex;"><span>Ctrl+b <span style="color:#ff7b72;font-weight:bold">}</span>  <span style="color:#8b949e;font-style:italic"># swap with next</span>
+</span></span></code></pre></div><h2 id="copy-mode">Copy Mode</h2>
+<h3 id="entering-copy-mode">Entering Copy Mode</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Enter copy mode</span>
+</span></span><span style="display:flex;"><span>Ctrl+b <span style="color:#ff7b72;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Search in copy mode</span>
+</span></span><span style="display:flex;"><span>Ctrl+b Ctrl+s  <span style="color:#8b949e;font-style:italic"># forward</span>
+</span></span><span style="display:flex;"><span>Ctrl+b Ctrl+r  <span style="color:#8b949e;font-style:italic"># backward</span>
+</span></span></code></pre></div><h3 id="copy-mode-navigation">Copy Mode Navigation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Move cursor</span>
+</span></span><span style="display:flex;"><span>Arrow keys
+</span></span><span style="display:flex;"><span>h/j/k/l  <span style="color:#8b949e;font-style:italic"># vim-style</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Page up/down</span>
+</span></span><span style="display:flex;"><span>Page Up/Page Down
+</span></span><span style="display:flex;"><span>Ctrl+b/Ctrl+f  <span style="color:#8b949e;font-style:italic"># vim-style</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Go to line</span>
+</span></span><span style="display:flex;"><span>g  <span style="color:#8b949e;font-style:italic"># beginning</span>
+</span></span><span style="display:flex;"><span>G  <span style="color:#8b949e;font-style:italic"># end</span>
+</span></span></code></pre></div><h3 id="selecting-and-copying">Selecting and Copying</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Start selection</span>
+</span></span><span style="display:flex;"><span>Space
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Copy selection</span>
+</span></span><span style="display:flex;"><span>Enter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Paste</span>
+</span></span><span style="display:flex;"><span>Ctrl+b <span style="color:#ff7b72;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show paste buffer</span>
+</span></span><span style="display:flex;"><span>Ctrl+b <span style="color:#ff7b72;font-weight:bold">=</span>
+</span></span></code></pre></div><h2 id="command-mode">Command Mode</h2>
+<h3 id="entering-command-mode">Entering Command Mode</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Command prompt</span>
+</span></span><span style="display:flex;"><span>Ctrl+b :
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Common commands</span>
+</span></span><span style="display:flex;"><span>:new-window
+</span></span><span style="display:flex;"><span>:kill-window
+</span></span><span style="display:flex;"><span>:split-window
+</span></span><span style="display:flex;"><span>:resize-pane
+</span></span></code></pre></div><h3 id="useful-commands">Useful Commands</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># List commands</span>
+</span></span><span style="display:flex;"><span>:list-commands
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show key bindings</span>
+</span></span><span style="display:flex;"><span>:list-keys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Reload config</span>
+</span></span><span style="display:flex;"><span>:source-file ~/.tmux.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show options</span>
+</span></span><span style="display:flex;"><span>:show-options
+</span></span></code></pre></div><h2 id="configuration">Configuration</h2>
+<h3 id="basic-configuration-tmuxconf">Basic Configuration (~/.tmux.conf)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Change prefix key</span>
+</span></span><span style="display:flex;"><span>set -g prefix C-a
+</span></span><span style="display:flex;"><span>unbind C-b
+</span></span><span style="display:flex;"><span>bind C-a send-prefix
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Enable mouse support</span>
+</span></span><span style="display:flex;"><span>set -g mouse on
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Start windows and panes at 1</span>
+</span></span><span style="display:flex;"><span>set -g base-index <span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span>setw -g pane-base-index <span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Renumber windows</span>
+</span></span><span style="display:flex;"><span>set -g renumber-windows on
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Increase history limit</span>
+</span></span><span style="display:flex;"><span>set -g history-limit <span style="color:#a5d6ff">10000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Enable vi mode</span>
+</span></span><span style="display:flex;"><span>setw -g mode-keys vi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Fast pane switching</span>
+</span></span><span style="display:flex;"><span>bind -n M-Left <span style="color:#ff7b72">select</span>-pane -L
+</span></span><span style="display:flex;"><span>bind -n M-Right <span style="color:#ff7b72">select</span>-pane -R
+</span></span><span style="display:flex;"><span>bind -n M-Up <span style="color:#ff7b72">select</span>-pane -U
+</span></span><span style="display:flex;"><span>bind -n M-Down <span style="color:#ff7b72">select</span>-pane -D
+</span></span></code></pre></div><h3 id="status-bar-configuration">Status Bar Configuration</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Status bar</span>
+</span></span><span style="display:flex;"><span>set -g status-interval <span style="color:#a5d6ff">1</span>
+</span></span><span style="display:flex;"><span>set -g status-justify centre
+</span></span><span style="display:flex;"><span>set -g status-style <span style="color:#79c0ff">bg</span><span style="color:#ff7b72;font-weight:bold">=</span>black,fg<span style="color:#ff7b72;font-weight:bold">=</span>white
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Status left</span>
+</span></span><span style="display:flex;"><span>set -g status-left-length <span style="color:#a5d6ff">40</span>
+</span></span><span style="display:flex;"><span>set -g status-left <span style="color:#a5d6ff">&#39;#[fg=green]#S #[fg=blue]#I #[fg=cyan]#P&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Status right</span>
+</span></span><span style="display:flex;"><span>set -g status-right <span style="color:#a5d6ff">&#39;#[fg=cyan]%d %b %R&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Window status</span>
+</span></span><span style="display:flex;"><span>setw -g window-status-style <span style="color:#79c0ff">fg</span><span style="color:#ff7b72;font-weight:bold">=</span>cyan,bg<span style="color:#ff7b72;font-weight:bold">=</span>black
+</span></span><span style="display:flex;"><span>setw -g window-status-current-style <span style="color:#79c0ff">fg</span><span style="color:#ff7b72;font-weight:bold">=</span>white,bg<span style="color:#ff7b72;font-weight:bold">=</span>red
+</span></span></code></pre></div><h3 id="key-bindings">Key Bindings</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Vim-style pane navigation</span>
+</span></span><span style="display:flex;"><span>bind h <span style="color:#ff7b72">select</span>-pane -L
+</span></span><span style="display:flex;"><span>bind j <span style="color:#ff7b72">select</span>-pane -D
+</span></span><span style="display:flex;"><span>bind k <span style="color:#ff7b72">select</span>-pane -U
+</span></span><span style="display:flex;"><span>bind l <span style="color:#ff7b72">select</span>-pane -R
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Vim-style copy mode</span>
+</span></span><span style="display:flex;"><span>bind-key -T copy-mode-vi <span style="color:#a5d6ff">&#39;v&#39;</span> send -X begin-selection
+</span></span><span style="display:flex;"><span>bind-key -T copy-mode-vi <span style="color:#a5d6ff">&#39;y&#39;</span> send -X copy-selection
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Better splitting</span>
+</span></span><span style="display:flex;"><span>bind | split-window -h
+</span></span><span style="display:flex;"><span>bind - split-window -v
+</span></span></code></pre></div><h2 id="common-workflows">Common Workflows</h2>
+<h3 id="development-setup">Development Setup</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create development session</span>
+</span></span><span style="display:flex;"><span>tmux new-session -d -s dev
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Split into multiple panes</span>
+</span></span><span style="display:flex;"><span>tmux split-window -h
+</span></span><span style="display:flex;"><span>tmux split-window -v
+</span></span><span style="display:flex;"><span>tmux <span style="color:#ff7b72">select</span>-pane -t <span style="color:#a5d6ff">0</span>
+</span></span><span style="display:flex;"><span>tmux split-window -v
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Run different commands in each pane</span>
+</span></span><span style="display:flex;"><span>tmux send-keys -t <span style="color:#a5d6ff">0</span> <span style="color:#a5d6ff">&#39;vim&#39;</span> Enter
+</span></span><span style="display:flex;"><span>tmux send-keys -t <span style="color:#a5d6ff">1</span> <span style="color:#a5d6ff">&#39;npm start&#39;</span> Enter
+</span></span><span style="display:flex;"><span>tmux send-keys -t <span style="color:#a5d6ff">2</span> <span style="color:#a5d6ff">&#39;npm test&#39;</span> Enter
+</span></span><span style="display:flex;"><span>tmux send-keys -t <span style="color:#a5d6ff">3</span> <span style="color:#a5d6ff">&#39;git status&#39;</span> Enter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Attach to session</span>
+</span></span><span style="display:flex;"><span>tmux attach -t dev
+</span></span></code></pre></div><h3 id="remote-work">Remote Work</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create persistent session on remote server</span>
+</span></span><span style="display:flex;"><span>ssh user@server
+</span></span><span style="display:flex;"><span>tmux new-session -d -s remote-work
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Run long-running processes</span>
+</span></span><span style="display:flex;"><span>tmux send-keys <span style="color:#a5d6ff">&#39;python train_model.py&#39;</span> Enter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Detach and logout</span>
+</span></span><span style="display:flex;"><span>tmux detach
+</span></span><span style="display:flex;"><span>exit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Later: reconnect and attach</span>
+</span></span><span style="display:flex;"><span>ssh user@server
+</span></span><span style="display:flex;"><span>tmux attach -t remote-work
+</span></span></code></pre></div><h2 id="advanced-features">Advanced Features</h2>
+<h3 id="session-scripting">Session Scripting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span><span style="color:#8b949e;font-style:italic"># Create development environment</span>
+</span></span><span style="display:flex;"><span>tmux new-session -d -s dev -x <span style="color:#a5d6ff">120</span> -y <span style="color:#a5d6ff">40</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create windows</span>
+</span></span><span style="display:flex;"><span>tmux new-window -t dev:1 -n <span style="color:#a5d6ff">&#39;editor&#39;</span>
+</span></span><span style="display:flex;"><span>tmux new-window -t dev:2 -n <span style="color:#a5d6ff">&#39;server&#39;</span>
+</span></span><span style="display:flex;"><span>tmux new-window -t dev:3 -n <span style="color:#a5d6ff">&#39;tests&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Setup editor window</span>
+</span></span><span style="display:flex;"><span>tmux send-keys -t dev:1 <span style="color:#a5d6ff">&#39;cd ~/project &amp;&amp; vim&#39;</span> Enter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Setup server window</span>
+</span></span><span style="display:flex;"><span>tmux send-keys -t dev:2 <span style="color:#a5d6ff">&#39;cd ~/project &amp;&amp; npm start&#39;</span> Enter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Setup tests window</span>
+</span></span><span style="display:flex;"><span>tmux send-keys -t dev:3 <span style="color:#a5d6ff">&#39;cd ~/project&#39;</span> Enter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Attach to session</span>
+</span></span><span style="display:flex;"><span>tmux attach -t dev
+</span></span></code></pre></div><h3 id="plugins-tpm">Plugins (TPM)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Install TPM (Tmux Plugin Manager)</span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Add to ~/.tmux.conf</span>
+</span></span><span style="display:flex;"><span>set -g @plugin <span style="color:#a5d6ff">&#39;tmux-plugins/tpm&#39;</span>
+</span></span><span style="display:flex;"><span>set -g @plugin <span style="color:#a5d6ff">&#39;tmux-plugins/tmux-sensible&#39;</span>
+</span></span><span style="display:flex;"><span>set -g @plugin <span style="color:#a5d6ff">&#39;tmux-plugins/tmux-resurrect&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Initialize TPM</span>
+</span></span><span style="display:flex;"><span>run <span style="color:#a5d6ff">&#39;~/.tmux/plugins/tpm/tpm&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Install plugins: Ctrl+b I</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Update plugins: Ctrl+b U</span>
+</span></span></code></pre></div><h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<p><strong>Prefix key not working</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Check if prefix is set correctly</span>
+</span></span><span style="display:flex;"><span>tmux show-options -g prefix
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Reset prefix</span>
+</span></span><span style="display:flex;"><span>tmux set-option -g prefix C-b
+</span></span></code></pre></div><p><strong>Colors not working</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Check terminal colors</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#79c0ff">$TERM</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Set in ~/.tmux.conf</span>
+</span></span><span style="display:flex;"><span>set -g default-terminal <span style="color:#a5d6ff">&#34;screen-256color&#34;</span>
+</span></span></code></pre></div><p><strong>Mouse not working</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Enable mouse in config</span>
+</span></span><span style="display:flex;"><span>set -g mouse on
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Reload config</span>
+</span></span><span style="display:flex;"><span>tmux source-file ~/.tmux.conf
+</span></span></code></pre></div><h3 id="debugging">Debugging</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show tmux info</span>
+</span></span><span style="display:flex;"><span>tmux info
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show server info</span>
+</span></span><span style="display:flex;"><span>tmux show-options -g
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># List clients</span>
+</span></span><span style="display:flex;"><span>tmux list-clients
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show messages</span>
+</span></span><span style="display:flex;"><span>tmux show-messages
+</span></span></code></pre></div><h2 id="quick-reference">Quick Reference</h2>
+<h3 id="essential-commands">Essential Commands</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Sessions</span>
+</span></span><span style="display:flex;"><span>tmux new -s name          <span style="color:#8b949e;font-style:italic"># Create session</span>
+</span></span><span style="display:flex;"><span>tmux ls                   <span style="color:#8b949e;font-style:italic"># List sessions</span>
+</span></span><span style="display:flex;"><span>tmux attach -t name       <span style="color:#8b949e;font-style:italic"># Attach to session</span>
+</span></span><span style="display:flex;"><span>Ctrl+b d                  <span style="color:#8b949e;font-style:italic"># Detach from session</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Windows</span>
+</span></span><span style="display:flex;"><span>Ctrl+b c                  <span style="color:#8b949e;font-style:italic"># Create window</span>
+</span></span><span style="display:flex;"><span>Ctrl+b n/p               <span style="color:#8b949e;font-style:italic"># Next/previous window</span>
+</span></span><span style="display:flex;"><span>Ctrl+b 0-9               <span style="color:#8b949e;font-style:italic"># Go to window number</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Panes</span>
+</span></span><span style="display:flex;"><span>Ctrl+b %                  <span style="color:#8b949e;font-style:italic"># Split vertically</span>
+</span></span><span style="display:flex;"><span>Ctrl+b <span style="color:#a5d6ff">&#34;                  # Split horizontally
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Ctrl+b arrow keys        # Navigate panes
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Ctrl+b x                  # Kill pane
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff"># Copy mode
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Ctrl+b [                  # Enter copy mode
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Space                     # Start selection
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Enter                     # Copy selection
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">Ctrl+b ]                  # Paste
+</span></span></span></code></pre></div><h3 id="useful-key-bindings">Useful Key Bindings</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Ctrl+b ?                  <span style="color:#8b949e;font-style:italic"># Show help</span>
+</span></span><span style="display:flex;"><span>Ctrl+b t                  <span style="color:#8b949e;font-style:italic"># Show time</span>
+</span></span><span style="display:flex;"><span>Ctrl+b q                  <span style="color:#8b949e;font-style:italic"># Show pane numbers</span>
+</span></span><span style="display:flex;"><span>Ctrl+b z                  <span style="color:#8b949e;font-style:italic"># Toggle pane zoom</span>
+</span></span><span style="display:flex;"><span>Ctrl+b <span style="color:#ff7b72;font-weight:bold">{</span>/<span style="color:#ff7b72;font-weight:bold">}</span>               <span style="color:#8b949e;font-style:italic"># Swap panes</span>
+</span></span><span style="display:flex;"><span>Ctrl+b !                  <span style="color:#8b949e;font-style:italic"># Break pane to window</span>
+</span></span></code></pre></div><h2 id="tips-and-tricks">Tips and Tricks</h2>
+<h3 id="productivity-tips">Productivity Tips</h3>
+<ul>
+<li>Use named sessions for different projects</li>
+<li>Create shell aliases for common tmux commands</li>
+<li>Use tmux scripting for consistent environments</li>
+<li>Learn vim-style navigation for efficiency</li>
+<li>Use mouse mode for quick operations</li>
+</ul>
+<h3 id="best-practices">Best Practices</h3>
+<ul>
+<li>Keep sessions organized and named</li>
+<li>Use different windows for different tasks</li>
+<li>Regularly detach from sessions when not needed</li>
+<li>Configure tmux to match your workflow</li>
+<li>Use plugins to extend functionality</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><code>man tmux</code> - Complete manual</li>
+<li><a href="https://github.com/tmux/tmux">Tmux GitHub</a> - Official repository</li>
+<li><a href="https://github.com/tmux/tmux/wiki">Tmux Wiki</a> - Documentation</li>
+<li><code>screen</code> - Alternative terminal multiplexer</li>
+<li><code>byobu</code> - Enhanced tmux/screen wrapper</li>
+</ul>
+
+    </div>
+
+    
+    <div class="mt-4">
+        <h5>Categories:</h5>
+        
+        <a href="/categories/tools" class="badge bg-secondary text-decoration-none me-2">tools</a>
+        
+    </div>
+    
+
+    <div class="mt-4">
+        <small class="text-muted">
+            Last updated: January 1, 2024
+        </small>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 QuickRef - Developer Reference. Built with <i class="fas fa-heart text-danger"></i> for developers.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="/js/app.js"></script>
+    
+    
+</body>
+</html>

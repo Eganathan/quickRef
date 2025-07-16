@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq - QuickRef - Developer Reference</title>
+    <meta name="description" content="Lightweight and flexible command-line JSON processor for parsing, filtering, and transforming JSON data.">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    
+    <link href="/css/styles.css" rel="stylesheet">
+    
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:1313/">
+                <i class="fas fa-code"></i> QuickRef - Developer Reference
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <button class="theme-toggle me-3" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                
+                <a class="nav-link" href="/" >
+                    <i class="fas fa-home"></i>
+                    
+                    Home
+                </a>
+                
+                <a class="nav-link" href="https://github.com/yourusername/quickref" target="_blank">
+                    
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="ref-page">
+    <a href="http://localhost:1313/" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to QuickRef
+    </a>
+    
+    <div class="ref-header">
+        <h1 class="ref-title">jq</h1>
+        <p class="ref-description">Lightweight and flexible command-line JSON processor for parsing, filtering, and transforming JSON data.</p>
+        <div class="ref-tags">
+            
+            <span class="ref-tag">jq</span>
+            
+            <span class="ref-tag">json</span>
+            
+            <span class="ref-tag">cli</span>
+            
+            <span class="ref-tag">data-processing</span>
+            
+            <span class="ref-tag">parsing</span>
+            
+        </div>
+    </div>
+
+    <div class="ref-content">
+        <h2 id="overview">Overview</h2>
+<p>jq is a lightweight and flexible command-line JSON processor. It&rsquo;s like <code>sed</code> for JSON data, allowing you to slice, filter, map, and transform structured data with ease. Essential for API testing, data processing, and JSON manipulation.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>sudo apt install jq
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># macOS</span>
+</span></span><span style="display:flex;"><span>brew install jq
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># CentOS/RHEL</span>
+</span></span><span style="display:flex;"><span>sudo yum install jq
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Windows</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download from https://stedolan.github.io/jq/download/</span>
+</span></span></code></pre></div><h2 id="basic-usage">Basic Usage</h2>
+<h3 id="simple-filtering">Simple Filtering</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Pretty print JSON</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Extract field</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.name&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Extract nested field</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;user&#34;:{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.user.name&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Extract array element</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[&#34;apple&#34;,&#34;banana&#34;,&#34;cherry&#34;]&#39;</span> | jq <span style="color:#a5d6ff">&#39;.[0]&#39;</span>
+</span></span></code></pre></div><h3 id="array-operations">Array Operations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Get array length</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#a5d6ff">&#39;length&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Get all elements</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#a5d6ff">&#39;.[]&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Get specific elements</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#a5d6ff">&#39;.[1:3]&#39;</span>  <span style="color:#8b949e;font-style:italic"># Elements 1-2</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#a5d6ff">&#39;.[-2:]&#39;</span>  <span style="color:#8b949e;font-style:italic"># Last 2 elements</span>
+</span></span></code></pre></div><h2 id="data-types">Data Types</h2>
+<h3 id="working-with-objects">Working with Objects</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Get all keys</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;keys&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Get all values</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30,&#34;city&#34;:&#34;NYC&#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;values&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Check if key exists</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#a5d6ff">&#39;has(&#34;name&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Get type of value</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.age | type&#39;</span>
+</span></span></code></pre></div><h3 id="working-with-arrays">Working with Arrays</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Add element</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,3]&#39;</span> | jq <span style="color:#a5d6ff">&#39;. + [4]&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Remove element</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,3,4]&#39;</span> | jq <span style="color:#a5d6ff">&#39;del(.[1])&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Reverse array</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,3,4]&#39;</span> | jq <span style="color:#a5d6ff">&#39;reverse&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Sort array</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[3,1,4,2]&#39;</span> | jq <span style="color:#a5d6ff">&#39;sort&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Unique elements</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,2,3,3,3]&#39;</span> | jq <span style="color:#a5d6ff">&#39;unique&#39;</span>
+</span></span></code></pre></div><h2 id="filtering-and-selection">Filtering and Selection</h2>
+<h3 id="basic-filters">Basic Filters</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Select objects with specific field</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;.[] | select(.age &gt; 25)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Select objects with specific value</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;active&#34;:true},{&#34;name&#34;:&#34;Jane&#34;,&#34;active&#34;:false}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;.[] | select(.active)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Select objects with key</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;},{&#34;age&#34;:30}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;.[] | select(has(&#34;name&#34;))&#39;</span>
+</span></span></code></pre></div><h3 id="complex-filters">Complex Filters</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Multiple conditions</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;.[] | select(.age &gt; 25 and .name == &#34;John&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Regular expression matching</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;},{&#34;name&#34;:&#34;Jane&#34;}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;.[] | select(.name | test(&#34;J.*&#34;))&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Empty or null values</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;},{&#34;name&#34;:null},{}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;.[] | select(.name != null)&#39;</span>
+</span></span></code></pre></div><h2 id="transformations">Transformations</h2>
+<h3 id="map-operations">Map Operations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Transform array elements</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,3,4]&#39;</span> | jq <span style="color:#a5d6ff">&#39;map(. * 2)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Transform object fields</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;john&#34;},{&#34;name&#34;:&#34;jane&#34;}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;map(.name | ascii_upcase)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Add field to objects</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;},{&#34;name&#34;:&#34;Jane&#34;}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;map(. + {&#34;active&#34;: true})&#39;</span>
+</span></span></code></pre></div><h3 id="object-construction">Object Construction</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create new object</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;first&#34;:&#34;John&#34;,&#34;last&#34;:&#34;Doe&#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;{name: (.first + &#34; &#34; + .last)}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Multiple fields</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#a5d6ff">&#39;{user: .name, years: .age}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Conditional fields</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#a5d6ff">&#39;{name, age: (if .age &gt; 25 then &#34;adult&#34; else &#34;young&#34; end)}&#39;</span>
+</span></span></code></pre></div><h3 id="string-operations">String Operations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># String interpolation</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#a5d6ff">&#39;&#34;Name: \(.name), Age: \(.age)&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># String manipulation</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;john doe&#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.name | ascii_upcase&#39;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John Doe&#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.name | ascii_downcase&#39;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;text&#34;:&#34;  hello  &#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.text | ltrimstr(&#34; &#34;) | rtrimstr(&#34; &#34;)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Split and join</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;path&#34;:&#34;/home/user/file.txt&#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.path | split(&#34;/&#34;) | join(&#34;-&#34;)&#39;</span>
+</span></span></code></pre></div><h2 id="advanced-features">Advanced Features</h2>
+<h3 id="conditionals">Conditionals</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># If-then-else</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;age&#34;:30}&#39;</span> | jq <span style="color:#a5d6ff">&#39;if .age &gt; 18 then &#34;adult&#34; else &#34;minor&#34; end&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Multiple conditions</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;score&#34;:85}&#39;</span> | jq <span style="color:#a5d6ff">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">  if .score &gt;= 90 then &#34;A&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">  elif .score &gt;= 80 then &#34;B&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">  elif .score &gt;= 70 then &#34;C&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">  else &#34;F&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">  end&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Null handling</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:null}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.name // &#34;Unknown&#34;&#39;</span>
+</span></span></code></pre></div><h3 id="grouping">Grouping</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Group by field</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;dept&#34;:&#34;IT&#34;},{&#34;name&#34;:&#34;Jane&#34;,&#34;dept&#34;:&#34;HR&#34;},{&#34;name&#34;:&#34;Bob&#34;,&#34;dept&#34;:&#34;IT&#34;}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;group_by(.dept)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Group and count</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;type&#34;:&#34;A&#34;},{&#34;type&#34;:&#34;B&#34;},{&#34;type&#34;:&#34;A&#34;},{&#34;type&#34;:&#34;C&#34;}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;group_by(.type) | map({type: .[0].type, count: length})&#39;</span>
+</span></span></code></pre></div><h3 id="aggregation">Aggregation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Sum values</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#a5d6ff">&#39;add&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Min/max</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,5,3,9,2]&#39;</span> | jq <span style="color:#a5d6ff">&#39;min&#39;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,5,3,9,2]&#39;</span> | jq <span style="color:#a5d6ff">&#39;max&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Average</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[1,2,3,4,5]&#39;</span> | jq <span style="color:#a5d6ff">&#39;add / length&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Count</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;active&#34;:true},{&#34;active&#34;:false},{&#34;active&#34;:true}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;map(select(.active)) | length&#39;</span>
+</span></span></code></pre></div><h2 id="working-with-complex-data">Working with Complex Data</h2>
+<h3 id="nested-objects">Nested Objects</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Deep field access</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;user&#34;:{&#34;profile&#34;:{&#34;name&#34;:&#34;John&#34;}}}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.user.profile.name&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Safe navigation</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;user&#34;:{&#34;profile&#34;:{&#34;name&#34;:&#34;John&#34;}}}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.user.profile.email?&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Recursive descent</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;a&#34;:{&#34;b&#34;:{&#34;c&#34;:1}}}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.. | numbers&#39;</span>
+</span></span></code></pre></div><h3 id="array-of-objects">Array of Objects</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Extract specific fields</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;map(.name)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Filter and transform</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;map(select(.age &gt; 25) | .name)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Create lookup table</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;id&#34;:1,&#34;name&#34;:&#34;John&#34;},{&#34;id&#34;:2,&#34;name&#34;:&#34;Jane&#34;}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;map({(.id|tostring): .name}) | add&#39;</span>
+</span></span></code></pre></div><h3 id="flattening">Flattening</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Flatten array</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[[1,2],[3,4],[5,6]]&#39;</span> | jq <span style="color:#a5d6ff">&#39;flatten&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Flatten one level</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[[1,2],[3,4],[5,6]]&#39;</span> | jq <span style="color:#a5d6ff">&#39;flatten(1)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Flatten objects</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;a&#34;:{&#34;x&#34;:1,&#34;y&#34;:2},&#34;b&#34;:{&#34;x&#34;:3,&#34;y&#34;:4}}&#39;</span> | jq <span style="color:#a5d6ff">&#39;to_entries | map(.value) | flatten&#39;</span>
+</span></span></code></pre></div><h2 id="inputoutput-formats">Input/Output Formats</h2>
+<h3 id="raw-output">Raw Output</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Raw strings</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;}&#39;</span> | jq -r <span style="color:#a5d6ff">&#39;.name&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Multiple raw strings</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;},{&#34;name&#34;:&#34;Jane&#34;}]&#39;</span> | jq -r <span style="color:#a5d6ff">&#39;.[] | .name&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Tab-separated values</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq -r <span style="color:#a5d6ff">&#39;.[] | [.name, .age] | @tsv&#39;</span>
+</span></span></code></pre></div><h3 id="csv-output">CSV Output</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># CSV format</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq -r <span style="color:#a5d6ff">&#39;.[] | [.name, .age] | @csv&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># CSV with headers</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30},{&#34;name&#34;:&#34;Jane&#34;,&#34;age&#34;:25}]&#39;</span> | jq -r <span style="color:#a5d6ff">&#39;[&#34;name&#34;,&#34;age&#34;], (.[] | [.name, .age]) | @csv&#39;</span>
+</span></span></code></pre></div><h3 id="json-lines">JSON Lines</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Convert to JSON Lines</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;},{&#34;name&#34;:&#34;Jane&#34;}]&#39;</span> | jq -c <span style="color:#a5d6ff">&#39;.[]&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Convert from JSON Lines</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;}
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">{&#34;name&#34;:&#34;Jane&#34;}&#39;</span> | jq -s <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span></code></pre></div><h2 id="practical-examples">Practical Examples</h2>
+<h3 id="api-response-processing">API Response Processing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Extract user names from API response</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.github.com/users | jq <span style="color:#a5d6ff">&#39;.[].login&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Get specific fields</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.github.com/users | jq <span style="color:#a5d6ff">&#39;.[] | {name: .login, url: .html_url}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Filter by criteria</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.github.com/users | jq <span style="color:#a5d6ff">&#39;.[] | select(.type == &#34;User&#34;) | .login&#39;</span>
+</span></span></code></pre></div><h3 id="log-processing">Log Processing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Parse JSON logs</span>
+</span></span><span style="display:flex;"><span>cat application.log | jq <span style="color:#a5d6ff">&#39;select(.level == &#34;ERROR&#34;) | .message&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Count by log level</span>
+</span></span><span style="display:flex;"><span>cat application.log | jq -r <span style="color:#a5d6ff">&#39;.level&#39;</span> | sort | uniq -c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Extract timestamp and message</span>
+</span></span><span style="display:flex;"><span>cat application.log | jq -r <span style="color:#a5d6ff">&#39;&#34;\(.timestamp): \(.message)&#34;&#39;</span>
+</span></span></code></pre></div><h3 id="configuration-management">Configuration Management</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Update configuration</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;database&#34;:{&#34;host&#34;:&#34;localhost&#34;,&#34;port&#34;:5432}}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.database.host = &#34;newhost&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Merge configurations</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;a&#34;:1,&#34;b&#34;:2}&#39;</span> | jq <span style="color:#a5d6ff">&#39;. + {&#34;c&#34;:3,&#34;d&#34;:4}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Remove sensitive data</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;user&#34;:&#34;john&#34;,&#34;password&#34;:&#34;secret&#34;,&#34;email&#34;:&#34;john@example.com&#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;del(.password)&#39;</span>
+</span></span></code></pre></div><h3 id="data-validation">Data Validation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Check required fields</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:30}&#39;</span> | jq <span style="color:#a5d6ff">&#39;if has(&#34;name&#34;) and has(&#34;age&#34;) then &#34;valid&#34; else &#34;invalid&#34; end&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Validate data types</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;age&#34;:&#34;30&#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;if (.name | type) == &#34;string&#34; and (.age | type) == &#34;number&#34; then &#34;valid&#34; else &#34;invalid&#34; end&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Check array length</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;items&#34;:[1,2,3]}&#39;</span> | jq <span style="color:#a5d6ff">&#39;if (.items | length) &gt; 0 then &#34;has items&#34; else &#34;empty&#34; end&#39;</span>
+</span></span></code></pre></div><h2 id="error-handling">Error Handling</h2>
+<h3 id="safe-navigation">Safe Navigation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Optional field access</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;user&#34;:{&#34;name&#34;:&#34;John&#34;}}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.user.email?&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Default values</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;user&#34;:{&#34;name&#34;:&#34;John&#34;}}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.user.email // &#34;not provided&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Try-catch alternative</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;user&#34;:{&#34;name&#34;:&#34;John&#34;}}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.user.email | select(. != null)&#39;</span>
+</span></span></code></pre></div><h3 id="empty-handling">Empty Handling</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Handle empty arrays</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[]&#39;</span> | jq <span style="color:#a5d6ff">&#39;if length &gt; 0 then .[0] else &#34;empty&#34; end&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Handle null values</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:null}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.name | if . == null then &#34;N/A&#34; else . end&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Compact output (remove nulls)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;a&#34;:1,&#34;b&#34;:null,&#34;c&#34;:3}&#39;</span> | jq <span style="color:#a5d6ff">&#39;compact&#39;</span>
+</span></span></code></pre></div><h2 id="command-line-options">Command-line Options</h2>
+<h3 id="common-options">Common Options</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Compact output</span>
+</span></span><span style="display:flex;"><span>jq -c <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Raw output</span>
+</span></span><span style="display:flex;"><span>jq -r <span style="color:#a5d6ff">&#39;.name&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Sort keys</span>
+</span></span><span style="display:flex;"><span>jq -S <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Slurp mode (read entire input)</span>
+</span></span><span style="display:flex;"><span>jq -s <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Read from file</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#a5d6ff">&#39;.&#39;</span> data.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Multiple inputs</span>
+</span></span><span style="display:flex;"><span>jq -s <span style="color:#a5d6ff">&#39;.[0] + .[1]&#39;</span> file1.json file2.json
+</span></span></code></pre></div><h3 id="output-control">Output Control</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Tab output</span>
+</span></span><span style="display:flex;"><span>jq -t <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Null input</span>
+</span></span><span style="display:flex;"><span>jq -n <span style="color:#a5d6ff">&#39;{name: &#34;John&#34;, age: 30}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Exit status</span>
+</span></span><span style="display:flex;"><span>jq -e <span style="color:#a5d6ff">&#39;.success&#39;</span> <span style="color:#8b949e;font-style:italic"># Exit 0 if truthy, 1 if falsy/null</span>
+</span></span></code></pre></div><h2 id="advanced-use-cases">Advanced Use Cases</h2>
+<h3 id="stream-processing">Stream Processing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Process large JSON files</span>
+</span></span><span style="display:flex;"><span>jq --stream <span style="color:#a5d6ff">&#39;. as $item | if $item[0][0] == &#34;users&#34; then $item else empty end&#39;</span> large.json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Streaming parser</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.example.com/stream | jq --stream
+</span></span></code></pre></div><h3 id="custom-functions">Custom Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Define function</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#a5d6ff">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">def double: . * 2;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">def square: . * .;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">[1,2,3,4] | map(double | square)
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Function with parameters</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#a5d6ff">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">def multiply(n): . * n;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">[1,2,3,4] | map(multiply(5))
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#39;</span>
+</span></span></code></pre></div><h3 id="complex-transformations">Complex Transformations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Pivot data</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;name&#34;:&#34;John&#34;,&#34;skill&#34;:&#34;Java&#34;},{&#34;name&#34;:&#34;John&#34;,&#34;skill&#34;:&#34;Python&#34;},{&#34;name&#34;:&#34;Jane&#34;,&#34;skill&#34;:&#34;JavaScript&#34;}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">group_by(.name) | map({
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">  name: .[0].name,
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">  skills: map(.skill)
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">})
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Nested grouping</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;[{&#34;dept&#34;:&#34;IT&#34;,&#34;name&#34;:&#34;John&#34;,&#34;salary&#34;:50000},{&#34;dept&#34;:&#34;IT&#34;,&#34;name&#34;:&#34;Jane&#34;,&#34;salary&#34;:60000}]&#39;</span> | jq <span style="color:#a5d6ff">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">group_by(.dept) | map({
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">  department: .[0].dept,
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">  employees: map({name, salary}),
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">  total_salary: map(.salary) | add
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">})
+</span></span></span><span style="display:flex;"><span><span style="color:#a5d6ff">&#39;</span>
+</span></span></code></pre></div><h2 id="performance-tips">Performance Tips</h2>
+<h3 id="optimization">Optimization</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use streaming for large files</span>
+</span></span><span style="display:flex;"><span>jq --stream <span style="color:#a5d6ff">&#39;. | select(.[0][0] == &#34;target_field&#34;)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Limit output early</span>
+</span></span><span style="display:flex;"><span>jq <span style="color:#a5d6ff">&#39;limit(10; .[] | select(.active))&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use compact output for smaller files</span>
+</span></span><span style="display:flex;"><span>jq -c <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span></code></pre></div><h3 id="memory-management">Memory Management</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Process line by line</span>
+</span></span><span style="display:flex;"><span>jq --stream <span style="color:#a5d6ff">&#39;. | select(length == 2)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Avoid loading entire file</span>
+</span></span><span style="display:flex;"><span>jq -c <span style="color:#a5d6ff">&#39;.[]&#39;</span> large.json | head -100
+</span></span></code></pre></div><h2 id="quick-reference">Quick Reference</h2>
+<h3 id="basic-syntax">Basic Syntax</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>.               <span style="color:#8b949e;font-style:italic"># Identity (entire input)</span>
+</span></span><span style="display:flex;"><span>.field          <span style="color:#8b949e;font-style:italic"># Field access</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#ff7b72;font-weight:bold">[</span>0<span style="color:#ff7b72;font-weight:bold">]</span>            <span style="color:#8b949e;font-style:italic"># Array index</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#ff7b72;font-weight:bold">[]</span>             <span style="color:#8b949e;font-style:italic"># Array/object values</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#ff7b72;font-weight:bold">[</span>1:3<span style="color:#ff7b72;font-weight:bold">]</span>          <span style="color:#8b949e;font-style:italic"># Array slice</span>
+</span></span><span style="display:flex;"><span>.field?         <span style="color:#8b949e;font-style:italic"># Optional field access</span>
+</span></span></code></pre></div><h3 id="common-operations">Common Operations</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>length          <span style="color:#8b949e;font-style:italic"># Get length</span>
+</span></span><span style="display:flex;"><span>keys            <span style="color:#8b949e;font-style:italic"># Get keys</span>
+</span></span><span style="display:flex;"><span>values          <span style="color:#8b949e;font-style:italic"># Get values</span>
+</span></span><span style="display:flex;"><span>type            <span style="color:#8b949e;font-style:italic"># Get type</span>
+</span></span><span style="display:flex;"><span>empty           <span style="color:#8b949e;font-style:italic"># Empty value</span>
+</span></span><span style="display:flex;"><span>map<span style="color:#ff7b72;font-weight:bold">(</span>expr<span style="color:#ff7b72;font-weight:bold">)</span>       <span style="color:#8b949e;font-style:italic"># Transform array</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">select</span><span style="color:#ff7b72;font-weight:bold">(</span>expr<span style="color:#ff7b72;font-weight:bold">)</span>    <span style="color:#8b949e;font-style:italic"># Filter</span>
+</span></span><span style="display:flex;"><span>has<span style="color:#ff7b72;font-weight:bold">(</span><span style="color:#a5d6ff">&#34;key&#34;</span><span style="color:#ff7b72;font-weight:bold">)</span>      <span style="color:#8b949e;font-style:italic"># Check key existence</span>
+</span></span></code></pre></div><h3 id="string-functions">String Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ascii_downcase  <span style="color:#8b949e;font-style:italic"># Lowercase</span>
+</span></span><span style="display:flex;"><span>ascii_upcase    <span style="color:#8b949e;font-style:italic"># Uppercase</span>
+</span></span><span style="display:flex;"><span>ltrimstr<span style="color:#ff7b72;font-weight:bold">(</span>s<span style="color:#ff7b72;font-weight:bold">)</span>     <span style="color:#8b949e;font-style:italic"># Left trim</span>
+</span></span><span style="display:flex;"><span>rtrimstr<span style="color:#ff7b72;font-weight:bold">(</span>s<span style="color:#ff7b72;font-weight:bold">)</span>     <span style="color:#8b949e;font-style:italic"># Right trim</span>
+</span></span><span style="display:flex;"><span>split<span style="color:#ff7b72;font-weight:bold">(</span>s<span style="color:#ff7b72;font-weight:bold">)</span>        <span style="color:#8b949e;font-style:italic"># Split string</span>
+</span></span><span style="display:flex;"><span>join<span style="color:#ff7b72;font-weight:bold">(</span>s<span style="color:#ff7b72;font-weight:bold">)</span>         <span style="color:#8b949e;font-style:italic"># Join array</span>
+</span></span><span style="display:flex;"><span>test<span style="color:#ff7b72;font-weight:bold">(</span>regex<span style="color:#ff7b72;font-weight:bold">)</span>     <span style="color:#8b949e;font-style:italic"># Test regex</span>
+</span></span></code></pre></div><h3 id="math-functions">Math Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>add             <span style="color:#8b949e;font-style:italic"># Sum array</span>
+</span></span><span style="display:flex;"><span>min             <span style="color:#8b949e;font-style:italic"># Minimum</span>
+</span></span><span style="display:flex;"><span>max             <span style="color:#8b949e;font-style:italic"># Maximum</span>
+</span></span><span style="display:flex;"><span>sort            <span style="color:#8b949e;font-style:italic"># Sort array</span>
+</span></span><span style="display:flex;"><span>reverse         <span style="color:#8b949e;font-style:italic"># Reverse array</span>
+</span></span><span style="display:flex;"><span>unique          <span style="color:#8b949e;font-style:italic"># Unique elements</span>
+</span></span><span style="display:flex;"><span>group_by<span style="color:#ff7b72;font-weight:bold">(</span>expr<span style="color:#ff7b72;font-weight:bold">)</span>  <span style="color:#8b949e;font-style:italic"># Group by expression</span>
+</span></span></code></pre></div><h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-errors">Common Errors</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Parse error</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;invalid json&#39;</span> | jq <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Solution: Fix JSON syntax</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Field doesn&#39;t exist</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.age&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Solution: Use .age? or .age // &#34;default&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Type error</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;}&#39;</span> | jq <span style="color:#a5d6ff">&#39;.name + 1&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Solution: Convert types or check type first</span>
+</span></span></code></pre></div><h3 id="debugging">Debugging</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Debug mode</span>
+</span></span><span style="display:flex;"><span>jq --debug <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Verbose output</span>
+</span></span><span style="display:flex;"><span>jq -v <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show parse tree</span>
+</span></span><span style="display:flex;"><span>jq --debug <span style="color:#a5d6ff">&#39;.&#39;</span> 2&gt;&amp;<span style="color:#a5d6ff">1</span> | head -20
+</span></span></code></pre></div><h2 id="see-also">See Also</h2>
+<ul>
+<li><code>man jq</code> - Manual page</li>
+<li><a href="https://stedolan.github.io/jq/manual/">jq Manual</a> - Official documentation</li>
+<li><a href="https://github.com/stedolan/jq/wiki/Cookbook">jq Cookbook</a> - Examples</li>
+<li><code>yq</code> - YAML processor using jq syntax</li>
+<li><code>jid</code> - Interactive jq</li>
+<li><code>fx</code> - Interactive JSON viewer</li>
+</ul>
+
+    </div>
+
+    
+    <div class="mt-4">
+        <h5>Categories:</h5>
+        
+        <a href="/categories/tools" class="badge bg-secondary text-decoration-none me-2">tools</a>
+        
+    </div>
+    
+
+    <div class="mt-4">
+        <small class="text-muted">
+            Last updated: January 1, 2024
+        </small>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 QuickRef - Developer Reference. Built with <i class="fas fa-heart text-danger"></i> for developers.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="/js/app.js"></script>
+    
+    
+</body>
+</html>

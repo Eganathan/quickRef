@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curl - QuickRef - Developer Reference</title>
+    <meta name="description" content="Command-line tool for transferring data with URLs, essential for API testing, web scraping, and HTTP requests.">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    
+    <link href="/css/styles.css" rel="stylesheet">
+    
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:1313/">
+                <i class="fas fa-code"></i> QuickRef - Developer Reference
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <button class="theme-toggle me-3" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                
+                <a class="nav-link" href="/" >
+                    <i class="fas fa-home"></i>
+                    
+                    Home
+                </a>
+                
+                <a class="nav-link" href="https://github.com/yourusername/quickref" target="_blank">
+                    
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="ref-page">
+    <a href="http://localhost:1313/" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to QuickRef
+    </a>
+    
+    <div class="ref-header">
+        <h1 class="ref-title">Curl</h1>
+        <p class="ref-description">Command-line tool for transferring data with URLs, essential for API testing, web scraping, and HTTP requests.</p>
+        <div class="ref-tags">
+            
+            <span class="ref-tag">curl</span>
+            
+            <span class="ref-tag">http</span>
+            
+            <span class="ref-tag">api</span>
+            
+            <span class="ref-tag">web</span>
+            
+            <span class="ref-tag">networking</span>
+            
+            <span class="ref-tag">cli</span>
+            
+        </div>
+    </div>
+
+    <div class="ref-content">
+        <h2 id="overview">Overview</h2>
+<p>Curl is a command-line tool for transferring data from or to servers using various protocols including HTTP, HTTPS, FTP, and more. It&rsquo;s essential for API testing, web scraping, downloading files, and debugging network requests.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>sudo apt install curl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># macOS (usually pre-installed)</span>
+</span></span><span style="display:flex;"><span>brew install curl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># CentOS/RHEL</span>
+</span></span><span style="display:flex;"><span>sudo yum install curl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Windows</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download from https://curl.se/windows/</span>
+</span></span></code></pre></div><h2 id="basic-usage">Basic Usage</h2>
+<h3 id="simple-get-request">Simple GET Request</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Basic GET request</span>
+</span></span><span style="display:flex;"><span>curl https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GET with verbose output</span>
+</span></span><span style="display:flex;"><span>curl -v https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GET with headers only</span>
+</span></span><span style="display:flex;"><span>curl -I https://api.example.com
+</span></span></code></pre></div><h3 id="download-files">Download Files</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download file</span>
+</span></span><span style="display:flex;"><span>curl -O https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download with custom filename</span>
+</span></span><span style="display:flex;"><span>curl -o myfile.zip https://example.com/file.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download multiple files</span>
+</span></span><span style="display:flex;"><span>curl -O https://example.com/file1.zip -O https://example.com/file2.zip
+</span></span></code></pre></div><h2 id="http-methods">HTTP Methods</h2>
+<h3 id="get-requests">GET Requests</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Simple GET</span>
+</span></span><span style="display:flex;"><span>curl https://api.example.com/users
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GET with query parameters</span>
+</span></span><span style="display:flex;"><span>curl <span style="color:#a5d6ff">&#34;https://api.example.com/users?page=1&amp;limit=10&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GET with URL encoding</span>
+</span></span><span style="display:flex;"><span>curl -G -d <span style="color:#a5d6ff">&#34;q=search term&#34;</span> -d <span style="color:#a5d6ff">&#34;page=1&#34;</span> https://api.example.com/search
+</span></span></code></pre></div><h3 id="post-requests">POST Requests</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># POST with data</span>
+</span></span><span style="display:flex;"><span>curl -X POST -d <span style="color:#a5d6ff">&#34;name=John&amp;email=john@example.com&#34;</span> https://api.example.com/users
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># POST with JSON data</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John&#34;,&#34;email&#34;:&#34;john@example.com&#34;}&#39;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/users
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># POST with file data</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d @data.json <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/users
+</span></span></code></pre></div><h3 id="put-requests">PUT Requests</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># PUT request</span>
+</span></span><span style="display:flex;"><span>curl -X PUT <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;John Updated&#34;}&#39;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/users/123
+</span></span></code></pre></div><h3 id="delete-requests">DELETE Requests</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># DELETE request</span>
+</span></span><span style="display:flex;"><span>curl -X DELETE https://api.example.com/users/123
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># DELETE with authentication</span>
+</span></span><span style="display:flex;"><span>curl -X DELETE <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Authorization: Bearer token123&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/users/123
+</span></span></code></pre></div><h3 id="patch-requests">PATCH Requests</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># PATCH request</span>
+</span></span><span style="display:flex;"><span>curl -X PATCH <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;Partially Updated&#34;}&#39;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/users/123
+</span></span></code></pre></div><h2 id="headers-and-authentication">Headers and Authentication</h2>
+<h3 id="custom-headers">Custom Headers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Add custom header</span>
+</span></span><span style="display:flex;"><span>curl -H <span style="color:#a5d6ff">&#34;Authorization: Bearer token123&#34;</span> https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Multiple headers</span>
+</span></span><span style="display:flex;"><span>curl -H <span style="color:#a5d6ff">&#34;Authorization: Bearer token123&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>     -H <span style="color:#a5d6ff">&#34;Content-Type: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>     -H <span style="color:#a5d6ff">&#34;User-Agent: MyApp/1.0&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>     https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Remove default headers</span>
+</span></span><span style="display:flex;"><span>curl -H <span style="color:#a5d6ff">&#34;User-Agent:&#34;</span> https://api.example.com
+</span></span></code></pre></div><h3 id="authentication">Authentication</h3>
+<h4 id="basic-authentication">Basic Authentication</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Basic auth with username:password</span>
+</span></span><span style="display:flex;"><span>curl -u username:password https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Basic auth with prompt for password</span>
+</span></span><span style="display:flex;"><span>curl -u username https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Basic auth with encoded credentials</span>
+</span></span><span style="display:flex;"><span>curl -H <span style="color:#a5d6ff">&#34;Authorization: Basic dXNlcjpwYXNz&#34;</span> https://api.example.com
+</span></span></code></pre></div><h4 id="bearer-token">Bearer Token</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Bearer token</span>
+</span></span><span style="display:flex;"><span>curl -H <span style="color:#a5d6ff">&#34;Authorization: Bearer your-token-here&#34;</span> https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># OAuth token</span>
+</span></span><span style="display:flex;"><span>curl -H <span style="color:#a5d6ff">&#34;Authorization: OAuth oauth-token&#34;</span> https://api.example.com
+</span></span></code></pre></div><h4 id="api-key">API Key</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># API key in header</span>
+</span></span><span style="display:flex;"><span>curl -H <span style="color:#a5d6ff">&#34;X-API-Key: your-api-key&#34;</span> https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># API key in query parameter</span>
+</span></span><span style="display:flex;"><span>curl <span style="color:#a5d6ff">&#34;https://api.example.com/data?api_key=your-api-key&#34;</span>
+</span></span></code></pre></div><h2 id="data-formats">Data Formats</h2>
+<h3 id="json-data">JSON Data</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># JSON POST</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#39;{&#34;key&#34;:&#34;value&#34;,&#34;number&#34;:42}&#39;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># JSON from file</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d @data.json <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com
+</span></span></code></pre></div><h3 id="form-data">Form Data</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># URL-encoded form data</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/x-www-form-urlencoded&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#34;name=John&amp;email=john@example.com&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Form data (automatic content-type)</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#34;name=John&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#34;email=john@example.com&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com
+</span></span></code></pre></div><h3 id="multipart-form-data">Multipart Form Data</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># File upload</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -F <span style="color:#a5d6ff">&#34;file=@document.pdf&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/upload
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Mixed form data</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -F <span style="color:#a5d6ff">&#34;name=John&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -F <span style="color:#a5d6ff">&#34;email=john@example.com&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -F <span style="color:#a5d6ff">&#34;avatar=@profile.jpg&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/users
+</span></span></code></pre></div><h3 id="xml-data">XML Data</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># XML POST</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/xml&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#39;&lt;user&gt;&lt;name&gt;John&lt;/name&gt;&lt;email&gt;john@example.com&lt;/email&gt;&lt;/user&gt;&#39;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com
+</span></span></code></pre></div><h2 id="output-and-formatting">Output and Formatting</h2>
+<h3 id="output-control">Output Control</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Save response to file</span>
+</span></span><span style="display:flex;"><span>curl -o response.json https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Append to file</span>
+</span></span><span style="display:flex;"><span>curl -o response.json https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Silent mode (no progress bar)</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show only HTTP status code</span>
+</span></span><span style="display:flex;"><span>curl -s -o /dev/null -w <span style="color:#a5d6ff">&#34;%{http_code}&#34;</span> https://api.example.com
+</span></span></code></pre></div><h3 id="response-information">Response Information</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show response headers</span>
+</span></span><span style="display:flex;"><span>curl -i https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show only headers</span>
+</span></span><span style="display:flex;"><span>curl -I https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Verbose output</span>
+</span></span><span style="display:flex;"><span>curl -v https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show response time</span>
+</span></span><span style="display:flex;"><span>curl -w <span style="color:#a5d6ff">&#34;%{time_total}\n&#34;</span> -o /dev/null -s https://api.example.com
+</span></span></code></pre></div><h3 id="pretty-print-json">Pretty Print JSON</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Format JSON output (with jq)</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.example.com | jq <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Format JSON with Python</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.example.com | python -m json.tool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Save formatted JSON</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.example.com | jq <span style="color:#a5d6ff">&#39;.&#39;</span> &gt; formatted.json
+</span></span></code></pre></div><h2 id="advanced-features">Advanced Features</h2>
+<h3 id="follow-redirects">Follow Redirects</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Follow redirects</span>
+</span></span><span style="display:flex;"><span>curl -L https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Follow redirects with max count</span>
+</span></span><span style="display:flex;"><span>curl -L --max-redirs <span style="color:#a5d6ff">5</span> https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show redirect chain</span>
+</span></span><span style="display:flex;"><span>curl -L -v https://example.com
+</span></span></code></pre></div><h3 id="cookies">Cookies</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Save cookies</span>
+</span></span><span style="display:flex;"><span>curl -c cookies.txt https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Load cookies</span>
+</span></span><span style="display:flex;"><span>curl -b cookies.txt https://example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use specific cookie</span>
+</span></span><span style="display:flex;"><span>curl -H <span style="color:#a5d6ff">&#34;Cookie: sessionid=abc123&#34;</span> https://example.com
+</span></span></code></pre></div><h3 id="timeouts-and-retries">Timeouts and Retries</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Connection timeout</span>
+</span></span><span style="display:flex;"><span>curl --connect-timeout <span style="color:#a5d6ff">10</span> https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Maximum time for request</span>
+</span></span><span style="display:flex;"><span>curl --max-time <span style="color:#a5d6ff">30</span> https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Retry on failure</span>
+</span></span><span style="display:flex;"><span>curl --retry <span style="color:#a5d6ff">3</span> https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Retry with delay</span>
+</span></span><span style="display:flex;"><span>curl --retry <span style="color:#a5d6ff">3</span> --retry-delay <span style="color:#a5d6ff">2</span> https://api.example.com
+</span></span></code></pre></div><h3 id="proxy-support">Proxy Support</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use HTTP proxy</span>
+</span></span><span style="display:flex;"><span>curl --proxy http://proxy.example.com:8080 https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use SOCKS proxy</span>
+</span></span><span style="display:flex;"><span>curl --socks5 proxy.example.com:1080 https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Proxy authentication</span>
+</span></span><span style="display:flex;"><span>curl --proxy-user username:password <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>     --proxy http://proxy.example.com:8080 <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>     https://api.example.com
+</span></span></code></pre></div><h2 id="ssltls-options">SSL/TLS Options</h2>
+<h3 id="ssl-verification">SSL Verification</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Skip SSL verification (insecure)</span>
+</span></span><span style="display:flex;"><span>curl -k https://self-signed.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use specific CA certificate</span>
+</span></span><span style="display:flex;"><span>curl --cacert ca-cert.pem https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Use client certificate</span>
+</span></span><span style="display:flex;"><span>curl --cert client-cert.pem --key client-key.pem https://api.example.com
+</span></span></code></pre></div><h3 id="ssl-information">SSL Information</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Show SSL certificate info</span>
+</span></span><span style="display:flex;"><span>curl -v https://api.example.com 2&gt;&amp;<span style="color:#a5d6ff">1</span> | grep -A <span style="color:#a5d6ff">10</span> <span style="color:#a5d6ff">&#34;Server certificate&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Check SSL certificate expiration</span>
+</span></span><span style="display:flex;"><span>curl -v https://api.example.com 2&gt;&amp;<span style="color:#a5d6ff">1</span> | grep <span style="color:#a5d6ff">&#34;expire date&#34;</span>
+</span></span></code></pre></div><h2 id="testing-apis">Testing APIs</h2>
+<h3 id="rest-api-testing">REST API Testing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Test API endpoint</span>
+</span></span><span style="display:flex;"><span>curl -X GET <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Accept: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/v1/users
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Test with authentication</span>
+</span></span><span style="display:flex;"><span>curl -X GET <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Authorization: Bearer token123&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Accept: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/v1/users/me
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Test error handling</span>
+</span></span><span style="display:flex;"><span>curl -X GET <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Accept: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/v1/nonexistent
+</span></span></code></pre></div><h3 id="graphql-api-testing">GraphQL API Testing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GraphQL query</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#39;{&#34;query&#34;:&#34;query { users { id name email } }&#34;}&#39;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/graphql
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GraphQL mutation</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#39;{&#34;query&#34;:&#34;mutation { createUser(name: \&#34;John\&#34;, email: \&#34;john@example.com\&#34;) { id name } }&#34;}&#39;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  https://api.example.com/graphql
+</span></span></code></pre></div><h3 id="health-checks">Health Checks</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Simple health check</span>
+</span></span><span style="display:flex;"><span>curl -f https://api.example.com/health
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Health check with timeout</span>
+</span></span><span style="display:flex;"><span>curl -f --max-time <span style="color:#a5d6ff">5</span> https://api.example.com/health
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Health check script</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> curl -f -s https://api.example.com/health &gt; /dev/null; <span style="color:#ff7b72">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#a5d6ff">&#34;Service is healthy&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">else</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#a5d6ff">&#34;Service is down&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">fi</span>
+</span></span></code></pre></div><h2 id="practical-examples">Practical Examples</h2>
+<h3 id="download-and-extract">Download and Extract</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download and extract tar.gz</span>
+</span></span><span style="display:flex;"><span>curl -L https://example.com/file.tar.gz | tar -xz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download and pipe to command</span>
+</span></span><span style="display:flex;"><span>curl -s https://api.example.com/data | jq <span style="color:#a5d6ff">&#39;.results[]&#39;</span>
+</span></span></code></pre></div><h3 id="api-testing-script">API Testing Script</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span><span style="color:#79c0ff">API_BASE</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;https://api.example.com&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">TOKEN</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;your-token-here&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Test authentication</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#34;Testing authentication...&#34;</span>
+</span></span><span style="display:flex;"><span>curl -s -H <span style="color:#a5d6ff">&#34;Authorization: Bearer </span><span style="color:#79c0ff">$TOKEN</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$API_BASE</span><span style="color:#a5d6ff">/auth/test&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Test GET endpoint</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#34;Testing GET endpoint...&#34;</span>
+</span></span><span style="display:flex;"><span>curl -s -H <span style="color:#a5d6ff">&#34;Authorization: Bearer </span><span style="color:#79c0ff">$TOKEN</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$API_BASE</span><span style="color:#a5d6ff">/users&#34;</span> | jq <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Test POST endpoint</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#34;Testing POST endpoint...&#34;</span>
+</span></span><span style="display:flex;"><span>curl -s -X POST <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Authorization: Bearer </span><span style="color:#79c0ff">$TOKEN</span><span style="color:#a5d6ff">&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -H <span style="color:#a5d6ff">&#34;Content-Type: application/json&#34;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  -d <span style="color:#a5d6ff">&#39;{&#34;name&#34;:&#34;Test User&#34;,&#34;email&#34;:&#34;test@example.com&#34;}&#39;</span> <span style="color:#79c0ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff"></span>  <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$API_BASE</span><span style="color:#a5d6ff">/users&#34;</span> | jq <span style="color:#a5d6ff">&#39;.&#39;</span>
+</span></span></code></pre></div><h3 id="web-scraping">Web Scraping</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download webpage</span>
+</span></span><span style="display:flex;"><span>curl -s https://example.com | grep -o <span style="color:#a5d6ff">&#39;&lt;title&gt;.*&lt;/title&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download images from webpage</span>
+</span></span><span style="display:flex;"><span>curl -s https://example.com | grep -o <span style="color:#a5d6ff">&#39;src=&#34;[^&#34;]*\.jpg&#34;&#39;</span> | cut -d<span style="color:#a5d6ff">&#39;&#34;&#39;</span> -f2 | xargs -I <span style="color:#ff7b72;font-weight:bold">{}</span> curl -O <span style="color:#ff7b72;font-weight:bold">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Check HTTP status codes</span>
+</span></span><span style="display:flex;"><span>curl -s -o /dev/null -w <span style="color:#a5d6ff">&#34;%{http_code} %{url_effective}\n&#34;</span> https://example.com
+</span></span></code></pre></div><h2 id="error-handling">Error Handling</h2>
+<h3 id="common-http-status-codes">Common HTTP Status Codes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Check for specific status codes</span>
+</span></span><span style="display:flex;"><span>curl -s -o /dev/null -w <span style="color:#a5d6ff">&#34;%{http_code}&#34;</span> https://api.example.com
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># 200 - OK</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># 401 - Unauthorized</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># 404 - Not Found</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># 500 - Server Error</span>
+</span></span></code></pre></div><h3 id="error-handling-in-scripts">Error Handling in Scripts</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span><span style="color:#79c0ff">response</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#ff7b72">$(</span>curl -s -w <span style="color:#a5d6ff">&#34;%{http_code}&#34;</span> https://api.example.com<span style="color:#ff7b72">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">status_code</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">response</span>: -3<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">body</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;</span><span style="color:#a5d6ff">${</span><span style="color:#79c0ff">response</span>%???<span style="color:#a5d6ff">}</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> <span style="color:#ff7b72;font-weight:bold">[</span> <span style="color:#a5d6ff">&#34;</span><span style="color:#79c0ff">$status_code</span><span style="color:#a5d6ff">&#34;</span> -eq <span style="color:#a5d6ff">200</span> <span style="color:#ff7b72;font-weight:bold">]</span>; <span style="color:#ff7b72">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#a5d6ff">&#34;Success: </span><span style="color:#79c0ff">$body</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">else</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#a5d6ff">&#34;Error: HTTP </span><span style="color:#79c0ff">$status_code</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#a5d6ff">&#34;Response: </span><span style="color:#79c0ff">$body</span><span style="color:#a5d6ff">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">fi</span>
+</span></span></code></pre></div><h2 id="configuration">Configuration</h2>
+<h3 id="config-file-curlrc">Config File (~/.curlrc)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Default options</span>
+</span></span><span style="display:flex;"><span>user-agent <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;MyApp/1.0&#34;</span>
+</span></span><span style="display:flex;"><span>connect-timeout <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>
+</span></span><span style="display:flex;"><span>max-time <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">30</span>
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">retry</span> <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3</span>
+</span></span><span style="display:flex;"><span>silent
+</span></span><span style="display:flex;"><span>show-error
+</span></span></code></pre></div><h3 id="environment-variables">Environment Variables</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Set proxy</span>
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">HTTP_PROXY</span><span style="color:#ff7b72;font-weight:bold">=</span>http://proxy.example.com:8080
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">HTTPS_PROXY</span><span style="color:#ff7b72;font-weight:bold">=</span>http://proxy.example.com:8080
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Set CA certificate path</span>
+</span></span><span style="display:flex;"><span>export <span style="color:#79c0ff">CURL_CA_BUNDLE</span><span style="color:#ff7b72;font-weight:bold">=</span>/path/to/ca-bundle.crt
+</span></span></code></pre></div><h2 id="quick-reference">Quick Reference</h2>
+<h3 id="common-options">Common Options</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>-X, --request       <span style="color:#8b949e;font-style:italic"># HTTP method</span>
+</span></span><span style="display:flex;"><span>-H, --header        <span style="color:#8b949e;font-style:italic"># Add header</span>
+</span></span><span style="display:flex;"><span>-d, --data          <span style="color:#8b949e;font-style:italic"># POST data</span>
+</span></span><span style="display:flex;"><span>-F, --form          <span style="color:#8b949e;font-style:italic"># Form data</span>
+</span></span><span style="display:flex;"><span>-o, --output        <span style="color:#8b949e;font-style:italic"># Output file</span>
+</span></span><span style="display:flex;"><span>-O, --remote-name   <span style="color:#8b949e;font-style:italic"># Use remote filename</span>
+</span></span><span style="display:flex;"><span>-u, --user          <span style="color:#8b949e;font-style:italic"># Authentication</span>
+</span></span><span style="display:flex;"><span>-v, --verbose       <span style="color:#8b949e;font-style:italic"># Verbose output</span>
+</span></span><span style="display:flex;"><span>-s, --silent        <span style="color:#8b949e;font-style:italic"># Silent mode</span>
+</span></span><span style="display:flex;"><span>-I, --head          <span style="color:#8b949e;font-style:italic"># Headers only</span>
+</span></span><span style="display:flex;"><span>-L, --location      <span style="color:#8b949e;font-style:italic"># Follow redirects</span>
+</span></span><span style="display:flex;"><span>-k, --insecure      <span style="color:#8b949e;font-style:italic"># Skip SSL verification</span>
+</span></span></code></pre></div><h3 id="format-strings">Format Strings</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%<span style="color:#ff7b72;font-weight:bold">{</span>http_code<span style="color:#ff7b72;font-weight:bold">}</span>        <span style="color:#8b949e;font-style:italic"># HTTP status code</span>
+</span></span><span style="display:flex;"><span>%<span style="color:#ff7b72;font-weight:bold">{</span>time_total<span style="color:#ff7b72;font-weight:bold">}</span>       <span style="color:#8b949e;font-style:italic"># Total time</span>
+</span></span><span style="display:flex;"><span>%<span style="color:#ff7b72;font-weight:bold">{</span>time_connect<span style="color:#ff7b72;font-weight:bold">}</span>     <span style="color:#8b949e;font-style:italic"># Connection time</span>
+</span></span><span style="display:flex;"><span>%<span style="color:#ff7b72;font-weight:bold">{</span>size_download<span style="color:#ff7b72;font-weight:bold">}</span>    <span style="color:#8b949e;font-style:italic"># Download size</span>
+</span></span><span style="display:flex;"><span>%<span style="color:#ff7b72;font-weight:bold">{</span>speed_download<span style="color:#ff7b72;font-weight:bold">}</span>   <span style="color:#8b949e;font-style:italic"># Download speed</span>
+</span></span><span style="display:flex;"><span>%<span style="color:#ff7b72;font-weight:bold">{</span>url_effective<span style="color:#ff7b72;font-weight:bold">}</span>    <span style="color:#8b949e;font-style:italic"># Final URL</span>
+</span></span></code></pre></div><h2 id="tips-and-tricks">Tips and Tricks</h2>
+<h3 id="performance-testing">Performance Testing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Measure response time</span>
+</span></span><span style="display:flex;"><span>curl -w <span style="color:#a5d6ff">&#34;@curl-format.txt&#34;</span> -o /dev/null -s https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># curl-format.txt content:</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#     time_namelookup:  %{time_namelookup}\n</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#        time_connect:  %{time_connect}\n</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#     time_appconnect:  %{time_appconnect}\n</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#    time_pretransfer:  %{time_pretransfer}\n</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#       time_redirect:  %{time_redirect}\n</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#  time_starttransfer:  %{time_starttransfer}\n</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#                     ----------\n</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">#          time_total:  %{time_total}\n</span>
+</span></span></code></pre></div><h3 id="debugging">Debugging</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Debug with verbose output</span>
+</span></span><span style="display:flex;"><span>curl -v https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Debug with trace</span>
+</span></span><span style="display:flex;"><span>curl --trace-ascii debug.txt https://api.example.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Debug SSL</span>
+</span></span><span style="display:flex;"><span>curl -v --trace-ascii ssl-debug.txt https://api.example.com
+</span></span></code></pre></div><h2 id="see-also">See Also</h2>
+<ul>
+<li><code>man curl</code> - Complete manual</li>
+<li><code>curl --help</code> - Quick help</li>
+<li><a href="https://curl.se/docs/">curl documentation</a> - Official docs</li>
+<li><code>wget</code> - Alternative download tool</li>
+<li><code>httpie</code> - Modern HTTP client</li>
+<li><code>jq</code> - JSON processor for formatting responses</li>
+</ul>
+
+    </div>
+
+    
+    <div class="mt-4">
+        <h5>Categories:</h5>
+        
+        <a href="/categories/tools" class="badge bg-secondary text-decoration-none me-2">tools</a>
+        
+    </div>
+    
+
+    <div class="mt-4">
+        <small class="text-muted">
+            Last updated: January 1, 2024
+        </small>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 QuickRef - Developer Reference. Built with <i class="fas fa-heart text-danger"></i> for developers.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="/js/app.js"></script>
+    
+    
+</body>
+</html>

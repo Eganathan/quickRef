@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C&#43;&#43; - QuickRef - Developer Reference</title>
+    <meta name="description" content="Modern C&#43;&#43; programming language reference covering syntax, STL, object-oriented programming, and best practices.">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    
+    <link href="/css/styles.css" rel="stylesheet">
+    
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:1313/">
+                <i class="fas fa-code"></i> QuickRef - Developer Reference
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <button class="theme-toggle me-3" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                
+                <a class="nav-link" href="/" >
+                    <i class="fas fa-home"></i>
+                    
+                    Home
+                </a>
+                
+                <a class="nav-link" href="https://github.com/yourusername/quickref" target="_blank">
+                    
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="ref-page">
+    <a href="http://localhost:1313/" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to QuickRef
+    </a>
+    
+    <div class="ref-header">
+        <h1 class="ref-title">C&#43;&#43;</h1>
+        <p class="ref-description">Modern C&#43;&#43; programming language reference covering syntax, STL, object-oriented programming, and best practices.</p>
+        <div class="ref-tags">
+            
+            <span class="ref-tag">cpp</span>
+            
+            <span class="ref-tag">c&#43;&#43;</span>
+            
+            <span class="ref-tag">programming</span>
+            
+            <span class="ref-tag">systems</span>
+            
+            <span class="ref-tag">performance</span>
+            
+        </div>
+    </div>
+
+    <div class="ref-content">
+        <h2 id="overview">Overview</h2>
+<p>C++ is a general-purpose programming language that supports procedural, object-oriented, and generic programming. It&rsquo;s widely used for system programming, game development, embedded systems, and high-performance applications.</p>
+<h2 id="installation">Installation</h2>
+<h3 id="compilers">Compilers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># GCC (GNU Compiler Collection)</span>
+</span></span><span style="display:flex;"><span>sudo apt install g++                    <span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>brew install gcc                        <span style="color:#8b949e;font-style:italic"># macOS</span>
+</span></span><span style="display:flex;"><span>sudo yum install gcc-c++                <span style="color:#8b949e;font-style:italic"># CentOS/RHEL</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Clang</span>
+</span></span><span style="display:flex;"><span>sudo apt install clang                  <span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>brew install llvm                       <span style="color:#8b949e;font-style:italic"># macOS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Microsoft Visual Studio (Windows)</span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Download from https://visualstudio.microsoft.com/</span>
+</span></span></code></pre></div><h3 id="build-tools">Build Tools</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># CMake</span>
+</span></span><span style="display:flex;"><span>sudo apt install cmake                  <span style="color:#8b949e;font-style:italic"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>brew install cmake                      <span style="color:#8b949e;font-style:italic"># macOS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Make</span>
+</span></span><span style="display:flex;"><span>sudo apt install make                   <span style="color:#8b949e;font-style:italic"># Usually pre-installed</span>
+</span></span></code></pre></div><h2 id="basic-syntax">Basic Syntax</h2>
+<h3 id="hello-world">Hello World</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;iostream&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Hello, World!&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="compilation">Compilation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Basic compilation</span>
+</span></span><span style="display:flex;"><span>g++ -o program program.cpp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># With debugging info</span>
+</span></span><span style="display:flex;"><span>g++ -g -o program program.cpp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># With optimization</span>
+</span></span><span style="display:flex;"><span>g++ -O2 -o program program.cpp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># C++ standard version</span>
+</span></span><span style="display:flex;"><span>g++ -std<span style="color:#ff7b72;font-weight:bold">=</span>c++17 -o program program.cpp
+</span></span></code></pre></div><h2 id="data-types">Data Types</h2>
+<h3 id="primitive-types">Primitive Types</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Integer types
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> num <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">42</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">short</span> s <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">long</span> l <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1000000L</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">long</span> <span style="color:#ff7b72">long</span> ll <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1000000000LL</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Unsigned types
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">int</span> u <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">42u</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">unsigned</span> <span style="color:#ff7b72">long</span> ul <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1000000UL</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Floating point
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">float</span> f <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14f</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">double</span> d <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14159</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">long</span> <span style="color:#ff7b72">double</span> ld <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.141592653589793</span>L;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Character types
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">char</span> c <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">wchar_t</span> wc <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#79c0ff">L</span><span style="color:#a5d6ff">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">char16_t</span> c16 <span style="color:#ff7b72;font-weight:bold">=</span> u<span style="color:#a5d6ff">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">char32_t</span> c32 <span style="color:#ff7b72;font-weight:bold">=</span> U<span style="color:#a5d6ff">&#39;A&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Boolean
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">bool</span> flag <span style="color:#ff7b72;font-weight:bold">=</span> true;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Auto type deduction
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">auto</span> x <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">42</span>;        <span style="color:#8b949e;font-style:italic">// int
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">auto</span> y <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14</span>;      <span style="color:#8b949e;font-style:italic">// double
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">auto</span> z <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">&#34;hello&#34;</span>;   <span style="color:#8b949e;font-style:italic">// const char*
+</span></span></span></code></pre></div><h3 id="constants">Constants</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">const</span> <span style="color:#ff7b72">int</span> MAX_SIZE <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">100</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">constexpr</span> <span style="color:#ff7b72">int</span> SIZE <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Enumeration
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">enum</span> <span style="color:#f0883e;font-weight:bold">Color</span> { RED, GREEN, BLUE };
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">enum</span> <span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Status</span> { ACTIVE, INACTIVE, PENDING };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Using enums
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>Color c <span style="color:#ff7b72;font-weight:bold">=</span> RED;
+</span></span><span style="display:flex;"><span>Status s <span style="color:#ff7b72;font-weight:bold">=</span> Status<span style="color:#ff7b72;font-weight:bold">::</span>ACTIVE;
+</span></span></code></pre></div><h2 id="variables-and-scope">Variables and Scope</h2>
+<h3 id="variable-declaration">Variable Declaration</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">int</span> x;              <span style="color:#8b949e;font-style:italic">// Declaration
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> y <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;         <span style="color:#8b949e;font-style:italic">// Initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> z{<span style="color:#a5d6ff">15</span>};          <span style="color:#8b949e;font-style:italic">// Uniform initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">a</span>(<span style="color:#a5d6ff">20</span>);          <span style="color:#8b949e;font-style:italic">// Direct initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Multiple declarations
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> m <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>, n <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">2</span>, p <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3</span>;
+</span></span></code></pre></div><h3 id="scope">Scope</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">int</span> global_var <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;    <span style="color:#8b949e;font-style:italic">// Global scope
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> local_var <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">20</span>;  <span style="color:#8b949e;font-style:italic">// Local scope
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">int</span> block_var <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">30</span>;  <span style="color:#8b949e;font-style:italic">// Block scope
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>        <span style="color:#8b949e;font-style:italic">// block_var is accessible here
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// block_var is not accessible here
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="functions">Functions</h2>
+<h3 id="function-declaration">Function Declaration</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function prototype
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">add</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function definition
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">add</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> a <span style="color:#ff7b72;font-weight:bold">+</span> b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function with default parameters
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">multiply</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">1</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> a <span style="color:#ff7b72;font-weight:bold">*</span> b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function overloading
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">max</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> (a <span style="color:#ff7b72;font-weight:bold">&gt;</span> b) <span style="color:#ff7b72;font-weight:bold">?</span> <span style="color:#79c0ff;font-weight:bold">a</span> : b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">double</span> <span style="color:#d2a8ff;font-weight:bold">max</span>(<span style="color:#ff7b72">double</span> a, <span style="color:#ff7b72">double</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> (a <span style="color:#ff7b72;font-weight:bold">&gt;</span> b) <span style="color:#ff7b72;font-weight:bold">?</span> <span style="color:#79c0ff;font-weight:bold">a</span> : b;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="advanced-functions">Advanced Functions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function templates
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">template</span><span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">typename</span> T<span style="color:#ff7b72;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>T maximum(T a, T b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> (a <span style="color:#ff7b72;font-weight:bold">&gt;</span> b) <span style="color:#ff7b72;font-weight:bold">?</span> <span style="color:#79c0ff;font-weight:bold">a</span> : b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Lambda functions
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">auto</span> lambda <span style="color:#ff7b72;font-weight:bold">=</span> [](<span style="color:#ff7b72">int</span> x, <span style="color:#ff7b72">int</span> y) { <span style="color:#ff7b72">return</span> x <span style="color:#ff7b72;font-weight:bold">+</span> y; };
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> result <span style="color:#ff7b72;font-weight:bold">=</span> lambda(<span style="color:#a5d6ff">5</span>, <span style="color:#a5d6ff">3</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Lambda with capture
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> multiplier <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">auto</span> multiply_by <span style="color:#ff7b72;font-weight:bold">=</span> [multiplier](<span style="color:#ff7b72">int</span> x) { <span style="color:#ff7b72">return</span> x <span style="color:#ff7b72;font-weight:bold">*</span> multiplier; };
+</span></span></code></pre></div><h2 id="control-structures">Control Structures</h2>
+<h3 id="conditionals">Conditionals</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// if-else
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">if</span> (x <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">0</span>) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Positive&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">else</span> <span style="color:#d2a8ff;font-weight:bold">if</span> (x <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">0</span>) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Negative&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">else</span> {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Zero&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Ternary operator
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> result <span style="color:#ff7b72;font-weight:bold">=</span> (x <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">0</span>) <span style="color:#ff7b72;font-weight:bold">?</span> <span style="color:#a5d6ff">1</span> <span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Switch statement
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">switch</span> (choice) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">case</span> <span style="color:#a5d6ff">1</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Option 1&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">case</span> <span style="color:#a5d6ff">2</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Option 2&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">default</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Invalid option&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="loops">Loops</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// for loop
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">int</span> i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>; i <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">10</span>; i<span style="color:#ff7b72;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> i <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Range-based for loop
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> numbers <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>};
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">int</span> <span style="color:#79c0ff;font-weight:bold">num</span> : numbers) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> num <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// while loop
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> i <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">while</span> (i <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">10</span>) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> i <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    i<span style="color:#ff7b72;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// do-while loop
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> j <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">do</span> {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> j <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    j<span style="color:#ff7b72;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">while</span> (j <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#a5d6ff">10</span>);
+</span></span></code></pre></div><h2 id="pointers-and-references">Pointers and References</h2>
+<h3 id="pointers">Pointers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">int</span> x <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span> ptr <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">&amp;</span>x;          <span style="color:#8b949e;font-style:italic">// Pointer to x
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> value <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">*</span>ptr;       <span style="color:#8b949e;font-style:italic">// Dereference pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Dynamic memory allocation
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span> arr <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">new</span> <span style="color:#ff7b72">int</span>[<span style="color:#a5d6ff">10</span>]; <span style="color:#8b949e;font-style:italic">// Allocate array
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">delete</span>[] arr;           <span style="color:#8b949e;font-style:italic">// Free memory
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span> num <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">new</span> <span style="color:#ff7b72">int</span>(<span style="color:#a5d6ff">42</span>); <span style="color:#8b949e;font-style:italic">// Allocate single int
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">delete</span> num;             <span style="color:#8b949e;font-style:italic">// Free memory
+</span></span></span></code></pre></div><h3 id="references">References</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">int</span> x <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&amp;</span> ref <span style="color:#ff7b72;font-weight:bold">=</span> x;           <span style="color:#8b949e;font-style:italic">// Reference to x
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>ref <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">20</span>;               <span style="color:#8b949e;font-style:italic">// Changes x to 20
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Function parameters
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">swap</span>(<span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&amp;</span> a, <span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&amp;</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> temp <span style="color:#ff7b72;font-weight:bold">=</span> a;
+</span></span><span style="display:flex;"><span>    a <span style="color:#ff7b72;font-weight:bold">=</span> b;
+</span></span><span style="display:flex;"><span>    b <span style="color:#ff7b72;font-weight:bold">=</span> temp;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="smart-pointers">Smart Pointers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;memory&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// unique_ptr
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>unique_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> ptr1 <span style="color:#ff7b72;font-weight:bold">=</span> std<span style="color:#ff7b72;font-weight:bold">::</span>make_unique<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span>(<span style="color:#a5d6ff">42</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// shared_ptr
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>shared_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> ptr2 <span style="color:#ff7b72;font-weight:bold">=</span> std<span style="color:#ff7b72;font-weight:bold">::</span>make_shared<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span>(<span style="color:#a5d6ff">42</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// weak_ptr
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>weak_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> weak_ptr <span style="color:#ff7b72;font-weight:bold">=</span> ptr2;
+</span></span></code></pre></div><h2 id="object-oriented-programming">Object-Oriented Programming</h2>
+<h3 id="classes-and-objects">Classes and Objects</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Rectangle</span> {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">private</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">double</span> width, height;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    Rectangle(<span style="color:#ff7b72">double</span> w, <span style="color:#ff7b72">double</span> h) <span style="color:#ff7b72;font-weight:bold">:</span> width(w), height(h) {}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Default constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    Rectangle() <span style="color:#ff7b72;font-weight:bold">:</span> width(<span style="color:#a5d6ff">0</span>), height(<span style="color:#a5d6ff">0</span>) {}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Copy constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    Rectangle(<span style="color:#ff7b72">const</span> Rectangle<span style="color:#ff7b72;font-weight:bold">&amp;</span> other) 
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72;font-weight:bold">:</span> width(other.width), height(other.height) {}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Destructor
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72;font-weight:bold">~</span>Rectangle() {
+</span></span><span style="display:flex;"><span>        <span style="color:#8b949e;font-style:italic">// Cleanup code
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Member functions
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">double</span> <span style="color:#d2a8ff;font-weight:bold">area</span>() <span style="color:#ff7b72">const</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> width <span style="color:#ff7b72;font-weight:bold">*</span> height;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">setDimensions</span>(<span style="color:#ff7b72">double</span> w, <span style="color:#ff7b72">double</span> h) {
+</span></span><span style="display:flex;"><span>        width <span style="color:#ff7b72;font-weight:bold">=</span> w;
+</span></span><span style="display:flex;"><span>        height <span style="color:#ff7b72;font-weight:bold">=</span> h;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Getters
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">double</span> <span style="color:#d2a8ff;font-weight:bold">getWidth</span>() <span style="color:#ff7b72">const</span> { <span style="color:#ff7b72">return</span> width; }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">double</span> <span style="color:#d2a8ff;font-weight:bold">getHeight</span>() <span style="color:#ff7b72">const</span> { <span style="color:#ff7b72">return</span> height; }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Usage
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>Rectangle <span style="color:#d2a8ff;font-weight:bold">rect</span>(<span style="color:#a5d6ff">5.0</span>, <span style="color:#a5d6ff">3.0</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">double</span> area <span style="color:#ff7b72;font-weight:bold">=</span> rect.area();
+</span></span></code></pre></div><h3 id="inheritance">Inheritance</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Base class
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Shape</span> {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">protected</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>string color;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    Shape(<span style="color:#ff7b72">const</span> std<span style="color:#ff7b72;font-weight:bold">::</span>string<span style="color:#ff7b72;font-weight:bold">&amp;</span> c) <span style="color:#ff7b72;font-weight:bold">:</span> color(c) {}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">virtual</span> <span style="color:#ff7b72">double</span> <span style="color:#d2a8ff;font-weight:bold">area</span>() <span style="color:#ff7b72">const</span> <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>;    <span style="color:#8b949e;font-style:italic">// Pure virtual function
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">virtual</span> <span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">draw</span>() <span style="color:#ff7b72">const</span> {
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Drawing a &#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> color <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34; shape&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">virtual</span> <span style="color:#ff7b72;font-weight:bold">~</span>Shape() <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">default</span>;         <span style="color:#8b949e;font-style:italic">// Virtual destructor
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Derived class
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Circle</span> <span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">public</span> Shape {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">private</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">double</span> radius;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    Circle(<span style="color:#ff7b72">double</span> r, <span style="color:#ff7b72">const</span> std<span style="color:#ff7b72;font-weight:bold">::</span>string<span style="color:#ff7b72;font-weight:bold">&amp;</span> c) <span style="color:#ff7b72;font-weight:bold">:</span> Shape(c), radius(r) {}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">double</span> <span style="color:#d2a8ff;font-weight:bold">area</span>() <span style="color:#ff7b72">const</span> <span style="color:#ff7b72">override</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">3.14159</span> <span style="color:#ff7b72;font-weight:bold">*</span> radius <span style="color:#ff7b72;font-weight:bold">*</span> radius;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">draw</span>() <span style="color:#ff7b72">const</span> <span style="color:#ff7b72">override</span> {
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Drawing a &#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> color <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34; circle&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="polymorphism">Polymorphism</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Virtual functions
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Animal</span> {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">virtual</span> <span style="color:#ff7b72">void</span> makeSound() <span style="color:#ff7b72">const</span> {
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Some generic animal sound&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">virtual</span> <span style="color:#ff7b72;font-weight:bold">~</span>Animal() <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">default</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Dog</span> <span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">public</span> Animal {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> makeSound() <span style="color:#ff7b72">const</span> <span style="color:#ff7b72">override</span> {
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Woof!&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Cat</span> <span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">public</span> Animal {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> makeSound() <span style="color:#ff7b72">const</span> <span style="color:#ff7b72">override</span> {
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Meow!&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Usage
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span>std<span style="color:#ff7b72;font-weight:bold">::</span>unique_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span>Animal<span style="color:#ff7b72;font-weight:bold">&gt;&gt;</span> animals;
+</span></span><span style="display:flex;"><span>animals.push_back(std<span style="color:#ff7b72;font-weight:bold">::</span>make_unique<span style="color:#ff7b72;font-weight:bold">&lt;</span>Dog<span style="color:#ff7b72;font-weight:bold">&gt;</span>());
+</span></span><span style="display:flex;"><span>animals.push_back(std<span style="color:#ff7b72;font-weight:bold">::</span>make_unique<span style="color:#ff7b72;font-weight:bold">&lt;</span>Cat<span style="color:#ff7b72;font-weight:bold">&gt;</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">const</span> <span style="color:#ff7b72">auto</span><span style="color:#ff7b72;font-weight:bold">&amp;</span> <span style="color:#79c0ff;font-weight:bold">animal</span> : animals) {
+</span></span><span style="display:flex;"><span>    animal<span style="color:#ff7b72;font-weight:bold">-&gt;</span>makeSound();  <span style="color:#8b949e;font-style:italic">// Polymorphic call
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>}
+</span></span></code></pre></div><h2 id="standard-template-library-stl">Standard Template Library (STL)</h2>
+<h3 id="containers">Containers</h3>
+<h4 id="vector">Vector</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;vector&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> v <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>};
+</span></span><span style="display:flex;"><span>v.push_back(<span style="color:#a5d6ff">6</span>);
+</span></span><span style="display:flex;"><span>v.pop_back();
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> size <span style="color:#ff7b72;font-weight:bold">=</span> v.size();
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> element <span style="color:#ff7b72;font-weight:bold">=</span> v[<span style="color:#a5d6ff">0</span>];
+</span></span></code></pre></div><h4 id="list">List</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;list&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#ff7b72;font-weight:bold">::</span>list<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> l <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>};
+</span></span><span style="display:flex;"><span>l.push_front(<span style="color:#a5d6ff">0</span>);
+</span></span><span style="display:flex;"><span>l.push_back(<span style="color:#a5d6ff">4</span>);
+</span></span><span style="display:flex;"><span>l.remove(<span style="color:#a5d6ff">2</span>);
+</span></span></code></pre></div><h4 id="map">Map</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;map&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#ff7b72;font-weight:bold">::</span>map<span style="color:#ff7b72;font-weight:bold">&lt;</span>std<span style="color:#ff7b72;font-weight:bold">::</span>string, <span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> m;
+</span></span><span style="display:flex;"><span>m[<span style="color:#a5d6ff">&#34;apple&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">5</span>;
+</span></span><span style="display:flex;"><span>m[<span style="color:#a5d6ff">&#34;banana&#34;</span>] <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3</span>;
+</span></span><span style="display:flex;"><span>m.insert({<span style="color:#a5d6ff">&#34;orange&#34;</span>, <span style="color:#a5d6ff">2</span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Iteration
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">const</span> <span style="color:#ff7b72">auto</span><span style="color:#ff7b72;font-weight:bold">&amp;</span> <span style="color:#79c0ff;font-weight:bold">pair</span> : m) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> pair.first <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;: &#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> pair.second <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="set">Set</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;set&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#ff7b72;font-weight:bold">::</span>set<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> s <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">5</span>};  <span style="color:#8b949e;font-style:italic">// Automatically sorted, no duplicates
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>s.insert(<span style="color:#a5d6ff">2</span>);
+</span></span><span style="display:flex;"><span>s.erase(<span style="color:#a5d6ff">3</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">bool</span> found <span style="color:#ff7b72;font-weight:bold">=</span> s.find(<span style="color:#a5d6ff">4</span>) <span style="color:#ff7b72;font-weight:bold">!=</span> s.end();
+</span></span></code></pre></div><h3 id="algorithms">Algorithms</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;algorithm&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> v <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">5</span>, <span style="color:#a5d6ff">9</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Sorting
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>sort(v.begin(), v.end());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Finding
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">auto</span> it <span style="color:#ff7b72;font-weight:bold">=</span> std<span style="color:#ff7b72;font-weight:bold">::</span>find(v.begin(), v.end(), <span style="color:#a5d6ff">4</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> (it <span style="color:#ff7b72;font-weight:bold">!=</span> v.end()) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Found at position: &#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>distance(v.begin(), it) <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Transforming
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>transform(v.begin(), v.end(), v.begin(), [](<span style="color:#ff7b72">int</span> x) { <span style="color:#ff7b72">return</span> x <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">2</span>; });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Filtering
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> filtered;
+</span></span><span style="display:flex;"><span>std<span style="color:#ff7b72;font-weight:bold">::</span>copy_if(v.begin(), v.end(), std<span style="color:#ff7b72;font-weight:bold">::</span>back_inserter(filtered), 
+</span></span><span style="display:flex;"><span>             [](<span style="color:#ff7b72">int</span> x) { <span style="color:#ff7b72">return</span> x <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">5</span>; });
+</span></span></code></pre></div><h3 id="iterators">Iterators</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> v <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Forward iterator
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">auto</span> it <span style="color:#ff7b72;font-weight:bold">=</span> v.begin(); it <span style="color:#ff7b72;font-weight:bold">!=</span> v.end(); <span style="color:#ff7b72;font-weight:bold">++</span>it) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#ff7b72;font-weight:bold">*</span>it <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Reverse iterator
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">auto</span> it <span style="color:#ff7b72;font-weight:bold">=</span> v.rbegin(); it <span style="color:#ff7b72;font-weight:bold">!=</span> v.rend(); <span style="color:#ff7b72;font-weight:bold">++</span>it) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#ff7b72;font-weight:bold">*</span>it <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Range-based for loop (preferred)
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">int</span> <span style="color:#79c0ff;font-weight:bold">value</span> : v) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> value <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="memory-management">Memory Management</h2>
+<h3 id="stack-vs-heap">Stack vs Heap</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Stack allocation
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> x <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">10</span>;                    <span style="color:#8b949e;font-style:italic">// Automatically managed
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> arr[<span style="color:#a5d6ff">100</span>];                  <span style="color:#8b949e;font-style:italic">// Fixed size, stack allocated
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Heap allocation
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span> ptr <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">new</span> <span style="color:#ff7b72">int</span>(<span style="color:#a5d6ff">10</span>);        <span style="color:#8b949e;font-style:italic">// Manual management required
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span> arr <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">new</span> <span style="color:#ff7b72">int</span>[<span style="color:#a5d6ff">100</span>];       <span style="color:#8b949e;font-style:italic">// Dynamic size, heap allocated
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Don&#39;t forget to free
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">delete</span> ptr;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">delete</span>[] arr;
+</span></span></code></pre></div><h3 id="raii-resource-acquisition-is-initialization">RAII (Resource Acquisition Is Initialization)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">FileHandler</span> {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">private</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>FILE<span style="color:#ff7b72;font-weight:bold">*</span> file;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    FileHandler(<span style="color:#ff7b72">const</span> std<span style="color:#ff7b72;font-weight:bold">::</span>string<span style="color:#ff7b72;font-weight:bold">&amp;</span> filename) {
+</span></span><span style="display:flex;"><span>        file <span style="color:#ff7b72;font-weight:bold">=</span> std<span style="color:#ff7b72;font-weight:bold">::</span>fopen(filename.c_str(), <span style="color:#a5d6ff">&#34;r&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> (<span style="color:#ff7b72;font-weight:bold">!</span>file) {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">throw</span> std<span style="color:#ff7b72;font-weight:bold">::</span>runtime_error(<span style="color:#a5d6ff">&#34;Cannot open file&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72;font-weight:bold">~</span>FileHandler() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> (file) {
+</span></span><span style="display:flex;"><span>            std<span style="color:#ff7b72;font-weight:bold">::</span>fclose(file);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Delete copy constructor and assignment operator
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    FileHandler(<span style="color:#ff7b72">const</span> FileHandler<span style="color:#ff7b72;font-weight:bold">&amp;</span>) <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">delete</span>;
+</span></span><span style="display:flex;"><span>    FileHandler<span style="color:#ff7b72;font-weight:bold">&amp;</span> <span style="color:#ff7b72">operator</span><span style="color:#ff7b72;font-weight:bold">=</span>(<span style="color:#ff7b72">const</span> FileHandler<span style="color:#ff7b72;font-weight:bold">&amp;</span>) <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">delete</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="exception-handling">Exception Handling</h2>
+<h3 id="try-catch">Try-Catch</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;stdexcept&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> result <span style="color:#ff7b72;font-weight:bold">=</span> divide(<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">0</span>);
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Result: &#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> result <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">catch</span> (<span style="color:#ff7b72">const</span> std<span style="color:#ff7b72;font-weight:bold">::</span>runtime_error<span style="color:#ff7b72;font-weight:bold">&amp;</span> e) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cerr <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Runtime error: &#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> e.what() <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">catch</span> (<span style="color:#ff7b72">const</span> std<span style="color:#ff7b72;font-weight:bold">::</span>exception<span style="color:#ff7b72;font-weight:bold">&amp;</span> e) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cerr <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;General error: &#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> e.what() <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>} <span style="color:#ff7b72">catch</span> (...) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cerr <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Unknown error occurred&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="custom-exceptions">Custom Exceptions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">DivisionByZeroException</span> <span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">public</span> std<span style="color:#ff7b72;font-weight:bold">::</span>exception {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">const</span> <span style="color:#ff7b72">char</span><span style="color:#ff7b72;font-weight:bold">*</span> what() <span style="color:#ff7b72">const</span> <span style="color:#ff7b72">noexcept</span> <span style="color:#ff7b72">override</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> <span style="color:#a5d6ff">&#34;Division by zero is not allowed&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">int</span> <span style="color:#d2a8ff;font-weight:bold">divide</span>(<span style="color:#ff7b72">int</span> a, <span style="color:#ff7b72">int</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (b <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#a5d6ff">0</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">throw</span> DivisionByZeroException();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> a <span style="color:#ff7b72;font-weight:bold">/</span> b;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="templates">Templates</h2>
+<h3 id="function-templates">Function Templates</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">template</span><span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">typename</span> T<span style="color:#ff7b72;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>T max(T a, T b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> (a <span style="color:#ff7b72;font-weight:bold">&gt;</span> b) <span style="color:#ff7b72;font-weight:bold">?</span> <span style="color:#79c0ff;font-weight:bold">a</span> : b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Usage
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> max_int <span style="color:#ff7b72;font-weight:bold">=</span> max(<span style="color:#a5d6ff">5</span>, <span style="color:#a5d6ff">3</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">double</span> max_double <span style="color:#ff7b72;font-weight:bold">=</span> max(<span style="color:#a5d6ff">5.5</span>, <span style="color:#a5d6ff">3.3</span>);
+</span></span></code></pre></div><h3 id="class-templates">Class Templates</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">template</span><span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">typename</span> T<span style="color:#ff7b72;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Stack</span> {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">private</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span>T<span style="color:#ff7b72;font-weight:bold">&gt;</span> elements;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> push(<span style="color:#ff7b72">const</span> T<span style="color:#ff7b72;font-weight:bold">&amp;</span> item) {
+</span></span><span style="display:flex;"><span>        elements.push_back(item);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    T <span style="color:#d2a8ff;font-weight:bold">pop</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> (elements.empty()) {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">throw</span> std<span style="color:#ff7b72;font-weight:bold">::</span>runtime_error(<span style="color:#a5d6ff">&#34;Stack is empty&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        T top <span style="color:#ff7b72;font-weight:bold">=</span> elements.back();
+</span></span><span style="display:flex;"><span>        elements.pop_back();
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> top;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">bool</span> <span style="color:#d2a8ff;font-weight:bold">empty</span>() <span style="color:#ff7b72">const</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> elements.empty();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Usage
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>Stack<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> int_stack;
+</span></span><span style="display:flex;"><span>Stack<span style="color:#ff7b72;font-weight:bold">&lt;</span>std<span style="color:#ff7b72;font-weight:bold">::</span>string<span style="color:#ff7b72;font-weight:bold">&gt;</span> string_stack;
+</span></span></code></pre></div><h3 id="template-specialization">Template Specialization</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">template</span><span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">typename</span> T<span style="color:#ff7b72;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Container</span> {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> process() {
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;General processing&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Specialization for bool
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">template</span><span style="color:#ff7b72;font-weight:bold">&lt;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Container</span><span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">bool</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> process() {
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Boolean processing&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="modern-c-features">Modern C++ Features</h2>
+<h3 id="c11-features">C++11 Features</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Auto keyword
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">auto</span> x <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">42</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">auto</span> y <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">3.14</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Range-based for loop
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> v <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>, <span style="color:#a5d6ff">4</span>, <span style="color:#a5d6ff">5</span>};
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">auto</span><span style="color:#ff7b72;font-weight:bold">&amp;</span> <span style="color:#79c0ff;font-weight:bold">element</span> : v) {
+</span></span><span style="display:flex;"><span>    element <span style="color:#ff7b72;font-weight:bold">*=</span> <span style="color:#a5d6ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Lambda expressions
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">auto</span> lambda <span style="color:#ff7b72;font-weight:bold">=</span> [](<span style="color:#ff7b72">int</span> x) { <span style="color:#ff7b72">return</span> x <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">2</span>; };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// nullptr
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">*</span> ptr <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">nullptr</span>;  <span style="color:#8b949e;font-style:italic">// Instead of NULL
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Move semantics
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> v1 <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>};
+</span></span><span style="display:flex;"><span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> v2 <span style="color:#ff7b72;font-weight:bold">=</span> std<span style="color:#ff7b72;font-weight:bold">::</span>move(v1);  <span style="color:#8b949e;font-style:italic">// v1 is now empty
+</span></span></span></code></pre></div><h3 id="c14-features">C++14 Features</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Generic lambda
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">auto</span> lambda <span style="color:#ff7b72;font-weight:bold">=</span> [](<span style="color:#ff7b72">auto</span> x, <span style="color:#ff7b72">auto</span> y) { <span style="color:#ff7b72">return</span> x <span style="color:#ff7b72;font-weight:bold">+</span> y; };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Return type deduction
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">auto</span> <span style="color:#d2a8ff;font-weight:bold">fibonacci</span>(<span style="color:#ff7b72">int</span> n) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (n <span style="color:#ff7b72;font-weight:bold">&lt;=</span> <span style="color:#a5d6ff">1</span>) <span style="color:#ff7b72">return</span> n;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> fibonacci(n<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>) <span style="color:#ff7b72;font-weight:bold">+</span> fibonacci(n<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">2</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Binary literals
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">int</span> binary <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0b101010</span>;
+</span></span></code></pre></div><h3 id="c17-features">C++17 Features</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Structured bindings
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>map<span style="color:#ff7b72;font-weight:bold">&lt;</span>std<span style="color:#ff7b72;font-weight:bold">::</span>string, <span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> m <span style="color:#ff7b72;font-weight:bold">=</span> {{<span style="color:#a5d6ff">&#34;apple&#34;</span>, <span style="color:#a5d6ff">5</span>}, {<span style="color:#a5d6ff">&#34;banana&#34;</span>, <span style="color:#a5d6ff">3</span>}};
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">const</span> <span style="color:#ff7b72">auto</span><span style="color:#ff7b72;font-weight:bold">&amp;</span> [key, value] <span style="color:#ff7b72;font-weight:bold">:</span> m) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> key <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;: &#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> value <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// if constexpr
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">template</span><span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">typename</span> T<span style="color:#ff7b72;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">auto</span> process(T value) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> <span style="color:#d2a8ff;font-weight:bold">constexpr</span> (std<span style="color:#ff7b72;font-weight:bold">::</span>is_integral_v<span style="color:#ff7b72;font-weight:bold">&lt;</span>T<span style="color:#ff7b72;font-weight:bold">&gt;</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> value <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">2</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#ff7b72">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> value;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="file-io">File I/O</h2>
+<h3 id="reading-files">Reading Files</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;fstream&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;sstream&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Read entire file
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>ifstream file(<span style="color:#a5d6ff">&#34;input.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>std<span style="color:#ff7b72;font-weight:bold">::</span>string content((std<span style="color:#ff7b72;font-weight:bold">::</span>istreambuf_iterator<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">char</span><span style="color:#ff7b72;font-weight:bold">&gt;</span>(file)),
+</span></span><span style="display:flex;"><span>                    std<span style="color:#ff7b72;font-weight:bold">::</span>istreambuf_iterator<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">char</span><span style="color:#ff7b72;font-weight:bold">&gt;</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Read line by line
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>ifstream file(<span style="color:#a5d6ff">&#34;input.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>std<span style="color:#ff7b72;font-weight:bold">::</span>string line;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">while</span> (std<span style="color:#ff7b72;font-weight:bold">::</span>getline(file, line)) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> line <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="writing-files">Writing Files</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;fstream&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Write to file
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>ofstream file(<span style="color:#a5d6ff">&#34;output.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>file <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Hello, World!&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>file <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Line 2&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Append to file
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>ofstream file(<span style="color:#a5d6ff">&#34;output.txt&#34;</span>, std<span style="color:#ff7b72;font-weight:bold">::</span>ios<span style="color:#ff7b72;font-weight:bold">::</span>app);
+</span></span><span style="display:flex;"><span>file <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Appended line&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span></code></pre></div><h2 id="debugging-and-best-practices">Debugging and Best Practices</h2>
+<h3 id="debugging">Debugging</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;cassert&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Assertions
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>assert(x <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#a5d6ff">0</span>);  <span style="color:#8b949e;font-style:italic">// Only in debug builds
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Debug output
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#ifdef DEBUG
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Debug: x = &#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> x <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#endif
+</span></span></span></code></pre></div><h3 id="best-practices">Best Practices</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use const correctness
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">print</span>(<span style="color:#ff7b72">const</span> std<span style="color:#ff7b72;font-weight:bold">::</span>string<span style="color:#ff7b72;font-weight:bold">&amp;</span> message) {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> message <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use RAII for resource management
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">ResourceManager</span> {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>unique_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span>Resource<span style="color:#ff7b72;font-weight:bold">&gt;</span> resource;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    ResourceManager() <span style="color:#ff7b72;font-weight:bold">:</span> resource(std<span style="color:#ff7b72;font-weight:bold">::</span>make_unique<span style="color:#ff7b72;font-weight:bold">&lt;</span>Resource<span style="color:#ff7b72;font-weight:bold">&gt;</span>()) {}
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Destructor automatically called
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Prefer STL containers over raw arrays
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> v(<span style="color:#a5d6ff">100</span>);  <span style="color:#8b949e;font-style:italic">// Instead of int arr[100];
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use smart pointers instead of raw pointers
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>unique_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> ptr <span style="color:#ff7b72;font-weight:bold">=</span> std<span style="color:#ff7b72;font-weight:bold">::</span>make_unique<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span>(<span style="color:#a5d6ff">42</span>);
+</span></span></code></pre></div><h2 id="common-patterns">Common Patterns</h2>
+<h3 id="singleton-pattern">Singleton Pattern</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Singleton</span> {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">private</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">static</span> Singleton<span style="color:#ff7b72;font-weight:bold">*</span> instance;
+</span></span><span style="display:flex;"><span>    Singleton() <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">default</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">static</span> Singleton<span style="color:#ff7b72;font-weight:bold">*</span> getInstance() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> (<span style="color:#ff7b72;font-weight:bold">!</span>instance) {
+</span></span><span style="display:flex;"><span>            instance <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">new</span> Singleton();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> instance;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Delete copy constructor and assignment
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    Singleton(<span style="color:#ff7b72">const</span> Singleton<span style="color:#ff7b72;font-weight:bold">&amp;</span>) <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">delete</span>;
+</span></span><span style="display:flex;"><span>    Singleton<span style="color:#ff7b72;font-weight:bold">&amp;</span> <span style="color:#ff7b72">operator</span><span style="color:#ff7b72;font-weight:bold">=</span>(<span style="color:#ff7b72">const</span> Singleton<span style="color:#ff7b72;font-weight:bold">&amp;</span>) <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">delete</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="factory-pattern">Factory Pattern</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Product</span> {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">virtual</span> <span style="color:#ff7b72;font-weight:bold">~</span>Product() <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">default</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">virtual</span> <span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">use</span>() <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">0</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">ConcreteProduct</span> <span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">public</span> Product {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> use() <span style="color:#ff7b72">override</span> {
+</span></span><span style="display:flex;"><span>        std<span style="color:#ff7b72;font-weight:bold">::</span>cout <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#a5d6ff">&#34;Using concrete product&#34;</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> std<span style="color:#ff7b72;font-weight:bold">::</span>endl;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">Factory</span> {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">static</span> std<span style="color:#ff7b72;font-weight:bold">::</span>unique_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span>Product<span style="color:#ff7b72;font-weight:bold">&gt;</span> createProduct() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> std<span style="color:#ff7b72;font-weight:bold">::</span>make_unique<span style="color:#ff7b72;font-weight:bold">&lt;</span>ConcreteProduct<span style="color:#ff7b72;font-weight:bold">&gt;</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="compilation-and-build-systems">Compilation and Build Systems</h2>
+<h3 id="cmake">CMake</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># CMakeLists.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>cmake_minimum_required(<span style="color:#a5d6ff">VERSION</span> <span style="color:#a5d6ff">3.10</span>)<span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span>project(<span style="color:#a5d6ff">MyProject</span>)<span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span>set(<span style="color:#a5d6ff">CMAKE_CXX_STANDARD</span> <span style="color:#a5d6ff">17</span>)<span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span>add_executable(<span style="color:#a5d6ff">myapp</span> <span style="color:#a5d6ff">main.cpp</span> <span style="color:#a5d6ff">utils.cpp</span>)<span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149">
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149"></span><span style="color:#8b949e;font-style:italic"># Link libraries
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>target_link_libraries(<span style="color:#a5d6ff">myapp</span> <span style="color:#a5d6ff">pthread</span>)<span style="color:#f85149">
+</span></span></span></code></pre></div><h3 id="makefile">Makefile</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Makefile
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#79c0ff">CXX</span> <span style="color:#ff7b72;font-weight:bold">=</span> g++
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">CXXFLAGS</span> <span style="color:#ff7b72;font-weight:bold">=</span> -std<span style="color:#ff7b72;font-weight:bold">=</span>c++17 -Wall -Wextra -g
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">TARGET</span> <span style="color:#ff7b72;font-weight:bold">=</span> myapp
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">SOURCES</span> <span style="color:#ff7b72;font-weight:bold">=</span> main.cpp utils.cpp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">$(TARGET)</span><span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">$(</span><span style="color:#79c0ff">SOURCES</span><span style="color:#ff7b72">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff7b72">$(</span>CXX<span style="color:#ff7b72">)</span> <span style="color:#ff7b72">$(</span>CXXFLAGS<span style="color:#ff7b72">)</span> -o <span style="color:#ff7b72">$(</span>TARGET<span style="color:#ff7b72">)</span> <span style="color:#ff7b72">$(</span>SOURCES<span style="color:#ff7b72">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">clean</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>	rm -f <span style="color:#ff7b72">$(</span>TARGET<span style="color:#ff7b72">)</span>
+</span></span></code></pre></div><h2 id="performance-tips">Performance Tips</h2>
+<h3 id="optimization">Optimization</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use const references for function parameters
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">process</span>(<span style="color:#ff7b72">const</span> std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;&amp;</span> data) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// Process data without copying
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use move semantics
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> getData() {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> result(<span style="color:#a5d6ff">1000</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">// ... fill result
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>    <span style="color:#ff7b72">return</span> result;  <span style="color:#8b949e;font-style:italic">// Move semantics applied automatically
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Reserve vector capacity
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span><span style="color:#ff7b72">int</span><span style="color:#ff7b72;font-weight:bold">&gt;</span> v;
+</span></span><span style="display:flex;"><span>v.reserve(<span style="color:#a5d6ff">1000</span>);  <span style="color:#8b949e;font-style:italic">// Avoid reallocations
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use emplace instead of push
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span>std<span style="color:#ff7b72;font-weight:bold">::</span>string<span style="color:#ff7b72;font-weight:bold">&gt;</span> v;
+</span></span><span style="display:flex;"><span>v.emplace_back(<span style="color:#a5d6ff">&#34;Hello&#34;</span>);  <span style="color:#8b949e;font-style:italic">// Construct in place
+</span></span></span></code></pre></div><h3 id="memory-optimization">Memory Optimization</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use appropriate data types
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>std<span style="color:#ff7b72;font-weight:bold">::</span><span style="color:#ff7b72">uint8_t</span> small_number <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#a5d6ff">255</span>;  <span style="color:#8b949e;font-style:italic">// Instead of int for small values
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Use object pooling for frequently created objects
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">ObjectPool</span> {
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>vector<span style="color:#ff7b72;font-weight:bold">&lt;</span>std<span style="color:#ff7b72;font-weight:bold">::</span>unique_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span>Object<span style="color:#ff7b72;font-weight:bold">&gt;&gt;</span> pool;
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">public</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>unique_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span>Object<span style="color:#ff7b72;font-weight:bold">&gt;</span> acquire() {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">if</span> (pool.empty()) {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff7b72">return</span> std<span style="color:#ff7b72;font-weight:bold">::</span>make_unique<span style="color:#ff7b72;font-weight:bold">&lt;</span>Object<span style="color:#ff7b72;font-weight:bold">&gt;</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">auto</span> obj <span style="color:#ff7b72;font-weight:bold">=</span> std<span style="color:#ff7b72;font-weight:bold">::</span>move(pool.back());
+</span></span><span style="display:flex;"><span>        pool.pop_back();
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> obj;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">release</span>(std<span style="color:#ff7b72;font-weight:bold">::</span>unique_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span>Object<span style="color:#ff7b72;font-weight:bold">&gt;</span> obj) {
+</span></span><span style="display:flex;"><span>        pool.push_back(std<span style="color:#ff7b72;font-weight:bold">::</span>move(obj));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h2 id="testing">Testing</h2>
+<h3 id="unit-testing-with-google-test">Unit Testing (with Google Test)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;gtest/gtest.h&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Test fixture
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">class</span> <span style="color:#f0883e;font-weight:bold">CalculatorTest</span> <span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ff7b72">public</span> <span style="color:#ff7b72;font-weight:bold">::</span>testing<span style="color:#ff7b72;font-weight:bold">::</span>Test {
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">protected</span><span style="color:#ff7b72;font-weight:bold">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">void</span> SetUp() <span style="color:#ff7b72">override</span> {
+</span></span><span style="display:flex;"><span>        calc <span style="color:#ff7b72;font-weight:bold">=</span> std<span style="color:#ff7b72;font-weight:bold">::</span>make_unique<span style="color:#ff7b72;font-weight:bold">&lt;</span>Calculator<span style="color:#ff7b72;font-weight:bold">&gt;</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    std<span style="color:#ff7b72;font-weight:bold">::</span>unique_ptr<span style="color:#ff7b72;font-weight:bold">&lt;</span>Calculator<span style="color:#ff7b72;font-weight:bold">&gt;</span> calc;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Test case
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>TEST_F(CalculatorTest, Addition) {
+</span></span><span style="display:flex;"><span>    EXPECT_EQ(calc<span style="color:#ff7b72;font-weight:bold">-&gt;</span>add(<span style="color:#a5d6ff">2</span>, <span style="color:#a5d6ff">3</span>), <span style="color:#a5d6ff">5</span>);
+</span></span><span style="display:flex;"><span>    EXPECT_EQ(calc<span style="color:#ff7b72;font-weight:bold">-&gt;</span>add(<span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>, <span style="color:#a5d6ff">1</span>), <span style="color:#a5d6ff">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>TEST_F(CalculatorTest, Division) {
+</span></span><span style="display:flex;"><span>    EXPECT_EQ(calc<span style="color:#ff7b72;font-weight:bold">-&gt;</span>divide(<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">2</span>), <span style="color:#a5d6ff">5</span>);
+</span></span><span style="display:flex;"><span>    EXPECT_THROW(calc<span style="color:#ff7b72;font-weight:bold">-&gt;</span>divide(<span style="color:#a5d6ff">10</span>, <span style="color:#a5d6ff">0</span>), std<span style="color:#ff7b72;font-weight:bold">::</span>invalid_argument);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="quick-reference">Quick Reference</h2>
+<h3 id="common-headers">Common Headers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;iostream&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">     </span><span style="color:#8b949e;font-style:italic">// Input/output
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;vector&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">       </span><span style="color:#8b949e;font-style:italic">// Dynamic arrays
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;string&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">       </span><span style="color:#8b949e;font-style:italic">// String class
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;algorithm&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">    </span><span style="color:#8b949e;font-style:italic">// Algorithms
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;memory&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">       </span><span style="color:#8b949e;font-style:italic">// Smart pointers
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;fstream&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">      </span><span style="color:#8b949e;font-style:italic">// File I/O
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;map&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">          </span><span style="color:#8b949e;font-style:italic">// Associative containers
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#8b949e;font-weight:bold;font-style:italic">#include</span> <span style="color:#8b949e;font-weight:bold;font-style:italic">&lt;thread&gt;</span><span style="color:#8b949e;font-weight:bold;font-style:italic">       </span><span style="color:#8b949e;font-style:italic">// Threading
+</span></span></span></code></pre></div><h3 id="essential-operators">Essential Operators</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Arithmetic
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">+</span> <span style="color:#ff7b72;font-weight:bold">-</span> <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#ff7b72;font-weight:bold">/</span> <span style="color:#ff7b72;font-weight:bold">%</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Comparison
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#ff7b72;font-weight:bold">&lt;</span> <span style="color:#ff7b72;font-weight:bold">&gt;</span> <span style="color:#ff7b72;font-weight:bold">&lt;=</span> <span style="color:#ff7b72;font-weight:bold">&gt;=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Logical
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">&amp;&amp;</span> <span style="color:#ff7b72;font-weight:bold">||</span> <span style="color:#ff7b72;font-weight:bold">!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Bitwise
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">&amp;</span> <span style="color:#ff7b72;font-weight:bold">|</span> <span style="color:#ff7b72;font-weight:bold">^</span> <span style="color:#ff7b72;font-weight:bold">~</span> <span style="color:#ff7b72;font-weight:bold">&lt;&lt;</span> <span style="color:#ff7b72;font-weight:bold">&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Assignment
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">+=</span> <span style="color:#ff7b72;font-weight:bold">-=</span> <span style="color:#ff7b72;font-weight:bold">*=</span> <span style="color:#ff7b72;font-weight:bold">/=</span> <span style="color:#ff7b72;font-weight:bold">%=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Increment/Decrement
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">++</span> <span style="color:#ff7b72;font-weight:bold">--</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Member access
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>. <span style="color:#ff7b72;font-weight:bold">-&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Scope resolution
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72;font-weight:bold">::</span>
+</span></span></code></pre></div><h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://en.cppreference.com/">cppreference.com</a> - Comprehensive C++ reference</li>
+<li><a href="https://github.com/isocpp/CppCoreGuidelines">C++ Core Guidelines</a> - Best practices</li>
+<li><a href="https://changkun.de/modern-cpp/">Modern C++ Tutorial</a> - Modern C++ features</li>
+<li><code>man g++</code> - GCC compiler manual</li>
+<li><code>clang++</code> - Clang compiler</li>
+<li><code>gdb</code> - GNU Debugger</li>
+</ul>
+
+    </div>
+
+    
+    <div class="mt-4">
+        <h5>Categories:</h5>
+        
+        <a href="/categories/programming" class="badge bg-secondary text-decoration-none me-2">programming</a>
+        
+    </div>
+    
+
+    <div class="mt-4">
+        <small class="text-muted">
+            Last updated: January 1, 2024
+        </small>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 QuickRef - Developer Reference. Built with <i class="fas fa-heart text-danger"></i> for developers.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="/js/app.js"></script>
+    
+    
+</body>
+</html>

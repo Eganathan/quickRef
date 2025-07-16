@@ -2,7 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/api/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/programming/bash/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/c/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/programming/c/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/c&#43;&#43;/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/programming/cpp/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
@@ -11,10 +26,100 @@
     <loc>http://localhost:1313/tags/cli/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/collaboration/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/concurrent/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cpp/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/curl/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/curl/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/data-processing/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/data-science/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/development/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/editor/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/enterprise/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/git/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/git/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/go/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/programming/go/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/golang/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tools/grep/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/http/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/java/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/programming/java/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/jq/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/jq/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/json/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/jvm/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/low-level/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/multiplexer/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/networking/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/object-oriented/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/parsing/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pattern-matching/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/performance/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/productivity/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/programming/</loc>
@@ -26,7 +131,22 @@
     <loc>http://localhost:1313/programming/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/programming/python/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/regex/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/regex/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/scm/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/scripting/</loc>
@@ -35,13 +155,34 @@
     <loc>http://localhost:1313/tags/search/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/session/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/shell/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/systems/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/terminal/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/text/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/text-editing/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/text-processing/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tmux/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/tmux/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tools/</loc>
@@ -54,6 +195,21 @@
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/unix/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/version-control/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/vim/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/vim/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-development/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url>
 </urlset>

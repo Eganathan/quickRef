@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex - QuickRef - Developer Reference</title>
+    <meta name="description" content="Regular expressions for pattern matching and text processing in various programming languages and tools.">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    
+    <link href="/css/styles.css" rel="stylesheet">
+    
+    
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:1313/">
+                <i class="fas fa-code"></i> QuickRef - Developer Reference
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <button class="theme-toggle me-3" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                
+                <a class="nav-link" href="/" >
+                    <i class="fas fa-home"></i>
+                    
+                    Home
+                </a>
+                
+                <a class="nav-link" href="https://github.com/yourusername/quickref" target="_blank">
+                    
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="ref-page">
+    <a href="http://localhost:1313/" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to QuickRef
+    </a>
+    
+    <div class="ref-header">
+        <h1 class="ref-title">Regex</h1>
+        <p class="ref-description">Regular expressions for pattern matching and text processing in various programming languages and tools.</p>
+        <div class="ref-tags">
+            
+            <span class="ref-tag">regex</span>
+            
+            <span class="ref-tag">pattern-matching</span>
+            
+            <span class="ref-tag">text-processing</span>
+            
+            <span class="ref-tag">programming</span>
+            
+            <span class="ref-tag">search</span>
+            
+        </div>
+    </div>
+
+    <div class="ref-content">
+        <h2 id="overview">Overview</h2>
+<p>Regular expressions (regex) are patterns used to match character combinations in strings. They&rsquo;re essential for text processing, validation, searching, and data extraction across virtually all programming languages and tools.</p>
+<h2 id="basic-syntax">Basic Syntax</h2>
+<h3 id="literal-characters">Literal Characters</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">hello       # Matches &#34;hello&#34; exactly
+123         # Matches &#34;123&#34; exactly
+</code></pre><h3 id="meta-characters">Meta Characters</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">.           # Any character except newline
+^           # Start of string/line
+$           # End of string/line
+\           # Escape character
+|           # OR operator
+()          # Group
+[]          # Character class
+{}          # Quantifier
+</code></pre><h2 id="character-classes">Character Classes</h2>
+<h3 id="predefined-classes">Predefined Classes</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">.           # Any character except newline
+\d          # Any digit (0-9)
+\D          # Any non-digit
+\w          # Any word character (a-z, A-Z, 0-9, _)
+\W          # Any non-word character
+\s          # Any whitespace character
+\S          # Any non-whitespace character
+</code></pre><h3 id="custom-classes">Custom Classes</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">[abc]       # Any of a, b, or c
+[a-z]       # Any lowercase letter
+[A-Z]       # Any uppercase letter
+[0-9]       # Any digit
+[^abc]      # Any character except a, b, or c
+[a-zA-Z0-9] # Any alphanumeric character
+</code></pre><h2 id="quantifiers">Quantifiers</h2>
+<h3 id="basic-quantifiers">Basic Quantifiers</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">*           # 0 or more
++           # 1 or more
+?           # 0 or 1 (optional)
+{n}         # Exactly n times
+{n,}        # n or more times
+{n,m}       # Between n and m times
+</code></pre><h3 id="examples">Examples</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">a*          # &#34;&#34;, &#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, ...
+a+          # &#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, ... (not empty)
+a?          # &#34;&#34; or &#34;a&#34;
+a{3}        # &#34;aaa&#34; exactly
+a{2,4}      # &#34;aa&#34;, &#34;aaa&#34;, or &#34;aaaa&#34;
+</code></pre><h2 id="anchors">Anchors</h2>
+<h3 id="position-anchors">Position Anchors</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">^           # Start of string/line
+$           # End of string/line
+\b          # Word boundary
+\B          # Non-word boundary
+</code></pre><h3 id="examples-1">Examples</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">^hello      # &#34;hello&#34; at start of line
+world$      # &#34;world&#34; at end of line
+\bcat\b     # &#34;cat&#34; as whole word
+\Bcat\B     # &#34;cat&#34; not as whole word
+</code></pre><h2 id="groups-and-capturing">Groups and Capturing</h2>
+<h3 id="groups">Groups</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">(abc)       # Capture group
+(?:abc)     # Non-capturing group
+(?P&lt;name&gt;abc) # Named group (Python)
+(?&lt;name&gt;abc)  # Named group (C#, Java)
+</code></pre><h3 id="backreferences">Backreferences</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">(cat)\1     # Matches &#34;catcat&#34;
+(\w+)\s+\1  # Matches repeated words
+</code></pre><h2 id="common-patterns">Common Patterns</h2>
+<h3 id="email-validation">Email Validation</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+</code></pre><h3 id="phone-numbers">Phone Numbers</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">^\+?1?[-.\s]?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}$
+</code></pre><h3 id="urls">URLs</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&amp;//=]*)$
+</code></pre><h3 id="ipv4-address">IPv4 Address</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$
+</code></pre><h3 id="date-formats">Date Formats</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex"># MM/DD/YYYY
+^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}$
+
+# YYYY-MM-DD
+^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$
+</code></pre><h3 id="credit-card-numbers">Credit Card Numbers</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex"># Visa
+^4[0-9]{12}(?:[0-9]{3})?$
+
+# MasterCard
+^5[1-5][0-9]{14}$
+
+# American Express
+^3[47][0-9]{13}$
+</code></pre><h2 id="language-specific-usage">Language-Specific Usage</h2>
+<h3 id="javascript">JavaScript</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Create regex
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span><span style="color:#ff7b72">const</span> regex <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#f85149">/pattern/flags;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">const</span> regex <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72">new</span> RegExp(<span style="color:#a5d6ff">&#39;pattern&#39;</span>, <span style="color:#a5d6ff">&#39;flags&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Test match
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>regex.test(string);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">// Find matches
+</span></span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"></span>string.match(regex);
+</span></span><span style="display:flex;"><span>string.search(regex);
+</span></span><span style="display:flex;"><span>string.replace(regex, replacement);
+</span></span></code></pre></div><h3 id="python">Python</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff7b72">import</span> <span style="color:#ff7b72">re</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Compile regex</span>
+</span></span><span style="display:flex;"><span>pattern <span style="color:#ff7b72;font-weight:bold">=</span> re<span style="color:#ff7b72;font-weight:bold">.</span>compile(<span style="color:#79c0ff">r</span><span style="color:#a5d6ff">&#39;regex_pattern&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Match functions</span>
+</span></span><span style="display:flex;"><span>re<span style="color:#ff7b72;font-weight:bold">.</span><span style="color:#ff7b72">match</span>(pattern, string)    <span style="color:#8b949e;font-style:italic"># Match at beginning</span>
+</span></span><span style="display:flex;"><span>re<span style="color:#ff7b72;font-weight:bold">.</span>search(pattern, string)   <span style="color:#8b949e;font-style:italic"># Find first match</span>
+</span></span><span style="display:flex;"><span>re<span style="color:#ff7b72;font-weight:bold">.</span>findall(pattern, string)  <span style="color:#8b949e;font-style:italic"># Find all matches</span>
+</span></span><span style="display:flex;"><span>re<span style="color:#ff7b72;font-weight:bold">.</span>sub(pattern, replacement, string)  <span style="color:#8b949e;font-style:italic"># Replace</span>
+</span></span></code></pre></div><h3 id="bashgrep">Bash/grep</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Basic grep</span>
+</span></span><span style="display:flex;"><span>grep <span style="color:#a5d6ff">&#39;pattern&#39;</span> file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Extended regex</span>
+</span></span><span style="display:flex;"><span>grep -E <span style="color:#a5d6ff">&#39;pattern&#39;</span> file.txt
+</span></span><span style="display:flex;"><span>egrep <span style="color:#a5d6ff">&#39;pattern&#39;</span> file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Perl-compatible regex</span>
+</span></span><span style="display:flex;"><span>grep -P <span style="color:#a5d6ff">&#39;pattern&#39;</span> file.txt
+</span></span></code></pre></div><h3 id="sed">sed</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Replace with regex</span>
+</span></span><span style="display:flex;"><span>sed <span style="color:#a5d6ff">&#39;s/pattern/replacement/g&#39;</span> file.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Extended regex</span>
+</span></span><span style="display:flex;"><span>sed -E <span style="color:#a5d6ff">&#39;s/pattern/replacement/g&#39;</span> file.txt
+</span></span></code></pre></div><h2 id="flagsmodifiers">Flags/Modifiers</h2>
+<h3 id="common-flags">Common Flags</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">i           # Case insensitive
+g           # Global (find all matches)
+m           # Multiline (^ and $ match line breaks)
+s           # Dot matches newline
+x           # Extended (ignore whitespace)
+</code></pre><h3 id="examples-2">Examples</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#79c0ff">/hello/i</span>        <span style="color:#f85149">#</span> Case insensitive
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">/hello/g</span>        <span style="color:#f85149">#</span> Global search
+</span></span><span style="display:flex;"><span><span style="color:#79c0ff">/hello/gi</span>       <span style="color:#f85149">#</span> Case insensitive <span style="color:#ff7b72;font-weight:bold">+</span> global
+</span></span></code></pre></div><h2 id="advanced-features">Advanced Features</h2>
+<h3 id="lookaheadlookbehind">Lookahead/Lookbehind</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">(?=pattern)     # Positive lookahead
+(?!pattern)     # Negative lookahead
+(?&lt;=pattern)    # Positive lookbehind
+(?&lt;!pattern)    # Negative lookbehind
+</code></pre><h3 id="examples-3">Examples</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">\d+(?=px)       # Numbers followed by &#34;px&#34;
+\d+(?!px)       # Numbers not followed by &#34;px&#34;
+(?&lt;=\$)\d+      # Numbers preceded by &#34;$&#34;
+(?&lt;!\$)\d+      # Numbers not preceded by &#34;$&#34;
+</code></pre><h2 id="practical-examples">Practical Examples</h2>
+<h3 id="extract-domain-from-email">Extract Domain from Email</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})
+</code></pre><h3 id="find-html-tags">Find HTML Tags</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">&lt;\/?[a-zA-Z][^&gt;]*&gt;
+</code></pre><h3 id="match-quoted-strings">Match Quoted Strings</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">&#34;([^&#34;\\]|\\.)*&#34;
+</code></pre><h3 id="find-css-colors">Find CSS Colors</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">#[0-9a-fA-F]{3,6}
+</code></pre><h3 id="extract-urls-from-text">Extract URLs from Text</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">https?:\/\/[^\s]+
+</code></pre><h3 id="match-json-values">Match JSON Values</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">&#34;[^&#34;]*&#34;:\s*(&#34;[^&#34;]*&#34;|\d+|true|false|null)
+</code></pre><h2 id="testing-and-debugging">Testing and Debugging</h2>
+<h3 id="online-tools">Online Tools</h3>
+<ul>
+<li><a href="https://regex101.com">regex101.com</a> - Interactive regex tester</li>
+<li><a href="https://regexr.com">regexr.com</a> - Visual regex builder</li>
+<li><a href="https://regexpal.com">regexpal.com</a> - Simple regex tester</li>
+</ul>
+<h3 id="command-line-testing">Command Line Testing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Test with grep</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#34;test string&#34;</span> | grep -E <span style="color:#a5d6ff">&#39;pattern&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Test with sed</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#a5d6ff">&#34;test string&#34;</span> | sed <span style="color:#a5d6ff">&#39;s/pattern/replacement/&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic"># Test with Python</span>
+</span></span><span style="display:flex;"><span>python3 -c <span style="color:#a5d6ff">&#34;import re; print(re.search(r&#39;pattern&#39;, &#39;test string&#39;))&#34;</span>
+</span></span></code></pre></div><h2 id="performance-tips">Performance Tips</h2>
+<h3 id="best-practices">Best Practices</h3>
+<ul>
+<li>Use specific characters instead of <code>.</code> when possible</li>
+<li>Avoid nested quantifiers like <code>(a+)+</code></li>
+<li>Use non-capturing groups <code>(?:...)</code> when you don&rsquo;t need the match</li>
+<li>Anchor patterns with <code>^</code> and <code>$</code> when appropriate</li>
+<li>Use word boundaries <code>\b</code> for word matching</li>
+</ul>
+<h3 id="common-pitfalls">Common Pitfalls</h3>
+<ul>
+<li><strong>Greedy vs Non-greedy</strong>: <code>.*</code> vs <code>.*?</code></li>
+<li><strong>Backtracking</strong>: Avoid complex nested patterns</li>
+<li><strong>Case sensitivity</strong>: Remember to use <code>i</code> flag when needed</li>
+<li><strong>Escaping</strong>: Don&rsquo;t forget to escape special characters</li>
+</ul>
+<h2 id="quick-reference">Quick Reference</h2>
+<h3 id="most-common-patterns">Most Common Patterns</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">\d+             # One or more digits
+\w+             # One or more word characters
+\s+             # One or more whitespace
+[a-zA-Z]+       # One or more letters
+\b\w+\b         # Whole words
+^.+$            # Entire line
+.*              # Any characters (greedy)
+.*?             # Any characters (non-greedy)
+</code></pre><h3 id="escape-sequences">Escape Sequences</h3>
+<pre tabindex="0"><code class="language-regex" data-lang="regex">\.              # Literal dot
+\*              # Literal asterisk
+\+              # Literal plus
+\?              # Literal question mark
+\\              # Literal backslash
+\(              # Literal parenthesis
+\[              # Literal bracket
+\{              # Literal brace
+\|              # Literal pipe
+</code></pre><h2 id="see-also">See Also</h2>
+<ul>
+<li><code>man grep</code> - Pattern matching in files</li>
+<li><code>man sed</code> - Stream editor with regex support</li>
+<li><code>man awk</code> - Pattern scanning and processing</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">MDN Regex Guide</a></li>
+<li><a href="https://docs.python.org/3/library/re.html">Python re module</a></li>
+</ul>
+
+    </div>
+
+    
+    <div class="mt-4">
+        <h5>Categories:</h5>
+        
+        <a href="/categories/tools" class="badge bg-secondary text-decoration-none me-2">tools</a>
+        
+    </div>
+    
+
+    <div class="mt-4">
+        <small class="text-muted">
+            Last updated: January 1, 2024
+        </small>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 QuickRef - Developer Reference. Built with <i class="fas fa-heart text-danger"></i> for developers.</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="/js/app.js"></script>
+    
+    
+</body>
+</html>
