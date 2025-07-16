@@ -1,4 +1,4 @@
-baseURL = "https://yoursite.com"
+baseURL = "https://qref.eknath.dev"
 languageCode = "en-us"
 title = "QuickRef - Developer Reference"
 theme = "quickref"
