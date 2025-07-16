@@ -33,10 +33,10 @@
                         {{ .Title }}
                     </div>
                     <div class="quickref-card-description">
-                        {{ .Summary | truncate 120 }}
+                        {{ .Description | default .Summary | truncate 100 }}
                     </div>
                     <div class="quickref-tags">
-                        {{ range .Params.tags }}
+                        {{ range (first 3 .Params.tags) }}
                         <span class="quickref-tag">{{ . }}</span>
                         {{ end }}
                     </div>
