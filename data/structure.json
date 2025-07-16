@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "id": "programming",
+      "name": "Programming",
+      "description": "Programming languages and frameworks",
+      "items": [
+        {
+          "id": "bash",
+          "name": "Bash",
+          "description": "Bash shell scripting and command line reference for Linux and Unix systems.",
+          "tags": [
+            "programming",
+            "shell",
+            "scripting",
+            "linux",
+            "unix"
+          ],
+          "file": "programming/bash.html"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "name": "Tools",
+      "description": "Development tools and utilities",
+      "items": [
+        {
+          "id": "grep",
+          "name": "Grep",
+          "description": "Text search and pattern matching utility for searching plain-text data sets for lines that match a regular expression.",
+          "tags": [
+            "tools",
+            "linux",
+            "cli",
+            "text",
+            "search"
+          ],
+          "file": "tools/grep.html"
+        }
+      ]
+    }
+  ],
+  "generated": "2025-07-16T06:46:54.974Z",
+  "total_items": 2
+}

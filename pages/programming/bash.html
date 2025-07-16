@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bash - QuickRef</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html"><i class="fas fa-code"></i> QuickRef</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="../../index.html">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a class="nav-link" href="https://github.com/yourusername/quickref" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <a href="../../index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to QuickRef
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="ref-header">
+            <h1 class="ref-title">Bash</h1>
+            <p class="ref-description">Bash shell scripting and command line reference for Linux and Unix systems.</p>
+            <div class="ref-tags">
+                <span class="ref-tag">shell</span>
+                <span class="ref-tag">scripting</span>
+                <span class="ref-tag">linux</span>
+                <span class="ref-tag">unix</span>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Variables</h3>
+            <div class="command-block">name="value"</div>
+            <div class="command-block">echo $name</div>
+            <div class="command-block">echo ${name}</div>
+            <div class="example-box">
+                <h6>Example:</h6>
+                <div class="command-block">username="john"</div>
+                <div class="command-block">echo "Hello $username"</div>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Conditionals</h3>
+            <div class="command-block">if [ condition ]; then
+    # commands
+elif [ condition ]; then
+    # commands
+else
+    # commands
+fi</div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Loops</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>For Loop</h5>
+                    <div class="command-block">for i in {1..10}; do
+    echo $i
+done</div>
+                </div>
+                <div class="col-md-6">
+                    <h5>While Loop</h5>
+                    <div class="command-block">while [ condition ]; do
+    # commands
+done</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Functions</h3>
+            <div class="command-block">function_name() {
+    # commands
+    return 0
+}</div>
+            <div class="example-box">
+                <h6>Example:</h6>
+                <div class="command-block">greet() {
+    echo "Hello $1"
+}
+greet "World"</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 QuickRef. Built with <i class="fas fa-heart text-danger"></i> for developers.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

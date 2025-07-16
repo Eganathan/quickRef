@@ -1,0 +1,81 @@
+{
+  "categories": [
+    {
+      "id": "programming",
+      "name": "Programming",
+      "description": "Programming languages and frameworks",
+      "items": [
+        {
+          "id": "grep",
+          "name": "Grep",
+          "description": "Text search and pattern matching utility",
+          "tags": ["linux", "cli", "text", "search"],
+          "file": "grep.html"
+        },
+        {
+          "id": "bash",
+          "name": "Bash",
+          "description": "Bash shell scripting reference",
+          "tags": ["shell", "scripting", "linux"],
+          "file": "bash.html"
+        },
+        {
+          "id": "git",
+          "name": "Git",
+          "description": "Version control system commands",
+          "tags": ["version-control", "git", "cli"],
+          "file": "git.html"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "name": "Development Tools",
+      "description": "Developer tools and utilities",
+      "items": [
+        {
+          "id": "docker",
+          "name": "Docker",
+          "description": "Container management platform",
+          "tags": ["containers", "devops", "docker"],
+          "file": "docker.html"
+        },
+        {
+          "id": "vim",
+          "name": "Vim",
+          "description": "Text editor commands and shortcuts",
+          "tags": ["editor", "vim", "shortcuts"],
+          "file": "vim.html"
+        }
+      ]
+    },
+    {
+      "id": "web",
+      "name": "Web Development",
+      "description": "Web technologies and frameworks",
+      "items": [
+        {
+          "id": "html",
+          "name": "HTML",
+          "description": "HTML tags and attributes reference",
+          "tags": ["html", "web", "markup"],
+          "file": "html.html"
+        },
+        {
+          "id": "css",
+          "name": "CSS",
+          "description": "CSS properties and selectors",
+          "tags": ["css", "styling", "web"],
+          "file": "css.html"
+        },
+        {
+          "id": "javascript",
+          "name": "JavaScript",
+          "description": "JavaScript syntax and methods",
+          "tags": ["javascript", "programming", "web"],
+          "file": "javascript.html"
+        }
+      ]
+    }
+  ]
+}

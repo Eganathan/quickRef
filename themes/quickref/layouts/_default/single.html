@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <a href="{{ .Site.BaseURL }}" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to QuickRef
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="ref-header">
+        <h1 class="ref-title">{{ .Title }}</h1>
+        <p class="ref-description">{{ .Description | default .Summary }}</p>
+        <div class="ref-tags">
+            {{ range .Params.tags }}
+            <span class="ref-tag">{{ . }}</span>
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="ref-content">
+        {{ .Content }}
+    </div>
+
+    {{ if .Params.categories }}
+    <div class="mt-4">
+        <h5>Categories:</h5>
+        {{ range .Params.categories }}
+        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="badge bg-secondary text-decoration-none me-2">{{ . }}</a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="mt-4">
+        <small class="text-muted">
+            {{ if .Date }}Last updated: {{ .Date.Format "January 2, 2006" }}{{ end }}
+        </small>
+    </div>
+</div>
+{{ end }}

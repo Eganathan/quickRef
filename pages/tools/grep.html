@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grep - QuickRef</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="fas fa-code"></i> QuickRef</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="../index.html">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a class="nav-link" href="https://github.com/yourusername/quickref" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <a href="../index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to QuickRef
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="ref-header">
+            <h1 class="ref-title">Grep</h1>
+            <p class="ref-description">Text search and pattern matching utility for searching plain-text data sets for lines that match a regular expression.</p>
+            <div class="ref-tags">
+                <span class="ref-tag">linux</span>
+                <span class="ref-tag">cli</span>
+                <span class="ref-tag">text</span>
+                <span class="ref-tag">search</span>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Basic Usage</h3>
+            <div class="command-block">grep "pattern" filename</div>
+            <div class="example-box">
+                <h6>Example:</h6>
+                <p>Search for the word "error" in log file:</p>
+                <div class="command-block">grep "error" /var/log/system.log</div>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Common Options</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Case & Matching</h5>
+                    <ul>
+                        <li><code class="code-inline">-i</code> - Ignore case</li>
+                        <li><code class="code-inline">-v</code> - Invert match (exclude)</li>
+                        <li><code class="code-inline">-w</code> - Match whole words</li>
+                        <li><code class="code-inline">-x</code> - Match whole lines</li>
+                        <li><code class="code-inline">-F</code> - Fixed strings (no regex)</li>
+                        <li><code class="code-inline">-E</code> - Extended regex</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Output Control</h5>
+                    <ul>
+                        <li><code class="code-inline">-n</code> - Show line numbers</li>
+                        <li><code class="code-inline">-c</code> - Count matches</li>
+                        <li><code class="code-inline">-l</code> - List matching files</li>
+                        <li><code class="code-inline">-L</code> - List non-matching files</li>
+                        <li><code class="code-inline">-o</code> - Show only matches</li>
+                        <li><code class="code-inline">-q</code> - Quiet mode</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Context Options</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="command-block">grep -A 3 "pattern" file</div>
+                    <p>Show 3 lines <strong>after</strong> match</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="command-block">grep -B 3 "pattern" file</div>
+                    <p>Show 3 lines <strong>before</strong> match</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="command-block">grep -C 3 "pattern" file</div>
+                    <p>Show 3 lines <strong>around</strong> match</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Regular Expressions</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Basic Patterns</h5>
+                    <ul>
+                        <li><code class="code-inline">^</code> - Start of line</li>
+                        <li><code class="code-inline">$</code> - End of line</li>
+                        <li><code class="code-inline">.</code> - Any character</li>
+                        <li><code class="code-inline">*</code> - Zero or more</li>
+                        <li><code class="code-inline">+</code> - One or more (with -E)</li>
+                        <li><code class="code-inline">?</code> - Zero or one (with -E)</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Character Classes</h5>
+                    <ul>
+                        <li><code class="code-inline">[abc]</code> - Any of a, b, c</li>
+                        <li><code class="code-inline">[^abc]</code> - Not a, b, c</li>
+                        <li><code class="code-inline">[a-z]</code> - Any lowercase</li>
+                        <li><code class="code-inline">[0-9]</code> - Any digit</li>
+                        <li><code class="code-inline">\d</code> - Digit (with -P)</li>
+                        <li><code class="code-inline">\w</code> - Word character (with -P)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Practical Examples</h3>
+            
+            <div class="example-box">
+                <h6>Search for IP addresses:</h6>
+                <div class="command-block">grep -E "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" file.txt</div>
+            </div>
+
+            <div class="example-box">
+                <h6>Search for email addresses:</h6>
+                <div class="command-block">grep -E "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" file.txt</div>
+            </div>
+
+            <div class="example-box">
+                <h6>Search in multiple files:</h6>
+                <div class="command-block">grep -r "TODO" /path/to/project</div>
+            </div>
+
+            <div class="example-box">
+                <h6>Search with file patterns:</h6>
+                <div class="command-block">grep -r --include="*.js" "console.log" .</div>
+            </div>
+
+            <div class="example-box">
+                <h6>Count occurrences:</h6>
+                <div class="command-block">grep -c "error" /var/log/system.log</div>
+            </div>
+
+            <div class="example-box">
+                <h6>Show only matching part:</h6>
+                <div class="command-block">grep -o "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}" access.log</div>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>File Operations</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Recursive Search</h5>
+                    <div class="command-block">grep -r "pattern" /path</div>
+                    <div class="command-block">grep -R "pattern" /path</div>
+                    <p>Search recursively in directories</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Include/Exclude Files</h5>
+                    <div class="command-block">grep -r --include="*.txt" "pattern" .</div>
+                    <div class="command-block">grep -r --exclude="*.log" "pattern" .</div>
+                    <p>Filter files by pattern</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Useful Combinations</h3>
+            
+            <div class="example-box">
+                <h6>Search for functions in code:</h6>
+                <div class="command-block">grep -n "function.*(" *.js</div>
+            </div>
+
+            <div class="example-box">
+                <h6>Find files containing pattern:</h6>
+                <div class="command-block">grep -l "pattern" *.txt</div>
+            </div>
+
+            <div class="example-box">
+                <h6>Search case-insensitive with line numbers:</h6>
+                <div class="command-block">grep -in "error" /var/log/system.log</div>
+            </div>
+
+            <div class="example-box">
+                <h6>Exclude binary files:</h6>
+                <div class="command-block">grep -I "pattern" *</div>
+            </div>
+
+            <div class="example-box">
+                <h6>Search for multiple patterns:</h6>
+                <div class="command-block">grep -E "error|warning|critical" /var/log/system.log</div>
+            </div>
+        </div>
+
+        <div class="ref-section">
+            <h3>Exit Codes</h3>
+            <ul>
+                <li><strong>0</strong> - Match found</li>
+                <li><strong>1</strong> - No match found</li>
+                <li><strong>2</strong> - Error occurred</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 QuickRef. Built with <i class="fas fa-heart text-danger"></i> for developers.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

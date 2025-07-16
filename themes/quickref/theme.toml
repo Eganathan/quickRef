@@ -1,0 +1,13 @@
+name = "quickref"
+license = "MIT"
+licenselink = "https://github.com/yourusername/quickref/blob/main/LICENSE"
+description = "A clean, fast theme for developer reference sites"
+homepage = "https://github.com/yourusername/quickref"
+demosite = "https://yoursite.com"
+tags = ["documentation", "reference", "developer", "cheatsheet"]
+features = ["responsive", "search", "categories", "tags"]
+min_version = "0.100.0"
+
+[author]
+  name = "QuickRef Team"
+  homepage = "https://github.com/yourusername/quickref"
