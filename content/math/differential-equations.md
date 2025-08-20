@@ -1,6 +1,6 @@
 ---
 title: "Differential Equations"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Comprehensive guide to ordinary and partial differential equations, solution methods, and applications in science and engineering."
 categories: ["math"]

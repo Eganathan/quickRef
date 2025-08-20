@@ -1,6 +1,6 @@
 ---
 title: "Curl"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Command-line tool for transferring data with URLs, essential for API testing, web scraping, and HTTP requests."
 categories: ["tools"]

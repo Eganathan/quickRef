@@ -1,6 +1,6 @@
 ---
 title: "BasicMath"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Comprehensive reference for basic mathematics covering number systems, arithmetic operations, BODMAS, GCF/LCM, and problem-solving fundamentals."
 categories: ["math"]

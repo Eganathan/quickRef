@@ -1,6 +1,6 @@
 ---
 title: "Grep"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Text search and pattern matching utility for searching plain-text data sets for lines that match a regular expression."
 categories: ["tools"]

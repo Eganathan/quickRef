@@ -2,479 +2,1011 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on QuickRef - Personal Developer Reference</title>
-    <link>https://qref.eknath.dev/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on QuickRef - Personal Developer Reference</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://qref.eknath.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adb</title>
+      <link>http://localhost:1313/tags/adb/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/adb/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Ai</title>
-      <link>https://qref.eknath.dev/tags/ai/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/ai/</guid>
+      <link>http://localhost:1313/tags/ai/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Algebra</title>
+      <link>http://localhost:1313/tags/algebra/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/algebra/</guid>
       <description></description>
     </item>
     <item>
       <title>Android</title>
-      <link>https://qref.eknath.dev/tags/android/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/android/</guid>
+      <link>http://localhost:1313/tags/android/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/android/</guid>
       <description></description>
     </item>
     <item>
-      <title>Anthropic</title>
-      <link>https://qref.eknath.dev/tags/anthropic/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/anthropic/</guid>
+      <title>Angles</title>
+      <link>http://localhost:1313/tags/angles/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/angles/</guid>
       <description></description>
     </item>
     <item>
       <title>Api</title>
-      <link>https://qref.eknath.dev/tags/api/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/api/</guid>
+      <link>http://localhost:1313/tags/api/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Applied-Mathematics</title>
+      <link>http://localhost:1313/tags/applied-mathematics/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/applied-mathematics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Area</title>
+      <link>http://localhost:1313/tags/area/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/area/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Arithmetic</title>
+      <link>http://localhost:1313/tags/arithmetic/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/arithmetic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Basics</title>
+      <link>http://localhost:1313/tags/basics/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bodmas</title>
+      <link>http://localhost:1313/tags/bodmas/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bodmas/</guid>
       <description></description>
     </item>
     <item>
       <title>C</title>
-      <link>https://qref.eknath.dev/tags/c/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/c/</guid>
+      <link>http://localhost:1313/tags/c/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/c/</guid>
       <description></description>
     </item>
     <item>
       <title>C&#43;&#43;</title>
-      <link>https://qref.eknath.dev/tags/c&#43;&#43;/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/c&#43;&#43;/</guid>
+      <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Calculus</title>
+      <link>http://localhost:1313/tags/calculus/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/calculus/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Circles</title>
+      <link>http://localhost:1313/tags/circles/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/circles/</guid>
       <description></description>
     </item>
     <item>
       <title>Claude</title>
-      <link>https://qref.eknath.dev/tags/claude/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/claude/</guid>
+      <link>http://localhost:1313/tags/claude/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/claude/</guid>
       <description></description>
     </item>
     <item>
       <title>Cli</title>
-      <link>https://qref.eknath.dev/tags/cli/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/cli/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Code-Assistance</title>
-      <link>https://qref.eknath.dev/tags/code-assistance/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/code-assistance/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Code-Generation</title>
-      <link>https://qref.eknath.dev/tags/code-generation/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/code-generation/</guid>
+      <link>http://localhost:1313/tags/cli/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cli/</guid>
       <description></description>
     </item>
     <item>
       <title>Collaboration</title>
-      <link>https://qref.eknath.dev/tags/collaboration/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/collaboration/</guid>
+      <link>http://localhost:1313/tags/collaboration/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/collaboration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Complex-Analysis</title>
+      <link>http://localhost:1313/tags/complex-analysis/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/complex-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Complex-Numbers</title>
+      <link>http://localhost:1313/tags/complex-numbers/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/complex-numbers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Computational-Mathematics</title>
+      <link>http://localhost:1313/tags/computational-mathematics/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/computational-mathematics/</guid>
       <description></description>
     </item>
     <item>
       <title>Concurrent</title>
-      <link>https://qref.eknath.dev/tags/concurrent/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/concurrent/</guid>
+      <link>http://localhost:1313/tags/concurrent/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/concurrent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Conic-Sections</title>
+      <link>http://localhost:1313/tags/conic-sections/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/conic-sections/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Containerization</title>
+      <link>http://localhost:1313/tags/containerization/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/containerization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Containers</title>
+      <link>http://localhost:1313/tags/containers/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/containers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Coordinate-Geometry</title>
+      <link>http://localhost:1313/tags/coordinate-geometry/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/coordinate-geometry/</guid>
       <description></description>
     </item>
     <item>
       <title>Cpp</title>
-      <link>https://qref.eknath.dev/tags/cpp/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/cpp/</guid>
+      <link>http://localhost:1313/tags/cpp/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cpp/</guid>
       <description></description>
     </item>
     <item>
       <title>Curl</title>
-      <link>https://qref.eknath.dev/tags/curl/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/curl/</guid>
+      <link>http://localhost:1313/tags/curl/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/curl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data-Analysis</title>
+      <link>http://localhost:1313/tags/data-analysis/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/data-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Data-Processing</title>
-      <link>https://qref.eknath.dev/tags/data-processing/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/data-processing/</guid>
+      <link>http://localhost:1313/tags/data-processing/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/data-processing/</guid>
       <description></description>
     </item>
     <item>
       <title>Data-Science</title>
-      <link>https://qref.eknath.dev/tags/data-science/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/data-science/</guid>
+      <link>http://localhost:1313/tags/data-science/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/data-science/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debugging</title>
+      <link>http://localhost:1313/tags/debugging/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/debugging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deployment</title>
+      <link>http://localhost:1313/tags/deployment/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/deployment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Derivatives</title>
+      <link>http://localhost:1313/tags/derivatives/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/derivatives/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Determinants</title>
+      <link>http://localhost:1313/tags/determinants/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/determinants/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>https://qref.eknath.dev/tags/development/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/development/</guid>
+      <link>http://localhost:1313/tags/development/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Devops</title>
+      <link>http://localhost:1313/tags/devops/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Differential-Equations</title>
+      <link>http://localhost:1313/tags/differential-equations/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/differential-equations/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Editor</title>
-      <link>https://qref.eknath.dev/tags/editor/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/editor/</guid>
+      <link>http://localhost:1313/tags/editor/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/editor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Eigenvalues</title>
+      <link>http://localhost:1313/tags/eigenvalues/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/eigenvalues/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Engineering</title>
+      <link>http://localhost:1313/tags/engineering/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Enterprise</title>
-      <link>https://qref.eknath.dev/tags/enterprise/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/enterprise/</guid>
+      <link>http://localhost:1313/tags/enterprise/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/enterprise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Equations</title>
+      <link>http://localhost:1313/tags/equations/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/equations/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Euler-Formula</title>
+      <link>http://localhost:1313/tags/euler-formula/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/euler-formula/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Exponentials</title>
+      <link>http://localhost:1313/tags/exponentials/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/exponentials/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Factoring</title>
+      <link>http://localhost:1313/tags/factoring/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/factoring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Functions</title>
+      <link>http://localhost:1313/tags/functions/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/functions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gcf</title>
+      <link>http://localhost:1313/tags/gcf/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gcf/</guid>
       <description></description>
     </item>
     <item>
       <title>Gemini</title>
-      <link>https://qref.eknath.dev/tags/gemini/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/gemini/</guid>
+      <link>http://localhost:1313/tags/gemini/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gemini/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Geometry</title>
+      <link>http://localhost:1313/tags/geometry/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/geometry/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://qref.eknath.dev/tags/git/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/git/</guid>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Go</title>
-      <link>https://qref.eknath.dev/tags/go/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/go/</guid>
+      <link>http://localhost:1313/tags/go/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/go/</guid>
       <description></description>
     </item>
     <item>
       <title>Golang</title>
-      <link>https://qref.eknath.dev/tags/golang/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/golang/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Google</title>
-      <link>https://qref.eknath.dev/tags/google/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/google/</guid>
+      <link>http://localhost:1313/tags/golang/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/golang/</guid>
       <description></description>
     </item>
     <item>
       <title>Gpt</title>
-      <link>https://qref.eknath.dev/tags/gpt/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/gpt/</guid>
+      <link>http://localhost:1313/tags/gpt/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gpt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Graphing</title>
+      <link>http://localhost:1313/tags/graphing/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/graphing/</guid>
       <description></description>
     </item>
     <item>
       <title>Http</title>
-      <link>https://qref.eknath.dev/tags/http/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/http/</guid>
+      <link>http://localhost:1313/tags/http/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/http/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hypothesis-Testing</title>
+      <link>http://localhost:1313/tags/hypothesis-testing/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hypothesis-testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Imaginary-Numbers</title>
+      <link>http://localhost:1313/tags/imaginary-numbers/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/imaginary-numbers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Integrals</title>
+      <link>http://localhost:1313/tags/integrals/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/integrals/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interpolation</title>
+      <link>http://localhost:1313/tags/interpolation/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/interpolation/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>https://qref.eknath.dev/tags/java/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/java/</guid>
+      <link>http://localhost:1313/tags/java/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Jq</title>
-      <link>https://qref.eknath.dev/tags/jq/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/jq/</guid>
+      <link>http://localhost:1313/tags/jq/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/jq/</guid>
       <description></description>
     </item>
     <item>
       <title>Json</title>
-      <link>https://qref.eknath.dev/tags/json/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/json/</guid>
+      <link>http://localhost:1313/tags/json/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/json/</guid>
       <description></description>
     </item>
     <item>
       <title>Jvm</title>
-      <link>https://qref.eknath.dev/tags/jvm/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/jvm/</guid>
+      <link>http://localhost:1313/tags/jvm/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/jvm/</guid>
       <description></description>
     </item>
     <item>
       <title>Kotlin</title>
-      <link>https://qref.eknath.dev/tags/kotlin/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/kotlin/</guid>
+      <link>http://localhost:1313/tags/kotlin/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kotlin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>http://localhost:1313/tags/kubernetes/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Laplace-Transforms</title>
+      <link>http://localhost:1313/tags/laplace-transforms/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/laplace-transforms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lcm</title>
+      <link>http://localhost:1313/tags/lcm/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/lcm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Limits</title>
+      <link>http://localhost:1313/tags/limits/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/limits/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linear-Algebra</title>
+      <link>http://localhost:1313/tags/linear-algebra/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linear-algebra/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linear-Systems</title>
+      <link>http://localhost:1313/tags/linear-systems/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linear-systems/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://qref.eknath.dev/tags/linux/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/linux/</guid>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Llm</title>
-      <link>https://qref.eknath.dev/tags/llm/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/llm/</guid>
+      <link>http://localhost:1313/tags/llm/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/llm/</guid>
       <description></description>
     </item>
     <item>
-      <title>Local-Ai</title>
-      <link>https://qref.eknath.dev/tags/local-ai/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/local-ai/</guid>
+      <title>Logarithms</title>
+      <link>http://localhost:1313/tags/logarithms/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/logarithms/</guid>
       <description></description>
     </item>
     <item>
       <title>Low-Level</title>
-      <link>https://qref.eknath.dev/tags/low-level/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/low-level/</guid>
+      <link>http://localhost:1313/tags/low-level/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/low-level/</guid>
       <description></description>
     </item>
     <item>
-      <title>Machine-Learning</title>
-      <link>https://qref.eknath.dev/tags/machine-learning/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/machine-learning/</guid>
+      <title>Mathematical-Modeling</title>
+      <link>http://localhost:1313/tags/mathematical-modeling/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mathematical-modeling/</guid>
       <description></description>
     </item>
     <item>
-      <title>Multimodal</title>
-      <link>https://qref.eknath.dev/tags/multimodal/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/multimodal/</guid>
+      <title>Mathematics</title>
+      <link>http://localhost:1313/tags/mathematics/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mathematics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Matrices</title>
+      <link>http://localhost:1313/tags/matrices/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/matrices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mean</title>
+      <link>http://localhost:1313/tags/mean/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mean/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Median</title>
+      <link>http://localhost:1313/tags/median/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/median/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Modeling</title>
+      <link>http://localhost:1313/tags/modeling/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/modeling/</guid>
       <description></description>
     </item>
     <item>
       <title>Multiplatform</title>
-      <link>https://qref.eknath.dev/tags/multiplatform/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/multiplatform/</guid>
+      <link>http://localhost:1313/tags/multiplatform/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/multiplatform/</guid>
       <description></description>
     </item>
     <item>
       <title>Multiplexer</title>
-      <link>https://qref.eknath.dev/tags/multiplexer/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/multiplexer/</guid>
+      <link>http://localhost:1313/tags/multiplexer/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/multiplexer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multivariable</title>
+      <link>http://localhost:1313/tags/multivariable/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/multivariable/</guid>
       <description></description>
     </item>
     <item>
       <title>Networking</title>
-      <link>https://qref.eknath.dev/tags/networking/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/networking/</guid>
+      <link>http://localhost:1313/tags/networking/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Normal-Distribution</title>
+      <link>http://localhost:1313/tags/normal-distribution/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/normal-distribution/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Numbers</title>
+      <link>http://localhost:1313/tags/numbers/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/numbers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Numerical-Integration</title>
+      <link>http://localhost:1313/tags/numerical-integration/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/numerical-integration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Numerical-Methods</title>
+      <link>http://localhost:1313/tags/numerical-methods/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/numerical-methods/</guid>
       <description></description>
     </item>
     <item>
       <title>Object-Oriented</title>
-      <link>https://qref.eknath.dev/tags/object-oriented/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/object-oriented/</guid>
+      <link>http://localhost:1313/tags/object-oriented/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/object-oriented/</guid>
       <description></description>
     </item>
     <item>
-      <title>Ollama</title>
-      <link>https://qref.eknath.dev/tags/ollama/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/ollama/</guid>
+      <title>Oci</title>
+      <link>http://localhost:1313/tags/oci/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/oci/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Odes</title>
+      <link>http://localhost:1313/tags/odes/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/odes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Operations</title>
+      <link>http://localhost:1313/tags/operations/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/operations/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Optimization</title>
+      <link>http://localhost:1313/tags/optimization/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/optimization/</guid>
       <description></description>
     </item>
     <item>
       <title>Parsing</title>
-      <link>https://qref.eknath.dev/tags/parsing/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/parsing/</guid>
+      <link>http://localhost:1313/tags/parsing/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/parsing/</guid>
       <description></description>
     </item>
     <item>
       <title>Pattern-Matching</title>
-      <link>https://qref.eknath.dev/tags/pattern-matching/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/pattern-matching/</guid>
+      <link>http://localhost:1313/tags/pattern-matching/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pattern-matching/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pdes</title>
+      <link>http://localhost:1313/tags/pdes/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pdes/</guid>
       <description></description>
     </item>
     <item>
       <title>Performance</title>
-      <link>https://qref.eknath.dev/tags/performance/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/performance/</guid>
+      <link>http://localhost:1313/tags/performance/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/performance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Perimeter</title>
+      <link>http://localhost:1313/tags/perimeter/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/perimeter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Podman</title>
+      <link>http://localhost:1313/tags/podman/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/podman/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Polar-Form</title>
+      <link>http://localhost:1313/tags/polar-form/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/polar-form/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Polynomials</title>
+      <link>http://localhost:1313/tags/polynomials/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/polynomials/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pre-Calculus</title>
+      <link>http://localhost:1313/tags/pre-calculus/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pre-calculus/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Probability</title>
+      <link>http://localhost:1313/tags/probability/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/probability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Probability-Models</title>
+      <link>http://localhost:1313/tags/probability-models/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/probability-models/</guid>
       <description></description>
     </item>
     <item>
       <title>Productivity</title>
-      <link>https://qref.eknath.dev/tags/productivity/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/productivity/</guid>
+      <link>http://localhost:1313/tags/productivity/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/productivity/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>https://qref.eknath.dev/tags/programming/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/programming/</guid>
+      <link>http://localhost:1313/tags/programming/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Prompt-Engineering</title>
-      <link>https://qref.eknath.dev/tags/prompt-engineering/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/prompt-engineering/</guid>
+      <link>http://localhost:1313/tags/prompt-engineering/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/prompt-engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://qref.eknath.dev/tags/python/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/python/</guid>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Regex</title>
-      <link>https://qref.eknath.dev/tags/regex/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/regex/</guid>
+      <link>http://localhost:1313/tags/regex/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/regex/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Root-Finding</title>
+      <link>http://localhost:1313/tags/root-finding/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/root-finding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rootless</title>
+      <link>http://localhost:1313/tags/rootless/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/rootless/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Roots</title>
+      <link>http://localhost:1313/tags/roots/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/roots/</guid>
       <description></description>
     </item>
     <item>
       <title>Scm</title>
-      <link>https://qref.eknath.dev/tags/scm/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/scm/</guid>
+      <link>http://localhost:1313/tags/scm/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/scm/</guid>
       <description></description>
     </item>
     <item>
       <title>Scripting</title>
-      <link>https://qref.eknath.dev/tags/scripting/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/scripting/</guid>
+      <link>http://localhost:1313/tags/scripting/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/scripting/</guid>
       <description></description>
     </item>
     <item>
       <title>Search</title>
-      <link>https://qref.eknath.dev/tags/search/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/search/</guid>
+      <link>http://localhost:1313/tags/search/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/search/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sequences</title>
+      <link>http://localhost:1313/tags/sequences/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sequences/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Series-Solutions</title>
+      <link>http://localhost:1313/tags/series-solutions/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/series-solutions/</guid>
       <description></description>
     </item>
     <item>
       <title>Session</title>
-      <link>https://qref.eknath.dev/tags/session/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/session/</guid>
+      <link>http://localhost:1313/tags/session/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/session/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shapes</title>
+      <link>http://localhost:1313/tags/shapes/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/shapes/</guid>
       <description></description>
     </item>
     <item>
       <title>Shell</title>
-      <link>https://qref.eknath.dev/tags/shell/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/shell/</guid>
+      <link>http://localhost:1313/tags/shell/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/shell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Standard-Deviation</title>
+      <link>http://localhost:1313/tags/standard-deviation/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/standard-deviation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Statistics</title>
+      <link>http://localhost:1313/tags/statistics/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/statistics/</guid>
       <description></description>
     </item>
     <item>
       <title>Systems</title>
-      <link>https://qref.eknath.dev/tags/systems/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/systems/</guid>
+      <link>http://localhost:1313/tags/systems/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Systems-Analysis</title>
+      <link>http://localhost:1313/tags/systems-analysis/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/systems-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Terminal</title>
-      <link>https://qref.eknath.dev/tags/terminal/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/terminal/</guid>
+      <link>http://localhost:1313/tags/terminal/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/terminal/</guid>
       <description></description>
     </item>
     <item>
       <title>Text</title>
-      <link>https://qref.eknath.dev/tags/text/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/text/</guid>
+      <link>http://localhost:1313/tags/text/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/text/</guid>
       <description></description>
     </item>
     <item>
       <title>Text-Editing</title>
-      <link>https://qref.eknath.dev/tags/text-editing/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/text-editing/</guid>
+      <link>http://localhost:1313/tags/text-editing/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/text-editing/</guid>
       <description></description>
     </item>
     <item>
       <title>Text-Processing</title>
-      <link>https://qref.eknath.dev/tags/text-processing/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/text-processing/</guid>
+      <link>http://localhost:1313/tags/text-processing/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/text-processing/</guid>
       <description></description>
     </item>
     <item>
       <title>Tmux</title>
-      <link>https://qref.eknath.dev/tags/tmux/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/tmux/</guid>
+      <link>http://localhost:1313/tags/tmux/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tmux/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>https://qref.eknath.dev/tags/tools/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/tools/</guid>
+      <link>http://localhost:1313/tags/tools/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transformations</title>
+      <link>http://localhost:1313/tags/transformations/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/transformations/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Triangles</title>
+      <link>http://localhost:1313/tags/triangles/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/triangles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Trigonometry</title>
+      <link>http://localhost:1313/tags/trigonometry/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/trigonometry/</guid>
       <description></description>
     </item>
     <item>
       <title>Unix</title>
-      <link>https://qref.eknath.dev/tags/unix/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/unix/</guid>
+      <link>http://localhost:1313/tags/unix/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/unix/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Variables</title>
+      <link>http://localhost:1313/tags/variables/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/variables/</guid>
       <description></description>
     </item>
     <item>
       <title>Version-Control</title>
-      <link>https://qref.eknath.dev/tags/version-control/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/version-control/</guid>
+      <link>http://localhost:1313/tags/version-control/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/version-control/</guid>
       <description></description>
     </item>
     <item>
       <title>Vim</title>
-      <link>https://qref.eknath.dev/tags/vim/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/vim/</guid>
+      <link>http://localhost:1313/tags/vim/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/vim/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtualization</title>
+      <link>http://localhost:1313/tags/virtualization/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/virtualization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Volume</title>
+      <link>http://localhost:1313/tags/volume/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/volume/</guid>
       <description></description>
     </item>
     <item>
       <title>Web</title>
-      <link>https://qref.eknath.dev/tags/web/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/web/</guid>
+      <link>http://localhost:1313/tags/web/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web/</guid>
       <description></description>
     </item>
     <item>
       <title>Web-Development</title>
-      <link>https://qref.eknath.dev/tags/web-development/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://qref.eknath.dev/tags/web-development/</guid>
+      <link>http://localhost:1313/tags/web-development/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-development/</guid>
       <description></description>
     </item>
   </channel>

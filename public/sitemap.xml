@@ -2,286 +2,553 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://qref.eknath.dev/tags/ai/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/adb/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/categories/ai/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tools/adb/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/ai/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/ai/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/android/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/categories/ai/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/anthropic/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/ai/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/api/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/algebra/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/programming/bash/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/math/algebra/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/c/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/android/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/programming/c/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/angles/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/c&#43;&#43;/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/api/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/programming/cpp/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/applied-mathematics/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/categories/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/area/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/claude/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/arithmetic/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/ai/claude-code/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/programming/bash/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/cli/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/math/basic-math/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/code-assistance/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/basics/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/code-generation/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/bodmas/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/collaboration/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/c/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/concurrent/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/programming/c/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/cpp/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/c&#43;&#43;/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/curl/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/programming/cpp/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tools/curl/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/calculus/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/data-processing/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/math/calculus/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/data-science/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/development/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/circles/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/editor/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/claude/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/enterprise/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/cli/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/gemini/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/collaboration/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/ai/gemini/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/math/complex-numbers/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/git/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/complex-analysis/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tools/git/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/complex-numbers/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/go/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/computational-mathematics/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/programming/go/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/concurrent/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/golang/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/conic-sections/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/google/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/containerization/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/gpt/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/containers/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tools/grep/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/coordinate-geometry/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/http/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/cpp/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/java/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/curl/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/programming/java/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tools/curl/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tools/jq/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/data-analysis/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/jq/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/data-processing/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/json/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/data-science/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/jvm/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/debugging/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/kotlin/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/deployment/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/programming/kotlin/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/derivatives/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/linux/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/determinants/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/llm/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/development/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/local-ai/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/devops/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/low-level/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/math/differential-equations/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/machine-learning/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/differential-equations/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/multimodal/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/docker/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/multiplatform/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tools/docker/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/multiplexer/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/editor/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/networking/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/eigenvalues/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/object-oriented/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/engineering/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/ollama/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/enterprise/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/ai/ollama/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/equations/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/parsing/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/euler-formula/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/pattern-matching/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/exponentials/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/performance/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/factoring/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/productivity/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/functions/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/programming/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/gcf/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/categories/programming/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/gemini/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/programming/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/geometry/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/ai/prompt-engineering/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/math/geometry/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/prompt-engineering/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/git/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/python/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tools/git/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/programming/python/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/go/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/programming/go/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/regex/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/golang/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tools/regex/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/gpt/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/scm/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/graphing/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/scripting/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tools/grep/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/search/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/http/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/session/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/hypothesis-testing/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/shell/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/imaginary-numbers/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/systems/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/integrals/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/interpolation/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/terminal/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/java/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/text/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/programming/java/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/text-editing/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tools/jq/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/text-processing/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/jq/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/tmux/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/json/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tools/tmux/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/jvm/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tools/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/kotlin/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/tools/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/programming/kotlin/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/categories/tools/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/kubernetes/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/unix/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/laplace-transforms/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/version-control/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/lcm/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/vim/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/limits/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tools/vim/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/linear-algebra/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/web/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/linear-systems/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://qref.eknath.dev/tags/web-development/</loc>
-    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/llm/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/logarithms/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/low-level/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/math/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/math/mathematical-modeling/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mathematical-modeling/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mathematics/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/math/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/matrices/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/math/matrices/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mean/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/median/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/modeling/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/multiplatform/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/multiplexer/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/multivariable/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/networking/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/normal-distribution/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/numbers/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/math/numerical-methods/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/numerical-integration/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/numerical-methods/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/object-oriented/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/oci/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/odes/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/operations/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/optimization/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/parsing/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pattern-matching/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pdes/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/performance/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/perimeter/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/podman/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/podman/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/polar-form/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/polynomials/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pre-calculus/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/math/pre-calculus/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/probability/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/probability-models/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/productivity/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/programming/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/programming/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/programming/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ai/prompt-engineering/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/prompt-engineering/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/programming/python/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/regex/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/regex/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/root-finding/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/rootless/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/roots/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/scm/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/scripting/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/search/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sequences/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/series-solutions/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/session/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/shapes/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/shell/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/standard-deviation/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/statistics/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/math/statistics/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/systems/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/systems-analysis/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/terminal/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/text/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/text-editing/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/text-processing/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tmux/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/tmux/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tools/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/tools/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/transformations/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/triangles/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/trigonometry/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/unix/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/variables/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/version-control/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/vim/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tools/vim/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/virtualization/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/volume/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-development/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url>
 </urlset>

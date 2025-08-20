@@ -1,6 +1,6 @@
 ---
 title: "C"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "C programming language reference covering syntax, memory management, system programming, and best practices."
 categories: ["programming"]

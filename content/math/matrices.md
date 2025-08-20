@@ -1,6 +1,6 @@
 ---
 title: "Matrices"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Comprehensive guide to matrices covering foundations, operations, linear algebra, eigenvalues, and applications in applied mathematics."
 categories: ["math"]

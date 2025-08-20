@@ -1,6 +1,6 @@
 ---
 title: "Java"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Java programming language reference covering syntax, OOP, collections, concurrency, and enterprise development."
 categories: ["programming"]

@@ -1,6 +1,6 @@
 ---
 title: "Python"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Python programming language reference covering syntax, data structures, libraries, and best practices."
 categories: ["programming"]

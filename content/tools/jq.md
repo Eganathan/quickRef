@@ -1,6 +1,6 @@
 ---
 title: "jq"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Lightweight and flexible command-line JSON processor for parsing, filtering, and transforming JSON data."
 categories: ["tools"]

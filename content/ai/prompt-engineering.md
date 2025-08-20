@@ -1,6 +1,6 @@
 ---
 title: "Prompt Engineering"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Essential techniques and patterns for effective AI prompt engineering with LLMs like GPT, Claude, and Gemini."
 categories: ["ai"]
@@ -30,6 +30,17 @@ Prompt engineering is the art and science of crafting effective prompts for Larg
 ❌ Poor: "Help with my code"
 ✅ Good: "As an experienced Python developer, help me debug this function and explain the error in detail"
 ```
+
+## Framework
+
+Getting the most out of generative AI is all about understanding inputs and outputs. What are you hoping to get from the tool? That’s the output. What kind of prompt is going to help you get it? That’s the input. And there’s a simple framework that helps you provide clear and specific directions to any gen AI tool.
+
+The **TCREI** framework (a useful acronym for "Thoughtfully Create Really Excellent Inputs") stands for:
+- **T**ask
+- **C**ontext
+- **R**eferences
+- **E**valuate
+- **I**terate
 
 ## Prompt Structure
 
@@ -482,6 +493,7 @@ Solution: Request citations, use chain-of-thought reasoning
 
 ## See Also
 
+- [Managing AI Agents with AGENT.MD](/ai/managing-ai-agents)
 - [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
 - [Anthropic Prompt Engineering](https://docs.anthropic.com/claude/docs/prompt-engineering)
 - [Google AI Prompt Design](https://ai.google.dev/docs/prompt_best_practices)

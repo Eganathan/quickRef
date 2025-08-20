@@ -1,6 +1,6 @@
 ---
 title: "Calculus"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Comprehensive calculus guide covering limits, derivatives, integrals, applications, and multivariable calculus fundamentals."
 categories: ["math"]

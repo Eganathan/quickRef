@@ -1,6 +1,6 @@
 ---
 title: "Vim"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Powerful text editor with modal editing, extensive customization, and efficient keyboard-driven workflow."
 categories: ["tools"]

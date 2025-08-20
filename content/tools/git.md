@@ -1,6 +1,6 @@
 ---
 title: "Git"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Distributed version control system for tracking changes in source code during software development."
 categories: ["tools"]

@@ -1,6 +1,6 @@
 ---
 title: "Mathematical Modeling"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Comprehensive guide to mathematical modeling covering model construction, analysis, validation, and applications across science, engineering, and economics."
 categories: ["math"]

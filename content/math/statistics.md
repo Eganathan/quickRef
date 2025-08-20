@@ -1,6 +1,6 @@
 ---
 title: "Statistics"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Comprehensive statistics and probability guide covering data analysis, descriptive statistics, probability theory, and statistical inference."
 categories: ["math"]

@@ -1,6 +1,6 @@
 ---
 title: "Regex"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Regular expressions for pattern matching and text processing in various programming languages and tools."
 categories: ["tools"]

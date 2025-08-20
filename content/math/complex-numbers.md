@@ -1,6 +1,6 @@
 ---
 title: "Complex Numbers"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Comprehensive guide to complex numbers covering fundamentals, operations, polar form, roots, and applications in engineering and mathematics."
 categories: ["math"]

@@ -1,6 +1,6 @@
 ---
 title: "Kotlin"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Kotlin programming language reference covering syntax, null safety, coroutines, and Android development."
 categories: ["programming"]

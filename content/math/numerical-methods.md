@@ -1,6 +1,6 @@
 ---
 title: "Numerical Methods"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Comprehensive guide to numerical methods covering root finding, numerical integration, differential equations, linear systems, and computational mathematics."
 categories: ["math"]

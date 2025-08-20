@@ -1,6 +1,6 @@
 ---
 title: "Tmux"
-date: 2024-01-01T00:00:00Z
+date: 2023-01-01T00:00:00Z
 draft: false
 description: "Terminal multiplexer for managing multiple terminal sessions, windows, and panes in a single interface."
 categories: ["tools"]
