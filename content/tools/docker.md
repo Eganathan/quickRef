@@ -20,7 +20,8 @@ sudo sh get-docker.sh
 sudo usermod -aG docker $USER
 
 # macOS
-brew install --cask docker
+brew install docker # OpenSource & recommended
+brew install --cask docker # NOT OPEN SOURCE
 # or download Docker Desktop from https://docker.com
 
 # CentOS/RHEL
@@ -31,6 +32,19 @@ sudo yum install docker-ce docker-ce-cli containerd.io
 # Start Docker service
 sudo systemctl start docker
 sudo systemctl enable docker
+```
+
+## My way of installation on mac
+
+I prefer to use the open source version of the docker, hence these are the steps i had to take to download and install the docker on my device.
+
+```bash
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # Download the docker
+brew install colima docker # install Colima | Colima is an open-source project that helps you run containers (like Docker containers) on macOS and Linux using a lightweight virtual machine (VM).
+colima start #Start Colima (starts Docker Engine under the hood)
+docker info # You should see docker info
+docker run -it ubuntu bash # if you want to playaround with a sample docker image (-it) stands for interactive
 ```
 
 ## Container Basics
