@@ -19,7 +19,7 @@
         {{ range .Site.Taxonomies.categories }}
         {{ $category := . }}
         {{ $categoryName := .Page.Title }}
-        <div class="category-section">
+        <div class="category-section" data-item-count="{{ len .Pages }}">
             <div class="category-header">
                 <i class="fas fa-folder category-icon"></i>
                 <h2 class="category-title">{{ $categoryName }}</h2>

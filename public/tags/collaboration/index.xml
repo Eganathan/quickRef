@@ -6,8 +6,15 @@
     <description>Recent content in Collaboration on QuickRef - Personal Developer Reference</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/collaboration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Managing AI Agents with AGENT.MD</title>
+      <link>http://localhost:1313/ai/managing-ai-agents/</link>
+      <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ai/managing-ai-agents/</guid>
+      <description>&lt;h2 id=&#34;agentmd-persistent-guidance-for-ai-agents&#34;&gt;AGENT.MD: Persistent Guidance for AI Agents&lt;/h2&gt;&#xA;&lt;p&gt;For ongoing projects, especially when collaborating with an AI agent, creating an &lt;code&gt;AGENT.MD&lt;/code&gt; file in the project&amp;rsquo;s root directory is a powerful technique. This file acts as a persistent, high-level prompt that guides the agent&amp;rsquo;s behavior, ensuring consistency and adherence to project standards over multiple interactions.&lt;/p&gt;&#xA;&lt;h3 id=&#34;why-is-agentmd-important&#34;&gt;Why is &lt;code&gt;AGENT.MD&lt;/code&gt; Important?&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Consistency&lt;/strong&gt;: Ensures the agent follows the same style, conventions, and architectural patterns every time it works on the codebase.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Efficiency&lt;/strong&gt;: Reduces the need to repeat instructions in every prompt. The agent can refer to the &lt;code&gt;AGENT.MD&lt;/code&gt; for standing orders.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Safety&lt;/strong&gt;: Allows you to define clear safety rules, forbidden commands, or sensitive areas of the codebase to avoid accidental changes.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Onboarding&lt;/strong&gt;: Helps the agent (and new human developers) quickly understand the project&amp;rsquo;s specific operational procedures and conventions.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;how-to-design-an-effective-agentmd&#34;&gt;How to Design an Effective &lt;code&gt;AGENT.MD&lt;/code&gt;&lt;/h3&gt;&#xA;&lt;p&gt;An effective &lt;code&gt;AGENT.MD&lt;/code&gt; should be structured like a set of clear instructions. Use Markdown to create a readable and well-organized document.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Git</title>
       <link>http://localhost:1313/tools/git/</link>

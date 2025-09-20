@@ -5,7 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setupSmoothScrolling();
     setupCopyButtons();
     setupAdaptiveGrid();
+    setupMasonryLayout();
 });
+
+// Add event listeners for responsive layout updates
+window.addEventListener('resize', debounce(setupMasonryLayout, 250));
 
 // Theme Management
 function initTheme() {
@@ -98,6 +102,9 @@ function handleSearch() {
     
     // Update grid layout based on visible content
     updateGridOnSearch();
+    
+    // Re-apply masonry layout after search
+    setTimeout(setupMasonryLayout, 100);
 }
 
 function showNoResults(searchTerm) {
@@ -238,4 +245,82 @@ function updateGridOnSearch() {
         .filter(category => category.style.display !== 'none');
     
     categoryGrid.setAttribute('data-category-count', visibleCategories.length);
+}
+
+// Masonry Layout Implementation
+function setupMasonryLayout() {
+    const categoryGrid = document.querySelector('.category-grid');
+    if (!categoryGrid) return;
+    
+    // Only apply masonry on larger screens
+    if (window.innerWidth < 768) {
+        categoryGrid.style.height = 'auto';
+        return;
+    }
+    
+    const categories = Array.from(categoryGrid.querySelectorAll('.category-section'))
+        .filter(cat => cat.style.display !== 'none');
+    
+    if (categories.length === 0) return;
+    
+    // Reset any previous positioning
+    categories.forEach(cat => {
+        cat.style.position = '';
+        cat.style.top = '';
+        cat.style.left = '';
+    });
+    
+    const gap = 32; // 2rem
+    const containerWidth = categoryGrid.offsetWidth;
+    let columnCount = 2;
+    
+    // Determine column count based on screen size
+    if (window.innerWidth >= 1600) {
+        columnCount = 4;
+    } else if (window.innerWidth >= 1200) {
+        columnCount = 3;
+    }
+    
+    // Don't use more columns than we have categories
+    columnCount = Math.min(columnCount, categories.length);
+    
+    const columnWidth = (containerWidth - (gap * (columnCount - 1))) / columnCount;
+    const columnHeights = new Array(columnCount).fill(0);
+    
+    // Position categories in masonry layout
+    categories.forEach((category, index) => {
+        // Find the shortest column
+        const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+        
+        // Position the category
+        const left = shortestColumnIndex * (columnWidth + gap);
+        const top = columnHeights[shortestColumnIndex];
+        
+        category.style.position = 'absolute';
+        category.style.left = `${left}px`;
+        category.style.top = `${top}px`;
+        category.style.width = `${columnWidth}px`;
+        
+        // Update column height
+        const categoryHeight = category.offsetHeight;
+        columnHeights[shortestColumnIndex] += categoryHeight + gap;
+    });
+    
+    // Set container height
+    const maxHeight = Math.max(...columnHeights) - gap;
+    categoryGrid.style.height = `${maxHeight}px`;
+    categoryGrid.style.position = 'relative';
+}
+
+// Debounce utility function
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
